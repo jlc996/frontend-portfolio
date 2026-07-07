@@ -8,6 +8,7 @@
   box-sizing: border-box;
 }
 
+
 /* ==========================
    Theme Variables
 ========================== */
@@ -19,6 +20,7 @@
   --accent-color: #2563eb;
 }
 
+
 .dark-theme {
   --bg-color: #111827;
   --text-color: #f9fafb;
@@ -26,17 +28,27 @@
   --accent-color: #60a5fa;
 }
 
+
+/* ==========================
+   Root Layout
+========================== */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
 /* ==========================
    Body
 ========================== */
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease,
-              color 0.3s ease;
 }
+
 
 /* ==========================
    App Layout
@@ -46,7 +58,15 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
+
 
 /* ==========================
    Main Content
@@ -54,10 +74,13 @@ body {
 
 .main-content {
   flex: 1;
+
   width: min(1200px, 100%);
-  margin: auto;
+  margin: 0 auto;
+
   padding: 2rem 1rem;
 }
+
 
 /* ==========================
    Links
@@ -68,9 +91,11 @@ a {
   text-decoration: none;
 }
 
+
 a:hover {
   text-decoration: underline;
 }
+
 
 /* ==========================
    Images
@@ -78,6 +103,7 @@ a:hover {
 
 img {
   width: 100%;
+  max-width: 100%;
   display: block;
   object-fit: cover;
 }
