@@ -1,16 +1,16 @@
-// ThemeContext.jsx
+import { createContext, useContext, useState } from "react";
 
-import { createContext, useState } from "react";
+// Create the Theme Context
+const ThemeContext = createContext();
 
-// Create the context
-export const ThemeContext = createContext();
-
-// Theme provider component
+// Theme Provider
 export function ThemeProvider({ children }) {
+  // Track whether dark mode is enabled
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  // Toggle between light and dark themes
   function toggleTheme() {
-    setIsDarkMode((prev) => !prev);
+    setIsDarkMode((prevMode) => !prevMode);
   }
 
   return (
@@ -23,4 +23,9 @@ export function ThemeProvider({ children }) {
       {children}
     </ThemeContext.Provider>
   );
+}
+
+// Custom hook for using the theme
+export function useTheme() {
+  return useContext(ThemeContext);
 }
