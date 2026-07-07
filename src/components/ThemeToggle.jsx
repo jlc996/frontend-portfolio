@@ -1,9 +1,11 @@
-// ThemeToggle.jsx
+import { useTheme } from "../context/ThemeContext";
 
 function ThemeToggle() {
+  const { isDarkMode, toggleTheme } = useTheme();
+
   return (
-    <button>
-      🌙 Dark Mode
+    <button onClick={toggleTheme}>
+      {isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
     </button>
   );
 }
