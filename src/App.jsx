@@ -12,77 +12,47 @@ import ProjectDetails from "./pages/ProjectDetails";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 
-// Import the Theme Provider to manage dark/light mode
-import { ThemeProvider } from "./context/ThemeContext";
+// Import Theme Context
+import { ThemeProvider, useTheme } from "./context/ThemeContext";
 
 // Import global application styles
 import "./styles/App.css";
 
-// Main application component
+// Component that can access theme state
+function AppContent() {
+  const { isDarkMode } = useTheme();
+
+  return (
+    <div className={isDarkMode ? "dark-theme app" : "light-theme app"}>
+      {/* Persistent navigation */}
+      <Navbar />
+
+      {/* Main content area */}
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/projects/:id" element={<ProjectDetails />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
+
+      {/* Persistent footer */}
+      <Footer />
+    </div>
+  );
+}
+
+// Main App component
 function App() {
   return (
-    // Wrap the entire application with the Theme Context
     <ThemeProvider>
-
-      {/* Enable client-side routing */}
       <BrowserRouter>
-
-        {/* Main application wrapper */}
-        <div className="app">
-
-          {/* Persistent navigation displayed on every page */}
-          <Navbar />
-
-          {/* Main content area where routed pages are rendered */}
-          <main className="main-content">
-
-            {/* Define all application routes */}
-            <Routes>
-
-              {/* Home page */}
-              <Route
-                path="/"
-                element={<Home />}
-              />
-
-              {/* Projects page */}
-              <Route
-                path="/projects"
-                element={<Projects />}
-              />
-
-              {/* Dynamic project details page using a route parameter */}
-              <Route
-                path="/projects/:id"
-                element={<ProjectDetails />}
-              />
-
-              {/* Experience & Skills page */}
-              <Route
-                path="/experience"
-                element={<Experience />}
-              />
-
-              {/* Contact page */}
-              <Route
-                path="/contact"
-                element={<Contact />}
-              />
-
-            </Routes>
-
-          </main>
-
-          {/* Persistent footer displayed on every page */}
-          <Footer />
-
-        </div>
-
+        <AppContent />
       </BrowserRouter>
-
     </ThemeProvider>
   );
 }
 
-// Export the App component
 export default App;
