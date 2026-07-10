@@ -59,7 +59,7 @@ function Home() {
         <div className="hero-image">
 
           <img
-            src="/profile.jpg"
+            src="/profile.png"
             alt="Joshua Craven - Frontend Developer"
           />
 

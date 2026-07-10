@@ -15,6 +15,10 @@ function Navbar() {
 
       {/* Portfolio logo/title */}
       <div className="logo">
+        <img
+            src="/logo.png"
+            alt="falcon head logo"
+          />
         <h2>Joshua Craven</h2>
       </div>
 
