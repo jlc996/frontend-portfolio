@@ -1,28 +1,56 @@
-// Import NavLink for client-side routing
-import { NavLink } from "react-router-dom";
+// Navbar.jsx
 
-// Import the theme toggle button
+// Import React Router components
+// NavLink provides client-side navigation with active link styling
+// Link makes the logo clickable and routes back to the homepage
+import { NavLink, Link } from "react-router-dom";
+
+// Import theme toggle component
 import ThemeToggle from "./ThemeToggle";
 
-// Import the navbar stylesheet
+// Import navbar styles
 import "../styles/Navbar.css";
+
 
 // Navigation component
 function Navbar() {
+
   return (
-    // Main navigation bar
+
+    // Main navigation container
     <nav className="navbar">
 
-      {/* Portfolio logo/title */}
-      <div className="logo">
-        <img
-            src="/logo.png"
-            alt="falcon head logo"
-          />
-        <h2>Joshua Craven</h2>
-      </div>
 
-      {/* Navigation links */}
+      {/* ==========================
+          Logo Section
+      ========================== */}
+
+      {/* Clicking the logo returns the user to Home */}
+      <Link
+        to="/"
+        className="logo"
+      >
+
+        {/* Portfolio Logo */}
+        <img
+          src="/logo.png"
+          alt="Joshua Craven portfolio logo"
+          className="logo-image"
+        />
+
+        {/* Developer Name */}
+        <h2>
+          Joshua Craven
+        </h2>
+
+      </Link>
+
+
+
+      {/* ==========================
+          Navigation Links
+      ========================== */}
+
       <ul className="nav-links">
 
         <li>
@@ -31,17 +59,20 @@ function Navbar() {
           </NavLink>
         </li>
 
+
         <li>
           <NavLink to="/projects">
             Projects
           </NavLink>
         </li>
 
+
         <li>
           <NavLink to="/experience">
             Experience
           </NavLink>
         </li>
+
 
         <li>
           <NavLink to="/contact">
@@ -51,12 +82,21 @@ function Navbar() {
 
       </ul>
 
-      {/* Dark/Light mode toggle */}
+
+
+      {/* ==========================
+          Theme Controls
+      ========================== */}
+
+      {/* Switches between light and dark mode */}
       <ThemeToggle />
 
+
     </nav>
+
   );
 }
 
-// Export the Navbar component
+
+// Export Navbar component
 export default Navbar;
