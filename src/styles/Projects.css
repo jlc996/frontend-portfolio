@@ -57,3 +57,34 @@
 
   flex-wrap: wrap;
 }
+
+/* ==========================
+   Search Bar
+========================== */
+
+.search-container {
+  margin: 2rem 0;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 0.85rem 1rem;
+
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+
+  font-size: 1rem;
+
+  outline: none;
+
+  transition: border-color 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.search-bar:focus {
+  border-color: var(--accent-color);
+
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.2);
+}

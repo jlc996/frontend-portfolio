@@ -8,6 +8,7 @@ import useFetch from "../hooks/useFetch";
 
 // Import reusable components
 import ProjectCard from "../components/ProjectCard";
+import SearchBar from "../components/SearchBar";
 import LoadingSpinner from "../components/LoadingSpinner";
 import ErrorMessage from "../components/ErrorMessage";
 
@@ -46,12 +47,11 @@ function Projects() {
       </p>
 
       {/* Search Box */}
-      <input
-        type="text"
-        className="search-bar"
-        placeholder="Search projects..."
+      {/* Search Box */}
+      <SearchBar
         value={searchTerm}
         onChange={(event) => setSearchTerm(event.target.value)}
+        placeholder="Search GitHub repositories..."
       />
 
       {/* Loading Indicator */}
