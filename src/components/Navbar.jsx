@@ -11,6 +11,7 @@ import ThemeToggle from "./ThemeToggle";
 // Import navbar styles
 import "../styles/Navbar.css";
 
+import logoPic from "../assets/logo.png";
 
 // Navigation component
 function Navbar() {
@@ -33,8 +34,8 @@ function Navbar() {
 
         {/* Portfolio Logo */}
         <img
-          src="/logo.png"
-          alt="Joshua Craven portfolio logo"
+          src={logoPic}
+          alt="portfolio logo"
           className="logo-image"
         />
 
