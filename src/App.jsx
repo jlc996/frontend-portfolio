@@ -1,5 +1,5 @@
 // Import React Router components for client-side navigation
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 // Import reusable layout components
 import Navbar from "./components/Navbar";
@@ -48,9 +48,7 @@ function AppContent() {
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <AppContent />
-      </BrowserRouter>
+      <AppContent />
     </ThemeProvider>
   );
 }
