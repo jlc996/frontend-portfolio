@@ -3,22 +3,29 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+
+  "homepage": "https://jlc996.github.io/frontend-portfolio/",
+
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "preview": "vite preview",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "deploy": "gh-pages -d dist"
   },
+
   "dependencies": {
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.18.1"
   },
+
   "devDependencies": {
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.3",
     "oxlint": "^1.71.0",
-    "vite": "^8.1.1"
+    "vite": "^8.1.1",
+    "gh-pages": "^6.3.0"
   }
 }
