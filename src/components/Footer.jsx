@@ -29,14 +29,14 @@ function Footer() {
           </a>
 
           <a
-            href="https://www.linkedin.com/"
+            href="https://www.linkedin.com/in/joshualeecraven"
             target="_blank"
             rel="noopener noreferrer"
           >
             LinkedIn
           </a>
 
-          <a href="mailto:your.email@example.com">
+          <a href="mailto:josh96craven@gmail.com">
             Email
           </a>
 
