@@ -1,0 +1,178 @@
+/* ==========================
+   Experience Section
+========================== */
+
+.experience-section {
+    padding: 5rem 2rem;
+    min-height: 80vh;
+}
+
+
+/* ==========================
+   Section Header
+========================== */
+
+.experience-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.experience-subtitle {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 3rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+
+/* ==========================
+   Experience Container
+========================== */
+
+.experience-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+/* ==========================
+   Experience Card
+========================== */
+
+.experience-card {
+    background-color: var(--card-color);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-left: 5px solid var(--accent-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================
+   Job Header
+========================== */
+
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+.experience-role {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+
+.experience-company {
+    color: var(--accent-color);
+    font-weight: 600;
+}
+
+
+.experience-date {
+    font-size: 0.9rem;
+    opacity: 0.75;
+    white-space: nowrap;
+}
+
+
+/* ==========================
+   Description
+========================== */
+
+.experience-description {
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+
+/* ==========================
+   Skills List
+========================== */
+
+.experience-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+.experience-skills li {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+}
+
+
+/* ==========================
+   Bullet Points
+========================== */
+
+.experience-card ul {
+    padding-left: 1.25rem;
+    color: var(--text-color);
+}
+
+
+.experience-card li {
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+}
+
+
+/* ==========================
+   Responsive Design
+========================== */
+
+@media (max-width: 768px) {
+
+    .experience-section {
+        padding: 3rem 1rem;
+    }
+
+
+    .experience-title {
+        font-size: 2rem;
+    }
+
+
+    .experience-header {
+        flex-direction: column;
+    }
+
+
+    .experience-date {
+        white-space: normal;
+    }
+
+
+    .experience-card {
+        padding: 1.5rem;
+    }
+
+}
