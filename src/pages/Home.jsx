@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 // Import page styles
 import "../styles/Home.css";
 
+import profilePic from "../assets/profile.png";
+
 // Home page component
 function Home() {
   return (
@@ -59,7 +61,7 @@ function Home() {
         <div className="hero-image">
 
           <img
-            src="/profile.png"
+            src={profilePic}
             alt="Joshua Craven - Frontend Developer"
           />
 
