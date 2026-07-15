@@ -1,266 +1,470 @@
-/* ==========================
+/* =====================================================
    Home Page Layout
-========================== */
+===================================================== */
 
 .home {
-  width: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 
-/* ==========================
+/* =====================================================
    Hero Section
-========================== */
+===================================================== */
 
 .hero {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    min-height: 80vh;
 
-  gap: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  padding: 4rem 0;
+    gap: 4rem;
+
+    padding: 5rem 0;
 }
 
 
 .hero-content {
-  flex: 1;
+    flex: 1;
 }
 
 
 .hero-content h1 {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  color: var(--text-color);
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.1;
+
+    color: var(--text-color);
+
+    margin-bottom: 1rem;
 }
 
 
 .hero-content h2 {
-  color: var(--accent-color);
-  margin-bottom: 1rem;
+
+    font-size: 1.8rem;
+
+    color: var(--accent-color);
+
+    margin-bottom: 1.25rem;
+
 }
 
 
 .hero-content p {
-  max-width: 600px;
-  font-size: 1.1rem;
+
+    max-width: 650px;
+
+    font-size: 1.15rem;
+
+    line-height: 1.8;
+
+    color: var(--text-color);
+
+    opacity: .9;
+
 }
 
 
-/* ==========================
+/* =====================================================
    Hero Buttons
-========================== */
+===================================================== */
 
 .hero-buttons {
-  display: flex;
 
-  gap: 1.5rem;
+    display: flex;
 
-  margin-top: 2rem;
+    align-items: center;
 
-  flex-wrap: wrap;
+    gap: 1.5rem;
+
+    margin-top: 2.5rem;
+
+    flex-wrap: wrap;
+
 }
 
 
 .button {
-  display: inline-flex;
 
-  align-items: center;
-  justify-content: center;
+    display: inline-flex;
 
-  padding: 0.85rem 2rem;
+    align-items: center;
 
-  border-radius: 8px;
+    justify-content: center;
 
-  font-weight: 600;
 
-  transition: transform 0.3s ease,
-              background-color 0.3s ease;
+    padding: .9rem 2rem;
+
+
+    border-radius: 12px;
+
+
+    font-weight: 700;
+
+
+    text-decoration: none;
+
+
+    transition: all .3s ease;
+
 }
+
 
 
 .button:hover {
-  transform: translateY(-3px);
+
+    transform: translateY(-5px);
+
 }
 
 
-/* Primary Button */
 
 .primary-button {
-  background-color: var(--accent-color);
-  color: white;
+
+    background: var(--accent-color);
+
+    color: white;
+
 }
 
 
-/* Secondary Button */
 
 .secondary-button {
-  border: 2px solid var(--accent-color);
-  color: var(--accent-color);
+
+    border: 2px solid var(--accent-color);
+
+    color: var(--accent-color);
+
 }
 
 
-/* ==========================
+
+/* =====================================================
    Profile Image
-========================== */
+===================================================== */
+
 
 .hero-image {
-  flex: 1;
 
-  max-width: 400px;
+    flex: 1;
+
+    max-width: 420px;
+
+    display: flex;
+
+    justify-content: center;
+
 }
+
 
 
 .hero-image img {
 
-  width: 100%;
+    width: 100%;
 
-  aspect-ratio: 1 / 1;
+    max-width: 380px;
 
-  object-fit: cover;
 
-  border-radius: 50%;
+    aspect-ratio: 1 / 1;
+
+
+    object-fit: cover;
+
+
+    border-radius: 50%;
+
+
+    border: 5px solid var(--accent-color);
+
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.25);
+
+
+    animation: floatImage 4s ease-in-out infinite;
 
 }
 
 
-/* ==========================
-   Technology Section
-========================== */
+
+@keyframes floatImage {
+
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+
+    50% {
+
+        transform: translateY(-12px);
+
+    }
+
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   Technology Stack
+===================================================== */
+
 
 .tech-stack {
 
-  margin-top: 3rem;
+    margin-top: 4rem;
 
-  text-align: center;
+    text-align: center;
 
 }
+
+
+
+.tech-stack h2 {
+
+    font-size: 2rem;
+
+    margin-bottom: 2rem;
+
+}
+
 
 
 .tech-grid {
 
-  display: grid;
 
-  grid-template-columns:
-  repeat(auto-fit, minmax(150px, 1fr));
+    display: grid;
 
-  gap: 1.5rem;
 
-  margin-top: 2rem;
+    grid-template-columns:
+    repeat(auto-fit, minmax(160px,1fr));
+
+
+    gap: 2rem;
 
 }
+
 
 
 .tech-card {
 
-  background-color: var(--card-color);
+    background: var(--card-color);
 
-  color: var(--text-color);
+    padding: 2rem 1.5rem;
 
-  padding: 1.5rem;
+    border-radius: 16px;
 
-  border-radius: 12px;
+    color: var(--text-color);
 
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    border-left: 5px solid var(--accent-color);
 
-  transition: transform 0.3s ease;
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.12);
+
+    transition:
+    transform .3s ease,
+    box-shadow .3s ease;
 
 }
+
 
 
 .tech-card:hover {
 
-  transform: translateY(-5px);
+
+    transform: translateY(-8px);
+
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.2);
+
 
 }
 
 
-/* ==========================
+
+.tech-card h3 {
+
+    color: var(--accent-color);
+
+}
+
+
+
+/* =====================================================
    Metrics Section
-========================== */
+===================================================== */
+
 
 .metrics {
 
-  display: grid;
 
-  grid-template-columns:
-  repeat(auto-fit, minmax(200px, 1fr));
+    display: grid;
 
-  gap: 1.5rem;
 
-  margin-top: 3rem;
+    grid-template-columns:
+    repeat(auto-fit,minmax(200px,1fr));
+
+
+    gap: 2rem;
+
+
+    margin-top: 4rem;
 
 }
+
 
 
 .metric-card {
 
-  background-color: var(--card-color);
+    background: var(--card-color);
 
-  color: var(--text-color);
+    padding: 2.5rem 1.5rem;
 
-  padding: 2rem;
+    border-radius: 16px;
 
-  border-radius: 12px;
+    text-align: center;
 
-  text-align: center;
+    border-left: 5px solid var(--accent-color);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.12);
+
+    transition: transform .3s ease;
 
 }
+
+
+
+.metric-card:hover {
+
+
+    transform: translateY(-8px);
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.2);
+
+}
+
 
 
 .metric-card h3 {
 
-  font-size: 2rem;
 
-  color: var(--accent-color);
+    font-size: 2.5rem;
+
+
+    color: var(--accent-color);
+
+
+    margin-bottom: .5rem;
+
 
 }
 
 
-/* ==========================
-   Mobile Responsive
-========================== */
 
-@media (max-width: 768px) {
-
-  .hero {
-
-    flex-direction: column;
-
-    text-align: center;
-
-    padding: 2rem 0;
-
-  }
+.metric-card p {
 
 
-  .hero-content p {
-
-    margin: auto;
-
-  }
+    color: var(--text-color);
 
 
-  .hero-buttons {
-
-    flex-direction: column;
-
-    align-items: center;
-
-  }
+}
 
 
-  .button {
-
-    width: 100%;
-
-    max-width: 250px;
-
-  }
+/* =====================================================
+   Responsive Design
+===================================================== */
 
 
-  .hero-image {
+@media (max-width: 900px) {
 
-    max-width: 280px;
 
-  }
+    .hero {
+
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 3rem 0;
+
+    }
+
+
+    .hero-content p {
+
+        margin: 0 auto;
+
+    }
+
+
+    .hero-buttons {
+
+        justify-content: center;
+
+    }
+
+
+    .hero-image {
+
+        max-width: 300px;
+
+    }
+
+}
+
+
+
+@media (max-width: 600px) {
+
+
+    .hero-content h1 {
+
+        font-size: 2.3rem;
+
+    }
+
+
+    .hero-content h2 {
+
+        font-size: 1.3rem;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .button {
+
+        width: 100%;
+
+        max-width: 260px;
+
+    }
+
+
+    .tech-grid {
+
+        grid-template-columns: repeat(2,1fr);
+
+    }
+
 
 }
