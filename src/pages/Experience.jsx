@@ -3,6 +3,70 @@
 // Import the page stylesheet
 import "../styles/Experience.css";
 
+// Import the badges
+import htmlBadge from "../assets/badges/html-badge.png";
+import cssBadge from "../assets/badges/css-badge.png";
+import javascriptBadge from "../assets/badges/javascript-badge.png";
+
+// Import the certificates
+import htmlCssCert from "../assets/certificates/html-css-cert.png"
+import javascriptCert from "../assets/certificates/javascript-cert.png"
+
+// ==========================
+// Certification Badge Data
+// ==========================
+
+const certifications = [
+  {
+    id: 1,
+    title: "HTML5 Certification",
+    image: htmlBadge,
+    description:
+      "Demonstrated proficiency in semantic HTML, accessibility, and modern webpage structure."
+  },
+
+  {
+    id: 2,
+    title: "CSS3 Certification",
+    image: cssBadge,
+    description:
+      "Built responsive layouts using Flexbox, CSS Grid, animations, and modern styling techniques."
+  },
+
+  {
+    id: 3,
+    title: "JavaScript Certification",
+    image: javascriptBadge,
+    description:
+      "Applied ES6+, DOM manipulation, events, asynchronous JavaScript, and dynamic application development."
+  },
+
+];
+
+// ==========================
+// Completion Certificates
+// ==========================
+
+const completionCertificates = [
+  {
+    id: 1,
+    title: "HTML & CSS Completion Certificate",
+    issuer: "Mississippi Coding Academies",
+    image: htmlCssCert,
+    description:
+      "Successfully completed the HTML & CSS module covering semantic HTML, responsive design, Flexbox, CSS Grid, accessibility, and modern web layouts."
+  },
+
+  {
+    id: 2,
+    title: "JavaScript Completion Certificate",
+    issuer: "Mississippi Coding Academies",
+    image: javascriptCert,
+    description:
+      "Successfully completed the JavaScript module covering ES6+, DOM manipulation, events, asynchronous programming, APIs, and dynamic web applications."
+  }
+];
+
 // Experience page component
 function Experience() {
   return (
@@ -92,6 +156,92 @@ function Experience() {
 
 
       {/* ==========================
+          Certifications
+        ========================== */}
+
+      <section className="certifications">
+
+        <h2>Certifications & Badges</h2>
+
+        <p>
+          Professional certifications earned while completing
+          the Full Stack Development curriculum at
+          Mississippi Coding Academies.
+        </p>
+
+        <div className="certification-grid">
+
+          {certifications.map((certificate) => (
+
+            <div
+              key={certificate.id}
+              className="certificate-card"
+            >
+
+              <img
+                src={certificate.image}
+                alt={certificate.title}
+              />
+
+              <h3>{certificate.title}</h3>
+
+              <p>{certificate.description}</p>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </section>
+
+
+      {/* ==========================
+          Completion Certificates
+        ========================== */}
+
+      <section className="completion-certificates">
+
+        <h2>Completion Certificates</h2>
+
+        <p>
+          Official module completion certificates earned while completing the
+          Full Stack Development program at Mississippi Coding Academies.
+        </p>
+
+        <div className="certificate-grid">
+
+          {completionCertificates.map((certificate) => (
+
+            <div
+              key={certificate.id}
+              className="certificate-card"
+            >
+
+              <img
+                src={certificate.image}
+                alt={certificate.title}
+              />
+
+              <div className="certificate-content">
+
+                <h3>{certificate.title}</h3>
+
+                <h4>{certificate.issuer}</h4>
+
+                <p>{certificate.description}</p>
+
+              </div>
+
+            </div>
+
+          ))}
+
+        </div>
+
+      </section>
+
+      {/* ==========================
           Development Timeline
       ========================== */}
 
@@ -155,7 +305,7 @@ function Experience() {
             Designed and developed this professional portfolio as a React
             Single Page Application using Vite. Implemented client-side
             routing with React Router, a reusable custom
-            <code> useFetch()</code> hook, live GitHub API integration,
+            <code>useFetch()</code> hook, live GitHub API integration,
             controlled form validation, reusable components, responsive CSS
             Grid and Flexbox layouts, and a global light/dark theme system to
             demonstrate modern frontend engineering practices.

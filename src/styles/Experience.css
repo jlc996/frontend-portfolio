@@ -1,177 +1,310 @@
-/* ==========================
-   Experience Section
-========================== */
+/* =====================================================
+   Experience Page
+===================================================== */
 
-.experience-section {
-    padding: 5rem 2rem;
-    min-height: 80vh;
-}
-
-
-/* ==========================
-   Section Header
-========================== */
-
-.experience-title {
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    color: var(--text-color);
-}
-
-.experience-subtitle {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 3rem;
-    color: var(--text-color);
-    opacity: 0.8;
-}
-
-
-/* ==========================
-   Experience Container
-========================== */
-
-.experience-container {
-    max-width: 1000px;
+.experience {
+    max-width: 1200px;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+    padding: 4rem 2rem;
+    color: var(--text-color);
+}
+
+
+/* =====================================================
+   Page Header
+===================================================== */
+
+.experience-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.experience-header h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.experience-header p {
+    max-width: 850px;
+    margin: 0 auto;
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+
+/* =====================================================
+   Shared Section Styles
+===================================================== */
+
+.skills-section,
+.certifications,
+.completion-certificates,
+.timeline,
+.highlights {
+    margin-bottom: 5rem;
+}
+
+.skills-section h2,
+.certifications h2,
+.completion-certificates h2,
+.timeline h2,
+.highlights h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.certifications p,
+.completion-certificates p {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 2rem;
+    opacity: .85;
+}
+
+
+/* =====================================================
+   Technical Skills
+===================================================== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
-
-/* ==========================
-   Experience Card
-========================== */
-
-.experience-card {
-    background-color: var(--card-color);
-    border-radius: 12px;
+.skill-card {
+    background: var(--card-color);
+    border-radius: 16px;
     padding: 2rem;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     border-left: 5px solid var(--accent-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    transition: .3s;
 }
 
-
-.experience-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+.skill-card:hover {
+    transform: translateY(-8px);
 }
 
-
-/* ==========================
-   Job Header
-========================== */
-
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 1rem;
+.skill-card h3 {
     margin-bottom: 1rem;
-}
-
-
-.experience-role {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--text-color);
-}
-
-
-.experience-company {
     color: var(--accent-color);
-    font-weight: 600;
 }
 
-
-.experience-date {
-    font-size: 0.9rem;
-    opacity: 0.75;
-    white-space: nowrap;
+.skill-card ul {
+    padding-left: 1.2rem;
 }
 
-
-/* ==========================
-   Description
-========================== */
-
-.experience-description {
-    color: var(--text-color);
-    line-height: 1.7;
-    margin-bottom: 1rem;
-}
-
-
-/* ==========================
-   Skills List
-========================== */
-
-.experience-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-
-.experience-skills li {
-    background-color: var(--accent-color);
-    color: white;
-    padding: 0.4rem 0.9rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-}
-
-
-/* ==========================
-   Bullet Points
-========================== */
-
-.experience-card ul {
-    padding-left: 1.25rem;
-    color: var(--text-color);
-}
-
-
-.experience-card li {
-    margin-bottom: 0.6rem;
+.skill-card li {
+    margin-bottom: .75rem;
     line-height: 1.6;
 }
 
 
-/* ==========================
-   Responsive Design
-========================== */
+/* =====================================================
+   Badge Grid
+===================================================== */
+
+.certification-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+.certificate-card {
+    background: var(--card-color);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    transition: .3s;
+}
+
+.certificate-card:hover {
+    transform: translateY(-8px);
+}
+
+.certificate-card img {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 0 auto 1rem;
+}
+
+.certificate-card h3 {
+    margin-bottom: .75rem;
+    color: var(--accent-color);
+}
+
+.certificate-card p {
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   Completion Certificates
+===================================================== */
+
+.completion-certificates .certificate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+    gap: 2rem;
+}
+
+.completion-certificates .certificate-card {
+    padding: 0;
+    overflow: hidden;
+    text-align: left;
+}
+
+.completion-certificates .certificate-card img {
+    width: 100%;
+    display: block;
+    margin: 0;
+}
+
+.certificate-content {
+    padding: 1.5rem;
+}
+
+.certificate-content h3 {
+    margin-bottom: .5rem;
+}
+
+.certificate-content h4 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.certificate-content p {
+    text-align: left;
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   Timeline
+===================================================== */
+
+.timeline-item {
+    background: var(--card-color);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 5px solid var(--accent-color);
+    border-radius: 0 16px 16px 0;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+.timeline-item h3 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.timeline-item p {
+    line-height: 1.8;
+}
+
+.timeline-item code {
+    background: rgba(0,0,0,.08);
+    padding: .15rem .4rem;
+    border-radius: 4px;
+}
+
+
+/* =====================================================
+   Professional Highlights
+===================================================== */
+
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+    gap: 2rem;
+}
+
+.highlight-card {
+    background: var(--card-color);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+    border-top: 5px solid var(--accent-color);
+    transition: .3s;
+}
+
+.highlight-card:hover {
+    transform: translateY(-8px);
+}
+
+.highlight-card h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.highlight-card p {
+    line-height: 1.7;
+}
+
+
+/* =====================================================
+   Responsive
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .experience-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .completion-certificates .certificate-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
 
 @media (max-width: 768px) {
 
-    .experience-section {
+    .experience {
         padding: 3rem 1rem;
     }
 
-
-    .experience-title {
+    .experience-header h1 {
         font-size: 2rem;
     }
 
-
-    .experience-header {
-        flex-direction: column;
+    .experience-header p {
+        font-size: .95rem;
     }
 
-
-    .experience-date {
-        white-space: normal;
+    .skills-grid,
+    .certification-grid,
+    .highlights-grid {
+        grid-template-columns: 1fr;
     }
 
+    .certificate-card img {
+        width: 100px;
+    }
 
-    .experience-card {
+}
+
+@media (max-width: 480px) {
+
+    .experience-header h1 {
+        font-size: 1.75rem;
+    }
+
+    .skills-section h2,
+    .certifications h2,
+    .completion-certificates h2,
+    .timeline h2,
+    .highlights h2 {
+        font-size: 1.6rem;
+    }
+
+    .skill-card,
+    .certificate-card,
+    .highlight-card,
+    .timeline-item {
         padding: 1.5rem;
     }
 
