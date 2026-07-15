@@ -3,6 +3,9 @@
 // Import the page stylesheet
 import "../styles/Experience.css";
 
+// Import reusable skill card component
+import SkillCard from "../components/SkillCard";
+
 // Import the badges
 import htmlBadge from "../assets/badges/html-badge.png";
 import cssBadge from "../assets/badges/css-badge.png";
@@ -11,6 +14,64 @@ import javascriptBadge from "../assets/badges/javascript-badge.png";
 // Import the certificates
 import htmlCssCert from "../assets/certificates/html-css-cert.png"
 import javascriptCert from "../assets/certificates/javascript-cert.png"
+
+// ==========================
+// Technical Skills Data
+// ==========================
+
+const skillCategories = [
+
+  {
+    id: 1,
+
+    title: "Frontend",
+
+    skills: [
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)",
+      "React",
+      "React Router",
+      "Bootstrap 5",
+      "Responsive Web Design"
+    ]
+
+  },
+
+
+  {
+    id: 2,
+
+    title: "API & Data",
+
+    skills: [
+      "REST API Integration",
+      "Fetch API",
+      "Async/Await",
+      "JSON",
+      "Local Storage"
+    ]
+
+  },
+
+
+  {
+    id: 3,
+
+    title: "Tools & Technologies",
+
+    skills: [
+      "Git",
+      "GitHub",
+      "Visual Studio Code",
+      "Vite",
+      "Chrome DevTools",
+      "npm"
+    ]
+
+  }
+
+];
 
 // ==========================
 // Certification Badge Data
@@ -98,58 +159,31 @@ function Experience() {
 
       <section className="skills-section">
 
-        <h2>Technical Skills</h2>
+        <h2>
+          Technical Skills
+        </h2>
+
 
         <div className="skills-grid">
 
-          {/* Frontend Skills */}
-          <div className="skill-card">
 
-            <h3>Frontend</h3>
+          {skillCategories.map((category) => (
 
-            <ul>
-              <li>HTML5</li>
-              <li>CSS3</li>
-              <li>JavaScript (ES6+)</li>
-              <li>React</li>
-              <li>React Router</li>
-              <li>Bootstrap 5</li>
-              <li>Responsive Web Design</li>
-            </ul>
+            <SkillCard
 
-          </div>
+              key={category.id}
 
-          {/* Backend Skills */}
-          <div className="skill-card">
+              title={category.title}
 
-            <h3>Backend</h3>
+              skills={category.skills}
 
-            <ul>
-              <li>Node.js</li>
-              <li>Express.js</li>
-              <li>REST APIs</li>
-              <li>JSON</li>
-            </ul>
+            />
 
-          </div>
+          ))}
 
-          {/* Development Tools */}
-          <div className="skill-card">
-
-            <h3>Tools & Technologies</h3>
-
-            <ul>
-              <li>Git</li>
-              <li>GitHub</li>
-              <li>Visual Studio Code</li>
-              <li>Vite</li>
-              <li>Chrome DevTools</li>
-              <li>npm</li>
-            </ul>
-
-          </div>
 
         </div>
+
 
       </section>
 

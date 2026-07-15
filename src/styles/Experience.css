@@ -3,11 +3,17 @@
 ===================================================== */
 
 .experience {
+
     max-width: 1200px;
+
     margin: 0 auto;
+
     padding: 4rem 2rem;
+
     color: var(--text-color);
+
 }
+
 
 
 /* =====================================================
@@ -15,21 +21,37 @@
 ===================================================== */
 
 .experience-header {
+
     text-align: center;
+
     margin-bottom: 4rem;
+
 }
+
+
 
 .experience-header h1 {
+
     font-size: 3rem;
+
     margin-bottom: 1rem;
+
 }
 
+
+
 .experience-header p {
+
     max-width: 850px;
+
     margin: 0 auto;
+
     line-height: 1.8;
-    opacity: 0.9;
+
+    opacity: .9;
+
 }
+
 
 
 /* =====================================================
@@ -41,104 +63,239 @@
 .completion-certificates,
 .timeline,
 .highlights {
+
     margin-bottom: 5rem;
+
 }
+
+
 
 .skills-section h2,
 .certifications h2,
 .completion-certificates h2,
 .timeline h2,
 .highlights h2 {
+
     text-align: center;
+
     margin-bottom: 1rem;
+
     font-size: 2rem;
+
 }
+
+
 
 .certifications p,
 .completion-certificates p {
+
     text-align: center;
+
     max-width: 750px;
+
     margin: 0 auto 2rem;
+
     opacity: .85;
+
 }
 
 
+
 /* =====================================================
-   Technical Skills
+   Technical Skills - SkillCard.jsx
 ===================================================== */
 
 .skills-grid {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
     gap: 2rem;
+
 }
+
+
 
 .skill-card {
+
     background: var(--card-color);
+
     border-radius: 16px;
+
     padding: 2rem;
-    border-left: 5px solid var(--accent-color);
-    box-shadow: 0 8px 20px rgba(0,0,0,.12);
-    transition: .3s;
+
+
+    border-left:
+
+        5px solid var(--accent-color);
+
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,.12);
+
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
 }
+
+
 
 .skill-card:hover {
+
     transform: translateY(-8px);
+
+
+    box-shadow:
+
+        0 12px 30px rgba(0,0,0,.2);
+
 }
+
+
 
 .skill-card h3 {
+
     margin-bottom: 1rem;
+
     color: var(--accent-color);
+
 }
+
+
 
 .skill-card ul {
+
     padding-left: 1.2rem;
+
 }
 
+
+
 .skill-card li {
+
     margin-bottom: .75rem;
+
     line-height: 1.6;
+
 }
+
 
 
 /* =====================================================
-   Badge Grid
+   Certifications & Badges
 ===================================================== */
 
 .certification-grid {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+
     gap: 2rem;
+
 }
+
+
 
 .certificate-card {
+
     background: var(--card-color);
+
+
     border-radius: 16px;
+
+
     padding: 2rem;
+
+
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,.12);
-    transition: .3s;
+
+
+
+    border-left:
+
+        5px solid var(--accent-color);
+
+
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,.12);
+
+
+
+    transition:
+
+        transform .3s ease,
+
+        box-shadow .3s ease;
+
 }
+
+
 
 .certificate-card:hover {
+
     transform: translateY(-8px);
+
+
+    box-shadow:
+
+        0 12px 30px rgba(0,0,0,.2);
+
 }
+
+
+
+/* Badge Images */
 
 .certificate-card img {
-    width: 120px;
+
+    width: 180px;
+
+
+    max-width: 100%;
+
+
     height: auto;
+
+
     display: block;
-    margin: 0 auto 1rem;
+
+
+    margin: 0 auto 1.5rem;
+
+
+    object-fit: contain;
+
 }
+
+
 
 .certificate-card h3 {
+
     margin-bottom: .75rem;
+
     color: var(--accent-color);
+
 }
 
+
+
 .certificate-card p {
+
     line-height: 1.6;
+
 }
+
 
 
 /* =====================================================
@@ -146,41 +303,97 @@
 ===================================================== */
 
 .completion-certificates .certificate-grid {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+
+
+    grid-template-columns:
+
+        repeat(auto-fit, minmax(350px, 1fr));
+
+
     gap: 2rem;
+
 }
+
+
 
 .completion-certificates .certificate-card {
-    padding: 0;
+
+
+    padding: 2rem;
+
+
+    text-align: center;
+
+
     overflow: hidden;
-    text-align: left;
+
 }
+
+
 
 .completion-certificates .certificate-card img {
+
+
     width: 100%;
-    display: block;
-    margin: 0;
+
+
+    max-width: 650px;
+
+
+    height: auto;
+
+
+    margin: 0 auto 1.5rem;
+
+
+    object-fit: contain;
+
 }
+
+
 
 .certificate-content {
-    padding: 1.5rem;
+
+
+    text-align: center;
+
 }
+
+
 
 .certificate-content h3 {
+
+
     margin-bottom: .5rem;
+
 }
+
+
 
 .certificate-content h4 {
+
+
     color: var(--accent-color);
+
+
     margin-bottom: 1rem;
+
+
     font-weight: 600;
+
 }
 
+
+
 .certificate-content p {
-    text-align: left;
+
+
     line-height: 1.7;
+
 }
+
 
 
 /* =====================================================
@@ -188,28 +401,75 @@
 ===================================================== */
 
 .timeline-item {
+
     background: var(--card-color);
+
+
     padding: 2rem;
+
+
     margin-bottom: 2rem;
-    border-left: 5px solid var(--accent-color);
-    border-radius: 0 16px 16px 0;
-    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+
+
+
+    border-left:
+
+        5px solid var(--accent-color);
+
+
+
+    border-radius:
+
+        0 16px 16px 0;
+
+
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,.12);
+
 }
+
+
 
 .timeline-item h3 {
+
+
     margin-bottom: 1rem;
+
+
     color: var(--accent-color);
+
 }
+
+
 
 .timeline-item p {
+
+
     line-height: 1.8;
+
 }
 
+
+
 .timeline-item code {
-    background: rgba(0,0,0,.08);
-    padding: .15rem .4rem;
+
+
+    background:
+
+        rgba(0,0,0,.08);
+
+
+    padding:
+
+        .15rem .4rem;
+
+
     border-radius: 4px;
+
 }
+
 
 
 /* =====================================================
@@ -217,95 +477,182 @@
 ===================================================== */
 
 .highlights-grid {
+
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+
+
+    grid-template-columns:
+
+        repeat(auto-fit, minmax(280px,1fr));
+
+
     gap: 2rem;
+
 }
+
+
 
 .highlight-card {
-    background: var(--card-color);
+
+
+    background:
+
+        var(--card-color);
+
+
+
     border-radius: 16px;
+
+
+
     padding: 2rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,.12);
-    border-top: 5px solid var(--accent-color);
-    transition: .3s;
+
+
+
+    box-shadow:
+
+        0 8px 20px rgba(0,0,0,.12);
+
+
+
+    border-top:
+
+        5px solid var(--accent-color);
+
+
+
+    transition:
+
+        transform .3s ease;
+
 }
+
+
 
 .highlight-card:hover {
+
+
     transform: translateY(-8px);
+
 }
+
+
 
 .highlight-card h3 {
+
+
     color: var(--accent-color);
+
+
     margin-bottom: 1rem;
+
 }
 
+
+
 .highlight-card p {
+
+
     line-height: 1.7;
+
 }
+
 
 
 /* =====================================================
-   Responsive
+   Responsive Design
 ===================================================== */
 
 @media (max-width: 992px) {
 
+
     .experience-header h1 {
+
         font-size: 2.5rem;
+
     }
 
+
     .completion-certificates .certificate-grid {
+
         grid-template-columns: 1fr;
+
     }
 
 }
 
+
+
 @media (max-width: 768px) {
 
+
     .experience {
+
         padding: 3rem 1rem;
+
     }
+
+
 
     .experience-header h1 {
+
         font-size: 2rem;
+
     }
 
-    .experience-header p {
-        font-size: .95rem;
-    }
+
 
     .skills-grid,
     .certification-grid,
     .highlights-grid {
+
         grid-template-columns: 1fr;
+
     }
 
+
+
     .certificate-card img {
-        width: 100px;
+
+        width: 140px;
+
     }
 
 }
 
+
+
 @media (max-width: 480px) {
 
+
     .experience-header h1 {
+
         font-size: 1.75rem;
+
     }
+
+
 
     .skills-section h2,
     .certifications h2,
     .completion-certificates h2,
     .timeline h2,
     .highlights h2 {
+
         font-size: 1.6rem;
+
     }
+
+
 
     .skill-card,
     .certificate-card,
     .highlight-card,
     .timeline-item {
+
         padding: 1.5rem;
+
     }
 
 }
