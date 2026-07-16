@@ -14,9 +14,9 @@
 ========================== */
 
 .light-theme {
-  --bg-color: #f8fafc;
+  --bg-color: #cccccc;
   --text-color: #1f2937;
-  --card-color: #ffffff;
+  --card-color: #bfc0c0;
   --accent-color: #2563eb;
 }
 
