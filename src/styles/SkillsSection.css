@@ -1,0 +1,55 @@
+/* =====================================================
+   Skills Section
+===================================================== */
+
+
+.skills-section {
+
+    margin-bottom: 5rem;
+
+}
+
+
+
+/* Section Title */
+
+.skills-section h2 {
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    margin-bottom: 2rem;
+
+    color: var(--text-color);
+
+}
+
+
+
+/* Skills Grid */
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 2rem;
+
+}
+
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
