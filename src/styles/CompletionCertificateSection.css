@@ -1,0 +1,68 @@
+/* =====================================================
+   Completion Certificate Section
+===================================================== */
+
+
+.completion-certificates {
+
+    margin-bottom: 5rem;
+
+}
+
+
+
+.completion-certificates h2 {
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    margin-bottom: 1rem;
+
+}
+
+
+
+.completion-certificates > p {
+
+    text-align: center;
+
+    max-width: 750px;
+
+    margin: 0 auto 2rem;
+
+    opacity: .85;
+
+}
+
+
+
+/* Certificate Grid */
+
+.completion-certificate-grid {
+
+
+    display: grid;
+
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(350px, 1fr));
+
+
+    gap: 2rem;
+
+
+}
+
+
+
+@media(max-width:768px){
+
+
+    .completion-certificate-grid {
+
+        grid-template-columns:1fr;
+
+    }
+
+}
