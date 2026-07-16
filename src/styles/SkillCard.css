@@ -1,0 +1,78 @@
+/* =====================================================
+   Skill Card
+===================================================== */
+
+
+.skills-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+    gap:2rem;
+
+}
+
+
+
+.skill-card {
+
+
+    background:var(--card-color);
+
+    border-radius:16px;
+
+    padding:2rem;
+
+
+    border-left:
+    5px solid var(--accent-color);
+
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.12);
+
+
+    transition:.3s;
+
+}
+
+
+
+.skill-card:hover {
+
+
+    transform:translateY(-8px);
+
+
+}
+
+
+
+.skill-card h3 {
+
+
+    color:var(--accent-color);
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.skill-card ul {
+
+    padding-left:1.2rem;
+
+}
+
+
+
+.skill-card li {
+
+    margin-bottom:.75rem;
+
+    line-height:1.6;
+
+}

@@ -1,0 +1,72 @@
+/* =====================================================
+   Professional Highlights
+===================================================== */
+
+
+.highlights-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(280px,1fr));
+
+
+    gap:2rem;
+
+}
+
+
+
+.highlight-card {
+
+
+    background:var(--card-color);
+
+
+    padding:2rem;
+
+
+    border-radius:16px;
+
+
+    border-top:
+    5px solid var(--accent-color);
+
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.12);
+
+
+    transition:.3s;
+
+}
+
+
+
+.highlight-card:hover {
+
+
+    transform:translateY(-8px);
+
+
+}
+
+
+
+.highlight-card h3 {
+
+
+    color:var(--accent-color);
+
+}
+
+
+
+.highlight-card p {
+
+
+    line-height:1.7;
+
+}

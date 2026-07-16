@@ -1,0 +1,51 @@
+/* =====================================================
+   Development Timeline
+===================================================== */
+
+
+.timeline-item {
+
+
+    background:var(--card-color);
+
+
+    padding:2rem;
+
+
+    margin-bottom:2rem;
+
+
+    border-left:
+    5px solid var(--accent-color);
+
+
+    border-radius:
+    0 16px 16px 0;
+
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.12);
+
+
+}
+
+
+
+.timeline-item h3 {
+
+
+    color:var(--accent-color);
+
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.timeline-item p {
+
+
+    line-height:1.8;
+
+}
