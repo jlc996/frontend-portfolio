@@ -2,7 +2,6 @@
    Skills Section
 ===================================================== */
 
-
 .skills-section {
 
     margin-bottom: 5rem;
@@ -10,8 +9,9 @@
 }
 
 
-
-/* Section Title */
+/* =====================================================
+   Section Heading
+===================================================== */
 
 .skills-section h2 {
 
@@ -27,7 +27,9 @@
 
 
 
-/* Skills Grid */
+/* =====================================================
+   Skills Grid
+===================================================== */
 
 .skills-grid {
 
@@ -42,13 +44,26 @@
 
 
 
-/* Responsive Design */
+/* =====================================================
+   Responsive Design
+===================================================== */
 
 @media (max-width: 768px) {
 
     .skills-grid {
 
         grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .skills-section h2 {
+
+        font-size: 1.6rem;
 
     }
 

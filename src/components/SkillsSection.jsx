@@ -1,96 +1,62 @@
 // SkillsSection.jsx
 
+// Import reusable component
 import SkillCard from "./SkillCard";
 
-import "../styles/SkillsSection.css";
+// Import skill data
+import {
+  skillCategories
+} from "../data/experienceData";
+
+// Import styles
+import "../styles/SkillSection.css";
 
 
-const skills = [
+// Skills section component
+function SkillsSection() {
 
-{
-id:1,
-title:"Frontend",
-skills:[
-"HTML5",
-"CSS3",
-"JavaScript ES6+",
-"React",
-"React Router",
-"Bootstrap 5",
-"Responsive Design"
-]
-},
+  return (
+
+    <section className="skills-section">
 
 
-{
-id:2,
-title:"API & Data",
-skills:[
-"REST APIs",
-"Fetch API",
-"Async/Await",
-"JSON",
-"Local Storage"
-]
-},
-
-
-{
-id:3,
-title:"Tools & Technologies",
-skills:[
-"Git",
-"GitHub",
-"VS Code",
-"Vite",
-"Chrome DevTools",
-"npm"
-]
-}
-
-];
+      {/* Section Heading */}
+      <h2>
+        Technical Skills
+      </h2>
 
 
 
-function SkillsSection(){
+      {/* Skill Cards Grid */}
+      <div className="skills-grid">
 
 
-return(
+        {
+          skillCategories.map((category) => (
 
-<section className="skills-section">
+            <SkillCard
 
+              key={category.id}
 
-<h2>
-Technical Skills
-</h2>
+              title={category.title}
 
+              skills={category.skills}
 
-<div className="skills-grid">
+            />
 
-
-{skills.map((category)=>(
-
-<SkillCard
-
-key={category.id}
-
-title={category.title}
-
-skills={category.skills}
-
-/>
-
-))}
+          ))
+        }
 
 
-</div>
+      </div>
 
 
-</section>
+    </section>
 
-);
+  );
 
 }
 
 
+// Export component
 export default SkillsSection;
