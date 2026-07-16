@@ -23,19 +23,115 @@
 
 
 
-/* Grid Layout */
+/* =====================================================
+   Card Grid Layout
+===================================================== */
+
 
 .highlights-grid {
 
-
-    display:grid;
-
+    display: grid;
 
     grid-template-columns:
-    repeat(auto-fit, minmax(280px,1fr));
+    repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 2rem;
+
+}
 
 
-    gap:2rem;
 
+/* =====================================================
+   Highlight Card
+===================================================== */
+
+
+.highlight-card {
+
+    background: var(--card-color);
+
+    color: var(--text-color);
+
+    padding: 2rem;
+
+    border-radius: 16px;
+
+
+    /* Blue top border */
+
+    border-top: 5px solid var(--accent-color);
+
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.12);
+
+
+    transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+
+}
+
+
+
+/* =====================================================
+   Hover Effect
+===================================================== */
+
+
+.highlight-card:hover {
+
+    transform: translateY(-8px);
+
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.2);
+
+}
+
+
+
+/* =====================================================
+   Card Title
+===================================================== */
+
+
+.highlight-card h3 {
+
+    color: var(--accent-color);
+
+    margin-bottom: 1rem;
+
+    font-size: 1.4rem;
+
+}
+
+
+
+/* =====================================================
+   Card Text
+===================================================== */
+
+
+.highlight-card p {
+
+    line-height: 1.7;
+
+}
+
+
+
+/* =====================================================
+   Responsive
+===================================================== */
+
+
+@media(max-width:768px){
+
+    .highlights-grid {
+
+        grid-template-columns: 1fr;
+
+    }
 
 }

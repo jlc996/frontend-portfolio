@@ -1,5 +1,6 @@
-function HighlightCard({title,text}){
+import "../styles/HighlightCard.css";
 
+function HighlightCard({title,text}){
 
 return(
 
