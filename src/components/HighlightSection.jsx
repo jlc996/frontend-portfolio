@@ -1,54 +1,74 @@
 // HighlightSection.jsx
 
-// Import reusable highlight card
-import HighlightCard from "./HighlightCard";
+
+// Import highlight data
+import {
+  highlights
+} from "../data/experienceData";
+
 
 // Import styles
 import "../styles/HighlightSection.css";
 
 
-// Professional highlights section component
-function HighlightSection({ highlights }) {
 
-    return (
-
-        <section className="highlights">
+// Highlight Section Component
+function HighlightSection() {
 
 
-            {/* Section Header */}
-            <h2>
-                Professional Highlights
-            </h2>
+  return (
+
+    <section className="highlights">
+
+
+      {/* Section Heading */}
+      <h2>
+        Professional Highlights
+      </h2>
 
 
 
-            {/* Highlight Cards */}
-            <div className="highlights-grid">
+      <div className="highlights-grid">
 
 
-                {highlights.map((highlight) => (
+        {
+          highlights.map((highlight) => (
 
-                    <HighlightCard
+            <article
 
-                        key={highlight.id}
+              key={highlight.id}
 
-                        title={highlight.title}
+              className="highlight-card"
 
-                        description={highlight.description}
-
-                    />
-
-                ))}
+            >
 
 
-            </div>
+              <h3>
+                {highlight.title}
+              </h3>
 
 
-        </section>
 
-    );
+              <p>
+                {highlight.description}
+              </p>
+
+
+            </article>
+
+          ))
+        }
+
+
+      </div>
+
+
+    </section>
+
+  );
 
 }
+
 
 
 export default HighlightSection;
