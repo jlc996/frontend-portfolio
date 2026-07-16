@@ -1,0 +1,41 @@
+/* =====================================================
+   Professional Highlights Section
+===================================================== */
+
+
+.highlights {
+
+    margin-bottom: 5rem;
+
+}
+
+
+
+.highlights h2 {
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    margin-bottom: 2rem;
+
+}
+
+
+
+/* Grid Layout */
+
+.highlights-grid {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+    repeat(auto-fit, minmax(280px,1fr));
+
+
+    gap:2rem;
+
+
+}
