@@ -1,0 +1,36 @@
+/* =====================================================
+   Technology Stack Section
+===================================================== */
+
+
+.tech-stack {
+
+    margin-top:4rem;
+
+    text-align:center;
+
+}
+
+
+
+.tech-stack h2 {
+
+    font-size:2rem;
+
+    margin-bottom:2rem;
+
+}
+
+
+
+.tech-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(160px,1fr));
+
+
+    gap:2rem;
+
+}

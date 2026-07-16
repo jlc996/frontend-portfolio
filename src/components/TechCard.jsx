@@ -1,5 +1,7 @@
 // TechCard.jsx
 
+import "../styles/TechCard.css";
+
 function TechCard({ technology }) {
 
   return (
