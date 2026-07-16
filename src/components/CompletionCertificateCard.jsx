@@ -1,45 +1,49 @@
-function CompletionCertificateCard({certificate}){
+// CompletionCertificateCard.jsx
 
 
-return(
-
-<div className="certificate-card">
+function CompletionCertificateCard({ certificate }) {
 
 
-<img
+  return (
 
-src={certificate.image}
-
-alt={certificate.title}
-
-/>
+    <article className="certificate-card">
 
 
-<div className="certificate-content">
+      {/* Certificate Image */}
+      <img
+
+        src={certificate.image}
+
+        alt={certificate.title}
+
+      />
 
 
-<h3>
-{certificate.title}
-</h3>
+      {/* Certificate Content */}
+      <div className="certificate-content">
 
 
-<h4>
-{certificate.issuer}
-</h4>
+        <h3>
+          {certificate.title}
+        </h3>
 
 
-<p>
-{certificate.description}
-</p>
+        <h4>
+          {certificate.issuer}
+        </h4>
 
 
-</div>
+        <p>
+          {certificate.description}
+        </p>
 
 
-</div>
+      </div>
 
-);
 
+    </article>
+
+  );
 
 }
 

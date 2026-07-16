@@ -1,4 +1,18 @@
 // ==========================
+// Import Images
+// ==========================
+
+import htmlBadge from "../assets/badges/html-badge.png";
+import cssBadge from "../assets/badges/css-badge.png";
+import javascriptBadge from "../assets/badges/javascript-badge.png";
+
+
+import htmlCssCert from "../assets/certificates/html-css-cert.png";
+import javascriptCert from "../assets/certificates/javascript-cert.png";
+
+
+
+// ==========================
 // Skills Data
 // ==========================
 
@@ -6,6 +20,7 @@ export const skillCategories = [
 
   {
     id: 1,
+
     title: "Frontend",
 
     skills: [
@@ -17,11 +32,13 @@ export const skillCategories = [
       "Bootstrap 5",
       "Responsive Web Design"
     ]
+
   },
 
 
   {
     id: 2,
+
     title: "API & Data",
 
     skills: [
@@ -31,11 +48,13 @@ export const skillCategories = [
       "JSON",
       "Local Storage"
     ]
+
   },
 
 
   {
     id: 3,
+
     title: "Tools & Technologies",
 
     skills: [
@@ -46,9 +65,11 @@ export const skillCategories = [
       "Chrome DevTools",
       "npm"
     ]
+
   }
 
 ];
+
 
 
 
@@ -60,37 +81,44 @@ export const certifications = [
 
   {
     id: 1,
+
     title: "HTML5 Certification",
 
-    image: "/badges/html-badge.png",
+    image: htmlBadge,
 
     description:
       "Demonstrated proficiency in semantic HTML, accessibility, and modern webpage structure."
+
   },
 
 
   {
     id: 2,
+
     title: "CSS3 Certification",
 
-    image: "/badges/css-badge.png",
+    image: cssBadge,
 
     description:
       "Built responsive layouts using Flexbox, CSS Grid, animations, and modern styling techniques."
+
   },
 
 
   {
     id: 3,
+
     title: "JavaScript Certification",
 
-    image: "/badges/javascript-badge.png",
+    image: javascriptBadge,
 
     description:
       "Applied ES6+, DOM manipulation, events, asynchronous JavaScript, and dynamic application development."
+
   }
 
 ];
+
 
 
 
@@ -101,6 +129,7 @@ export const certifications = [
 export const completionCertificates = [
 
   {
+
     id: 1,
 
     title:
@@ -110,14 +139,16 @@ export const completionCertificates = [
       "Mississippi Coding Academies",
 
     image:
-      "/certificates/html-css-cert.png",
+      htmlCssCert,
 
     description:
       "Completed HTML & CSS covering semantic HTML, responsive design, Flexbox, CSS Grid, accessibility, and modern layouts."
+
   },
 
 
   {
+
     id: 2,
 
     title:
@@ -127,13 +158,15 @@ export const completionCertificates = [
       "Mississippi Coding Academies",
 
     image:
-      "/certificates/javascript-cert.png",
+      javascriptCert,
 
     description:
       "Completed JavaScript covering ES6+, DOM manipulation, events, asynchronous programming, APIs, and dynamic applications."
+
   }
 
 ];
+
 
 
 
@@ -151,6 +184,7 @@ export const timelineData = [
 
     description:
       "Learned HTML5, CSS3, responsive design, Git, GitHub, and JavaScript fundamentals while completing the Collab Computers capstone project."
+
   },
 
 
@@ -162,6 +196,7 @@ export const timelineData = [
 
     description:
       "Converted Collab Computers into a dynamic JavaScript application using reusable data structures, DOM manipulation, and Local Storage."
+
   },
 
 
@@ -173,6 +208,7 @@ export const timelineData = [
 
     description:
       "Built React applications using components, hooks, React Router, API integration, and responsive layouts."
+
   },
 
 
@@ -184,9 +220,11 @@ export const timelineData = [
 
     description:
       "Created this React portfolio using Vite, React Router, custom hooks, GitHub API integration, and a theme system."
+
   }
 
 ];
+
 
 
 
@@ -197,6 +235,7 @@ export const timelineData = [
 export const highlights = [
 
   {
+
     id: 1,
 
     title:
@@ -204,10 +243,12 @@ export const highlights = [
 
     description:
       "Designed mobile-first applications using CSS Grid, Flexbox, and responsive design techniques."
+
   },
 
 
   {
+
     id: 2,
 
     title:
@@ -215,10 +256,12 @@ export const highlights = [
 
     description:
       "Developed reusable components, hooks, routing, and state-driven interfaces."
+
   },
 
 
   {
+
     id: 3,
 
     title:
@@ -226,6 +269,7 @@ export const highlights = [
 
     description:
       "Connected applications to REST APIs using asynchronous JavaScript and reusable data fetching patterns."
+
   }
 
 ];

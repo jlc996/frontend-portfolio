@@ -1,6 +1,10 @@
 // CompletionCertificateSection.jsx
 
 
+// Import reusable component
+import CompletionCertificateCard from "./CompletionCertificateCard";
+
+
 // Import certificate data
 import {
   completionCertificates
@@ -12,7 +16,6 @@ import "../styles/CompletionCertificateSection.css";
 
 
 
-// Completion Certificate Section Component
 function CompletionCertificateSection() {
 
 
@@ -21,7 +24,6 @@ function CompletionCertificateSection() {
     <section className="completion-certificates">
 
 
-      {/* Section Heading */}
       <h2>
         Completion Certificates
       </h2>
@@ -35,57 +37,19 @@ function CompletionCertificateSection() {
 
 
 
-
-      {/* Certificate Grid */}
       <div className="certificate-grid">
 
 
         {
           completionCertificates.map((certificate) => (
 
-            <article
+            <CompletionCertificateCard
+
               key={certificate.id}
-              className="certificate-card"
-            >
 
+              certificate={certificate}
 
-
-              {/* Certificate Image */}
-              <img
-
-                src={certificate.image}
-
-                alt={certificate.title}
-
-              />
-
-
-
-              {/* Certificate Information */}
-              <div className="certificate-content">
-
-
-                <h3>
-                  {certificate.title}
-                </h3>
-
-
-
-                <h4>
-                  {certificate.issuer}
-                </h4>
-
-
-
-                <p>
-                  {certificate.description}
-                </p>
-
-
-              </div>
-
-
-            </article>
+            />
 
           ))
         }
@@ -101,5 +65,4 @@ function CompletionCertificateSection() {
 }
 
 
-// Export Component
 export default CompletionCertificateSection;

@@ -1,5 +1,7 @@
 import CertificationCard from "./CertificationCard";
 
+import "../styles/CertificationSection.css";
+
 import htmlBadge from "../assets/badges/html-badge.png";
 import cssBadge from "../assets/badges/css-badge.png";
 import javascriptBadge from "../assets/badges/javascript-badge.png";
