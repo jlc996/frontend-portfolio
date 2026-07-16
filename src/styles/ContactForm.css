@@ -1,0 +1,183 @@
+/* =====================================================
+   Contact Form Section
+===================================================== */
+
+.contact-form-section {
+
+    max-width: 800px;
+
+    margin: 0 auto;
+
+}
+
+
+
+/* =====================================================
+   Contact Form
+===================================================== */
+
+.contact-form {
+
+    background: var(--card-color);
+
+    color: var(--text-color);
+
+    padding: 2.5rem;
+
+    border-radius: 16px;
+
+    border-left: 6px solid var(--accent-color);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .12);
+
+}
+
+
+
+/* =====================================================
+   Form Groups
+===================================================== */
+
+.form-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 1.5rem;
+
+}
+
+
+
+/* =====================================================
+   Labels
+===================================================== */
+
+.form-group label {
+
+    font-weight: 600;
+
+    margin-bottom: .5rem;
+
+    color: var(--text-color);
+
+}
+
+
+
+/* =====================================================
+   Inputs & Textarea
+===================================================== */
+
+.form-group input,
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 1rem;
+
+    border: 2px solid transparent;
+
+    border-radius: 10px;
+
+    background: var(--bg-color);
+
+    color: var(--text-color);
+
+    font-size: 1rem;
+
+    transition:
+        border-color .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+
+/* =====================================================
+   Focus State
+===================================================== */
+
+.form-group input:focus,
+.form-group textarea:focus {
+
+    outline: none;
+
+    border-color: var(--accent-color);
+
+    box-shadow:
+        0 0 0 4px rgba(0, 123, 255, .15);
+
+}
+
+
+
+/* =====================================================
+   Textarea
+===================================================== */
+
+.form-group textarea {
+
+    resize: vertical;
+
+    min-height: 180px;
+
+}
+
+
+
+/* =====================================================
+   Submit Button
+===================================================== */
+
+.contact-form button {
+
+    margin-top: .5rem;
+
+}
+
+
+
+/* =====================================================
+   Success Message
+===================================================== */
+
+.success-message {
+
+    margin-top: 1.5rem;
+
+    color: #22c55e;
+
+    font-weight: 600;
+
+}
+
+
+
+/* =====================================================
+   Responsive Design
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .contact-form {
+
+        padding: 2rem;
+
+    }
+
+}
+
+
+
+@media (max-width: 480px) {
+
+    .contact-form {
+
+        padding: 1.5rem;
+
+    }
+
+}
