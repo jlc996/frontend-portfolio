@@ -1,5 +1,7 @@
 // SkillCard.jsx
 
+import "../styles/SkillCard.css";
+
 
 function SkillCard({ title, skills }) {
 

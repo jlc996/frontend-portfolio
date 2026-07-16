@@ -1,40 +1,48 @@
 /* =====================================================
-   Skill Card
+   Skill Card Layout
 ===================================================== */
 
 
 .skills-grid {
 
-    display:grid;
+    display: grid;
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(280px,1fr));
+    /* 3 cards side-by-side on desktop */
+    grid-template-columns: repeat(3, 1fr);
 
-    gap:2rem;
+    gap: 2rem;
 
 }
 
 
 
+/* =====================================================
+   Skill Card
+===================================================== */
+
+
 .skill-card {
 
+    background: var(--card-color);
 
-    background:var(--card-color);
+    color: var(--text-color);
 
-    border-radius:16px;
+    border-radius: 16px;
 
-    padding:2rem;
+    padding: 2rem;
 
 
-    border-left:
-    5px solid var(--accent-color);
+    /* Blue side border */
+    border-left: 5px solid var(--accent-color);
 
 
     box-shadow:
-    0 8px 20px rgba(0,0,0,.12);
+        0 8px 20px rgba(0,0,0,.12);
 
 
-    transition:.3s;
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
 
 }
 
@@ -42,9 +50,11 @@
 
 .skill-card:hover {
 
+    transform: translateY(-8px);
 
-    transform:translateY(-8px);
 
+    box-shadow:
+        0 12px 30px rgba(0,0,0,.2);
 
 }
 
@@ -52,10 +62,9 @@
 
 .skill-card h3 {
 
+    color: var(--accent-color);
 
-    color:var(--accent-color);
-
-    margin-bottom:1rem;
+    margin-bottom: 1rem;
 
 }
 
@@ -63,7 +72,7 @@
 
 .skill-card ul {
 
-    padding-left:1.2rem;
+    padding-left: 1.2rem;
 
 }
 
@@ -71,8 +80,41 @@
 
 .skill-card li {
 
-    margin-bottom:.75rem;
+    margin-bottom: .75rem;
 
-    line-height:1.6;
+    line-height: 1.6;
+
+}
+
+
+
+/* =====================================================
+   Responsive
+===================================================== */
+
+
+/* Tablet */
+
+@media (max-width: 992px) {
+
+    .skills-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+
+    }
 
 }

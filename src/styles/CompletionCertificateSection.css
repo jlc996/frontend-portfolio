@@ -10,14 +10,20 @@
 }
 
 
+/* =====================================================
+   Section Header
+===================================================== */
+
 
 .completion-certificates h2 {
 
     text-align: center;
 
-    font-size: 2rem;
+    font-size: 2.2rem;
 
     margin-bottom: 1rem;
+
+    color: var(--text-color);
 
 }
 
@@ -27,9 +33,13 @@
 
     text-align: center;
 
-    max-width: 750px;
+    max-width: 800px;
 
-    margin: 0 auto 2rem;
+    margin: 0 auto 3rem;
+
+    line-height: 1.7;
+
+    color: var(--text-color);
 
     opacity: .85;
 
@@ -37,32 +47,182 @@
 
 
 
-/* Certificate Grid */
+/* =====================================================
+   Certificate Grid
+===================================================== */
 
-.completion-certificate-grid {
 
+.completion-certificates .certificate-grid {
 
     display: grid;
 
-
     grid-template-columns:
-    repeat(auto-fit, minmax(350px, 1fr));
+        repeat(auto-fit, minmax(520px, 1fr));
+
+    gap: 3rem;
+
+}
 
 
-    gap: 2rem;
+
+/* =====================================================
+   Certificate Card
+===================================================== */
+
+
+.completion-certificates .certificate-card {
+
+    background: var(--card-color);
+
+    border-radius: 18px;
+
+    padding: 2.5rem;
+
+    border-left:
+        6px solid var(--accent-color);
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,.12);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+
+.completion-certificates .certificate-card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,.2);
+
+}
+
+
+
+/* =====================================================
+   MCA Certificate Images
+===================================================== */
+
+
+.completion-certificates .certificate-card img {
+
+    width: 100%;
+
+    max-width: 800px;
+
+    height: auto;
+
+    display: block;
+
+    margin: 0 auto 2rem;
+
+    object-fit: contain;
+
+    border-radius: 8px;
+
+}
+
+
+
+/* =====================================================
+   Certificate Content
+===================================================== */
+
+
+.completion-certificates .certificate-content {
+
+    text-align: center;
+
+}
+
+
+
+.completion-certificates .certificate-content h3 {
+
+    font-size: 1.5rem;
+
+    color: var(--accent-color);
+
+    margin-bottom: .75rem;
+
+}
+
+
+
+.completion-certificates .certificate-content h4 {
+
+    font-size: 1.1rem;
+
+    margin-bottom: 1rem;
+
+    color: var(--text-color);
+
+}
+
+
+
+.completion-certificates .certificate-content p {
+
+    line-height: 1.8;
+
+    color: var(--text-color);
+
+}
+
+
+
+/* =====================================================
+   Responsive Design
+===================================================== */
+
+
+@media (max-width: 1100px) {
+
+
+    .completion-certificates .certificate-grid {
+
+        grid-template-columns: 1fr;
+
+    }
 
 
 }
 
 
 
-@media(max-width:768px){
+@media (max-width: 768px) {
 
 
-    .completion-certificate-grid {
+    .completion-certificates {
 
-        grid-template-columns:1fr;
+        margin-bottom: 3rem;
 
     }
+
+
+    .completion-certificates h2 {
+
+        font-size: 1.8rem;
+
+    }
+
+
+    .completion-certificates .certificate-card {
+
+        padding: 1.5rem;
+
+    }
+
+
+    .completion-certificates .certificate-card img {
+
+        max-width: 100%;
+
+    }
+
 
 }
