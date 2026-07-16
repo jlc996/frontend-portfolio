@@ -3,194 +3,424 @@
 ===================================================== */
 
 .hero {
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     gap: 4rem;
 
+
     max-width: 1200px;
+
     margin: 0 auto;
+
     padding: 4rem 2rem;
+
 }
+
 
 
 /* =====================================================
    Hero Content
 ===================================================== */
 
+
 .hero-content {
+
     flex: 1;
+
 }
+
 
 .hero-greeting {
+
     color: var(--accent-color);
+
     font-weight: 600;
+
     margin-bottom: 0.5rem;
+
 }
+
+
 
 .hero-content h1 {
+
     font-size: clamp(2.8rem, 5vw, 4rem);
+
     color: var(--text-color);
+
     margin-bottom: 0.5rem;
+
 }
+
+
 
 .hero-content h2 {
+
     color: var(--accent-color);
+
     font-size: 1.8rem;
+
     margin-bottom: 1.5rem;
+
 }
 
+
+
 .hero-content p:last-of-type {
+
     max-width: 600px;
+
     line-height: 1.8;
+
     color: var(--text-color);
+
     opacity: 0.9;
+
 }
+
 
 
 /* =====================================================
    Hero Buttons
 ===================================================== */
 
+
 .hero-buttons {
+
     display: flex;
+
     gap: 1.25rem;
+
     margin-top: 2rem;
+
     flex-wrap: wrap;
+
 }
 
+
+
 .button {
+
     display: inline-flex;
+
     align-items: center;
+
     justify-content: center;
+
 
     padding: 0.85rem 2rem;
 
+
     border-radius: 8px;
+
 
     text-decoration: none;
 
+
     font-weight: 600;
+
 
     transition:
         transform 0.3s ease,
         background-color 0.3s ease,
         color 0.3s ease;
+
 }
 
+
+
 .button:hover {
+
     transform: translateY(-3px);
+
 }
+
 
 
 /* Primary Button */
 
 .primary-button {
+
     background: var(--accent-color);
+
     color: white;
+
 }
+
 
 
 /* Secondary Button */
 
 .secondary-button {
+
     border: 2px solid var(--accent-color);
+
     color: var(--accent-color);
+
     background: transparent;
+
 }
+
 
 
 /* =====================================================
    Hero Image
 ===================================================== */
 
+
 .hero-image {
+
     flex: 1;
+
     display: flex;
+
     justify-content: center;
+
 }
 
+
+
 .hero-image img {
+
+
     width: 100%;
+
+
     max-width: 380px;
+
+
     aspect-ratio: 1 / 1;
+
 
     object-fit: cover;
 
+
+
     border-radius: 50%;
+
+
 
     border: 6px solid var(--accent-color);
 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+
+
+    box-shadow:
+
+        0 15px 35px rgba(0, 0, 0, 0.18);
+
+
+
+    animation:
+
+        floatImage 4s ease-in-out infinite;
+
+
 
     transition:
+
         transform 0.35s ease,
+
         box-shadow 0.35s ease;
+
 }
+
+
+
+/* =====================================================
+   Floating Animation
+===================================================== */
+
+
+@keyframes floatImage {
+
+
+    0% {
+
+        transform: translateY(0);
+
+    }
+
+
+
+    50% {
+
+        transform: translateY(-12px);
+
+    }
+
+
+
+    100% {
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   Profile Hover Effect
+===================================================== */
+
 
 .hero-image img:hover {
-    transform: scale(1.03);
 
-    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+
+    /* Pause floating while hovering */
+
+    animation-play-state: paused;
+
+
+
+    transform:
+
+        translateY(-12px)
+
+        scale(1.06);
+
+
+
+    box-shadow:
+
+
+        0 25px 45px rgba(0, 0, 0, 0.35);
+
 }
+
 
 
 /* =====================================================
    Responsive Design
 ===================================================== */
 
+
 @media (max-width: 992px) {
 
+
     .hero {
+
         gap: 2.5rem;
+
     }
+
+
 
     .hero-image img {
+
         max-width: 320px;
+
     }
 
+
 }
+
+
 
 @media (max-width: 768px) {
 
+
     .hero {
+
+
         flex-direction: column-reverse;
+
+
         text-align: center;
+
+
         padding: 3rem 1rem;
+
+
     }
+
+
 
     .hero-content p:last-of-type {
+
+
         margin: 0 auto;
+
+
     }
+
+
 
     .hero-buttons {
+
+
         justify-content: center;
+
+
     }
 
+
+
     .hero-image img {
+
+
         max-width: 280px;
+
+
     }
+
 
 }
 
+
+
 @media (max-width: 480px) {
 
+
     .hero-content h1 {
+
+
         font-size: 2.3rem;
+
+
     }
+
+
 
     .hero-content h2 {
+
+
         font-size: 1.4rem;
+
+
     }
+
+
 
     .hero-buttons {
+
+
         flex-direction: column;
+
+
         align-items: center;
+
+
     }
 
+
+
     .button {
+
+
         width: 100%;
+
+
         max-width: 260px;
+
+
     }
+
 
 }
