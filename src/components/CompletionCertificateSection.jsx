@@ -1,59 +1,105 @@
 // CompletionCertificateSection.jsx
 
-// Import reusable certificate card
-import CompletionCertificateCard from "./CompletionCertificateCard";
+
+// Import certificate data
+import {
+  completionCertificates
+} from "../data/experienceData";
+
 
 // Import styles
 import "../styles/CompletionCertificateSection.css";
 
 
-// Completion certificate section component
-function CompletionCertificateSection({ certificates }) {
 
-    return (
-
-        <section className="completion-certificates">
+// Completion Certificate Section Component
+function CompletionCertificateSection() {
 
 
-            {/* Section Header */}
-            <h2>
-                Completion Certificates
-            </h2>
+  return (
+
+    <section className="completion-certificates">
 
 
-            <p>
-                Official module completion certificates earned while
-                completing the Full Stack Development program at
-                Mississippi Coding Academies.
-            </p>
+      {/* Section Heading */}
+      <h2>
+        Completion Certificates
+      </h2>
 
 
 
-            {/* Certificate Grid */}
-            <div className="completion-certificate-grid">
+      <p>
+        Official module completion certificates earned while completing
+        the Full Stack Development program at Mississippi Coding Academies.
+      </p>
 
 
-                {certificates.map((certificate) => (
-
-                    <CompletionCertificateCard
-
-                        key={certificate.id}
-
-                        certificate={certificate}
-
-                    />
-
-                ))}
 
 
-            </div>
+      {/* Certificate Grid */}
+      <div className="certificate-grid">
 
 
-        </section>
+        {
+          completionCertificates.map((certificate) => (
 
-    );
+            <article
+              key={certificate.id}
+              className="certificate-card"
+            >
+
+
+
+              {/* Certificate Image */}
+              <img
+
+                src={certificate.image}
+
+                alt={certificate.title}
+
+              />
+
+
+
+              {/* Certificate Information */}
+              <div className="certificate-content">
+
+
+                <h3>
+                  {certificate.title}
+                </h3>
+
+
+
+                <h4>
+                  {certificate.issuer}
+                </h4>
+
+
+
+                <p>
+                  {certificate.description}
+                </p>
+
+
+              </div>
+
+
+            </article>
+
+          ))
+        }
+
+
+      </div>
+
+
+    </section>
+
+  );
 
 }
 
 
+// Export Component
 export default CompletionCertificateSection;
