@@ -10,7 +10,11 @@ function ProjectCard({ project }) {
     <article className="project-card">
 
       {/* Project Name */}
-      <h2>{project.name.replaceAll("_" , " ")}</h2>
+      <h2>
+        {project.name
+          .replace(/[-_]/g, " ")
+          .replace(/\b\w/g, (letter) => letter.toUpperCase())}
+      </h2>
 
       {/* Project Description */}
       <p>
