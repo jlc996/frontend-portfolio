@@ -23,10 +23,8 @@ const excludedProjects = [
 // Project Details page component
 function ProjectDetails() {
 
-
   // Get repository name from URL
   const { id } = useParams();
-
 
 
   // Fetch GitHub repositories
@@ -37,23 +35,17 @@ function ProjectDetails() {
   } = useFetch(API_URL);
 
 
-
-
   // Safely filter projects
-  const projectList = (projects || [])
-    .filter(
-      (project) =>
-        !excludedProjects.includes(project.name)
-    );
-
-
-
-  // Find selected project
-  const project = projectList.find(
-    (repo) => repo.name === id
+  const projectList = (projects || []).filter(
+    (project) =>
+      !excludedProjects.includes(project.name)
   );
 
 
+  // Find selected repository
+  const project = projectList.find(
+    (repo) => repo.name === id
+  );
 
 
   // Loading state
@@ -64,7 +56,7 @@ function ProjectDetails() {
       <section className="project-details">
 
         <h2>
-          Loading project...
+          Loading Project...
         </h2>
 
       </section>
@@ -72,9 +64,6 @@ function ProjectDetails() {
     );
 
   }
-
-
-
 
 
   // Error state
@@ -88,12 +77,9 @@ function ProjectDetails() {
           Error Loading Project
         </h2>
 
-
         <p>
           {error}
         </p>
-
-
 
         <Link
           to="/projects"
@@ -102,15 +88,11 @@ function ProjectDetails() {
           Back to Projects
         </Link>
 
-
       </section>
 
     );
 
   }
-
-
-
 
 
   // Project not found
@@ -124,12 +106,9 @@ function ProjectDetails() {
           Project Not Found
         </h2>
 
-
         <p>
           The requested project could not be found.
         </p>
-
-
 
         <Link
           to="/projects"
@@ -137,7 +116,6 @@ function ProjectDetails() {
         >
           Back to Projects
         </Link>
-
 
       </section>
 
@@ -146,15 +124,10 @@ function ProjectDetails() {
   }
 
 
-
-
-
-  // Render project details
+  // Render page
   return (
 
     <section className="project-details">
-
-
 
       {/* ==========================
           Project Header
@@ -162,24 +135,46 @@ function ProjectDetails() {
 
       <header className="project-details-header">
 
-
         <h1>
-          {project.name}
+          {project.name
+            .replace(/[-_]/g, " ")
+            .replace(/\b\w/g, (letter) => letter.toUpperCase())}
         </h1>
-
 
         <p className="project-description">
 
           {project.description ||
-            "No description available."}
+            "This repository does not currently include a project description."}
 
         </p>
 
 
+        {/* ==========================
+            Repository Topics
+        ========================== */}
+
+        {project.topics?.length > 0 && (
+
+          <div className="project-topics">
+
+            {project.topics.map((topic) => (
+
+              <span
+                key={topic}
+                className="topic-badge"
+              >
+
+                {topic}
+
+              </span>
+
+            ))}
+
+          </div>
+
+        )}
+
       </header>
-
-
-
 
 
 
@@ -187,100 +182,93 @@ function ProjectDetails() {
           Project Information Card
       ========================== */}
 
-
       <div className="details-card">
-
 
         <p>
           <strong>
             Primary Language:
           </strong>{" "}
-
           {project.language || "Not specified"}
-
         </p>
-
-
 
         <p>
           <strong>
             Stars:
           </strong>{" "}
-
           {project.stargazers_count}
-
         </p>
-
-
-
 
         <p>
           <strong>
             Forks:
           </strong>{" "}
-
           {project.forks_count}
-
         </p>
-
-
-
 
         <p>
           <strong>
             Open Issues:
           </strong>{" "}
-
           {project.open_issues_count}
-
         </p>
-
-
-
 
         <p>
           <strong>
             Visibility:
           </strong>{" "}
-
           {project.visibility}
-
         </p>
 
+        <p>
+          <strong>
+            Repository Size:
+          </strong>{" "}
+          {project.size} KB
+        </p>
 
+        <p>
+          <strong>
+            Default Branch:
+          </strong>{" "}
+          {project.default_branch}
+        </p>
 
+        <p>
+          <strong>
+            License:
+          </strong>{" "}
+          {project.license?.name || "None"}
+        </p>
 
         <p>
           <strong>
             Created:
           </strong>{" "}
-
-          {new Date(
-            project.created_at
-          ).toLocaleDateString()}
-
+          {new Date(project.created_at).toLocaleDateString(
+            "en-US",
+            {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            }
+          )}
         </p>
-
-
-
 
         <p>
           <strong>
             Last Updated:
           </strong>{" "}
-
-          {new Date(
-            project.updated_at
-          ).toLocaleDateString()}
-
+          {new Date(project.updated_at).toLocaleDateString(
+            "en-US",
+            {
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            }
+          )}
         </p>
 
-
-
       </div>
-
-
-
 
 
 
@@ -288,17 +276,27 @@ function ProjectDetails() {
           Action Buttons
       ========================== */}
 
-
       <div className="details-buttons">
 
+        {project.homepage && (
+
+          <a
+            href={project.homepage}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="button primary-button"
+          >
+
+            Live Demo
+
+          </a>
+
+        )}
 
         <a
           href={project.html_url}
-
           target="_blank"
-
           rel="noopener noreferrer"
-
           className="button primary-button"
         >
 
@@ -306,33 +304,22 @@ function ProjectDetails() {
 
         </a>
 
-
-
-
         <Link
-
           to="/projects"
-
           className="button secondary-button"
-
         >
 
           Back to Projects
 
         </Link>
 
-
-
       </div>
-
-
 
     </section>
 
   );
 
 }
-
 
 
 // Export component
