@@ -2,11 +2,11 @@
 
 import "../styles/Experience.css";
 
-import SkillsSection from "../components/Experience/SkillsSection";
-import CertificationSection from "../components/Experience/CertificationSection";
-import CompletionCertificateSection from "../components/Experience/CompletionCertificateSection";
-import Timeline from "../components/Experience/TimeLine";
-import HighlightSection from "../components/Experience/HighlightSection";
+import SkillsSection from "../components/experience/SkillsSection";
+import CertificationSection from "../components/experience/CertificationSection";
+import CompletionCertificateSection from "../components/experience/CompletionCertificateSection";
+import Timeline from "../components/experience/TimeLine";
+import HighlightSection from "../components/experience/HighlightSection";
 
 
 function Experience() {
