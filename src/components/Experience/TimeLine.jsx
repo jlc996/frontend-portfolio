@@ -1,4 +1,4 @@
-import "../../styles/Timeline.css";
+import "../../styles/experience/TimeLine.css";
 
 
 const timelineItems=[

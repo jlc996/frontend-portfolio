@@ -8,7 +8,7 @@ import {
 
 
 // Import styles
-import "../../styles/HighlightSection.css";
+import "../../styles/experience/HighlightSection.css";
 
 
 

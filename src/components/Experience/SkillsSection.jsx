@@ -9,7 +9,7 @@ import {
 } from "../../data/experienceData";
 
 // Import styles
-import "../../styles/SkillsSection.css";
+import "../../styles/experience/SkillsSection.css";
 
 
 // Skills section component

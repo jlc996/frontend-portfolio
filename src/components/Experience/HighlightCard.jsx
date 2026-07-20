@@ -1,4 +1,4 @@
-import "../styles/HighlightCard.css";
+import "../../styles/experience/HighlightCard.css";
 
 function HighlightCard({title,text}){
 

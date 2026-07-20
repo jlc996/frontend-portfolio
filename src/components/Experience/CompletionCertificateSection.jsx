@@ -12,7 +12,7 @@ import {
 
 
 // Import styles
-import "../../styles/CompletionCertificateSection.css";
+import "../../styles/experience/CompletionCertificateSection.css";
 
 
 

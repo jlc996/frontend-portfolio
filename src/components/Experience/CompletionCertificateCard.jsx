@@ -1,5 +1,6 @@
 // CompletionCertificateCard.jsx
 
+import "../../styles/experience/CertificationCard.css";
 
 function CompletionCertificateCard({ certificate }) {
 
