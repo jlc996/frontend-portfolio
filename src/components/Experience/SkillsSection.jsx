@@ -6,10 +6,10 @@ import SkillCard from "./SkillCard";
 // Import skill data
 import {
   skillCategories
-} from "../data/experienceData";
+} from "../../data/experienceData";
 
 // Import styles
-import "../styles/SkillsSection.css";
+import "../../styles/SkillsSection.css";
 
 
 // Skills section component

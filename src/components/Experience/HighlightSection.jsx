@@ -4,11 +4,11 @@
 // Import highlight data
 import {
   highlights
-} from "../data/experienceData";
+} from "../../data/experienceData";
 
 
 // Import styles
-import "../styles/HighlightSection.css";
+import "../../styles/HighlightSection.css";
 
 
 

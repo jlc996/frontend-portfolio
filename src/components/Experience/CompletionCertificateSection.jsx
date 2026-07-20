@@ -8,11 +8,11 @@ import CompletionCertificateCard from "./CompletionCertificateCard";
 // Import certificate data
 import {
   completionCertificates
-} from "../data/experienceData";
+} from "../../data/experienceData";
 
 
 // Import styles
-import "../styles/CompletionCertificateSection.css";
+import "../../styles/CompletionCertificateSection.css";
 
 
 

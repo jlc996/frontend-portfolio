@@ -1,6 +1,6 @@
 // SkillCard.jsx
 
-import "../styles/SkillCard.css";
+import "../../styles/SkillCard.css";
 
 
 function SkillCard({ title, skills }) {
