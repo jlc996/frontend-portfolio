@@ -8,7 +8,7 @@ import TechStack from "../components/home/TechStack";
 import Metrics from "../components/home/Metrics";
 
 
-import "../styles/Home.css";
+import "../styles/pages/Home.css";
 
 
 

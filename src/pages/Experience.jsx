@@ -1,6 +1,6 @@
 // Experience.jsx
 
-import "../styles/Experience.css";
+import "../styles/pages/Experience.css";
 
 import SkillsSection from "../components/experience/SkillsSection";
 import CertificationSection from "../components/experience/CertificationSection";

@@ -13,7 +13,7 @@ import LoadingSpinner from "../components/projects/LoadingSpinner";
 import ErrorMessage from "../components/projects/ErrorMessage";
 
 // Import page stylesheet
-import "../styles/Projects.css";
+import "../styles/pages/Projects.css";
 
 
 // GitHub API URL

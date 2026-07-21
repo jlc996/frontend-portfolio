@@ -7,7 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import useFetch from "../hooks/useFetch";
 
 // Import page styles
-import "../styles/ProjectDetails.css";
+import "../styles/pages/ProjectDetails.css";
 
 
 // GitHub API endpoint
