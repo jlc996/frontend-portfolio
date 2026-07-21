@@ -1,7 +1,7 @@
 // ProjectHeader.jsx
 
 // Import project topics component
-import ProjectTopics from "./ProjectTopics";
+import ProjectTopics from "../ProjectTopics";
 
 
 // Format GitHub repository names

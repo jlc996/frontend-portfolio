@@ -1,7 +1,10 @@
 // ProjectDetails.jsx
 
-// Import React Router
-import { useParams } from "react-router-dom";
+// Import React Router components
+import {
+  Link,
+  useParams
+} from "react-router-dom";
 
 // Import reusable fetch hook
 import useFetch from "../hooks/useFetch";
@@ -11,9 +14,9 @@ import LoadingSpinner from "../components/projects/LoadingSpinner";
 import ErrorMessage from "../components/projects/ErrorMessage";
 
 // Import Project Details child components
-import ProjectHeader from "../components/projects/ProjectHeader";
-import ProjectInfoCard from "../components/projects/ProjectInfoCard";
-import ProjectActions from "../components/projects/ProjectActions";
+import ProjectHeader from "../components/projects/projectDetails/ProjectHeader";
+import ProjectInfoCard from "../components/projects/projectDetails/ProjectInfoCard";
+import ProjectActions from "../components/projects/projectDetails/ProjectActions";
 
 // Import page styles
 import "../styles/pages/ProjectDetails.css";
@@ -101,7 +104,10 @@ function ProjectDetails() {
 
 
 
-  // Project not found
+  // ==========================
+  // Project Not Found
+  // ==========================
+
   if (!project) {
 
     return (
@@ -112,9 +118,22 @@ function ProjectDetails() {
           Project Not Found
         </h2>
 
+
         <p>
           The requested project could not be found.
         </p>
+
+
+        {/* Back to Projects Button */}
+        <Link
+          to="/projects"
+          className="button secondary-button"
+        >
+
+          Back to Projects
+
+        </Link>
+
 
       </section>
 
