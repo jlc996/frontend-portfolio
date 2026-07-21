@@ -4,10 +4,10 @@
 import { Link } from "react-router-dom";
 
 // Profile image
-import profileImage from "../assets/profile/profile.png";
+import profileImage from "../../assets/profile/profile.png";
 
 // Component styles
-import "../styles/Hero.css";
+import "../../styles/home/Hero.css";
 
 // Hero component
 function Hero() {

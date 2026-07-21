@@ -2,7 +2,7 @@
 
 import TechCard from "./TechCard";
 
-import "../styles/TechStack.css";
+import "../../styles/home/TechStack.css";
 
 
 // Technology data

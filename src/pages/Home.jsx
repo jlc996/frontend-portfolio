@@ -1,11 +1,11 @@
 // Home.jsx
 
 
-import Hero from "../components/Hero";
+import Hero from "../components/home/Hero";
 
-import TechStack from "../components/TechStack";
+import TechStack from "../components/home/TechStack";
 
-import Metrics from "../components/Metrics";
+import Metrics from "../components/home/Metrics";
 
 
 import "../styles/Home.css";

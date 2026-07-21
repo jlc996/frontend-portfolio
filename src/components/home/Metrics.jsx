@@ -2,7 +2,7 @@
 
 import MetricCard from "./MetricCard";
 
-import "../styles/Metrics.css";
+import "../../styles/home/Metrics.css";
 
 
 
