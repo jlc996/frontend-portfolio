@@ -7,10 +7,10 @@ import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 
 // Import reusable components
-import ProjectCard from "../components/ProjectCard";
-import SearchBar from "../components/SearchBar";
-import LoadingSpinner from "../components/LoadingSpinner";
-import ErrorMessage from "../components/ErrorMessage";
+import ProjectCard from "../components/projects/ProjectCard";
+import SearchBar from "../components/projects/SearchBar";
+import LoadingSpinner from "../components/projects/LoadingSpinner";
+import ErrorMessage from "../components/projects/ErrorMessage";
 
 // Import page stylesheet
 import "../styles/Projects.css";
