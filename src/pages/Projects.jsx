@@ -17,7 +17,8 @@ import "../styles/pages/Projects.css";
 
 
 // GitHub API URL
-const API_URL = "https://api.github.com/users/jlc996/repos";
+const API_URL =
+  "https://api.github.com/users/jlc996/repos";
 
 
 // Repositories to hide from portfolio
@@ -30,12 +31,19 @@ const excludedProjects = [
 function Projects() {
 
 
-  // Store search input
+  // ==========================
+  // Search State
+  // ==========================
+
+  // Store the user's search input
   const [searchTerm, setSearchTerm] = useState("");
 
 
 
-  // Fetch GitHub repositories
+  // ==========================
+  // Fetch GitHub Repositories
+  // ==========================
+
   const {
     data: projects,
     isLoading,
@@ -44,7 +52,21 @@ function Projects() {
 
 
 
-  // Filter portfolio projects
+  // ==========================
+  // Normalize Search Input
+  // ==========================
+
+  // Remove extra spaces and convert
+  // the search term to lowercase
+  const normalizedSearchTerm =
+    searchTerm.trim().toLowerCase();
+
+
+
+  // ==========================
+  // Filter Projects
+  // ==========================
+
   const filteredProjects = (projects || [])
 
     // Remove unwanted repositories
@@ -53,14 +75,62 @@ function Projects() {
         !excludedProjects.includes(project.name)
     )
 
-    // Search remaining projects
-    .filter((project) =>
-      project.name
-        .toLowerCase()
-        .includes(searchTerm.toLowerCase())
-    );
+    // Search project information
+    .filter((project) => {
 
 
+      // Project name
+      const projectName =
+        project.name?.toLowerCase() || "";
+
+
+      // Project description
+      const projectDescription =
+        project.description?.toLowerCase() || "";
+
+
+      // Primary programming language
+      const projectLanguage =
+        project.language?.toLowerCase() || "";
+
+
+      // GitHub repository topics
+      const projectTopics =
+        project.topics
+          ?.join(" ")
+          .toLowerCase() || "";
+
+
+
+      // Return projects that match
+      // any searchable field
+      return (
+
+        projectName.includes(
+          normalizedSearchTerm
+        ) ||
+
+        projectDescription.includes(
+          normalizedSearchTerm
+        ) ||
+
+        projectLanguage.includes(
+          normalizedSearchTerm
+        ) ||
+
+        projectTopics.includes(
+          normalizedSearchTerm
+        )
+
+      );
+
+    });
+
+
+
+  // ==========================
+  // Render Projects Page
+  // ==========================
 
   return (
 
@@ -73,20 +143,17 @@ function Projects() {
 
       <header className="projects-header">
 
-
         <h1>
           My Projects
         </h1>
 
-
         <p>
-          Browse my GitHub repositories and explore the applications
-          I've built using modern frontend technologies.
+          Browse my GitHub repositories and explore
+          the applications I've built using modern
+          frontend technologies.
         </p>
 
-
       </header>
-
 
 
 
@@ -102,11 +169,9 @@ function Projects() {
           setSearchTerm(event.target.value)
         }
 
-        placeholder="Search portfolio projects..."
+        placeholder="Search projects by name, technology, or topic..."
 
       />
-
-
 
 
 
@@ -122,21 +187,17 @@ function Projects() {
 
 
 
-
-
-
       {/* ==========================
           Error State
       ========================== */}
 
       {error && (
 
-        <ErrorMessage message={error} />
+        <ErrorMessage
+          message={error}
+        />
 
       )}
-
-
-
 
 
 
@@ -149,10 +210,13 @@ function Projects() {
         <div className="project-grid">
 
 
+          {/* ==========================
+              Matching Projects
+          ========================== */}
+
           {filteredProjects.length > 0 ? (
 
             filteredProjects.map((project) => (
-
 
               <ProjectCard
 
@@ -162,12 +226,14 @@ function Projects() {
 
               />
 
-
             ))
-
 
           ) : (
 
+
+            /* ==========================
+               No Search Results
+            ========================== */
 
             <p className="no-projects">
 
@@ -175,9 +241,7 @@ function Projects() {
 
             </p>
 
-
           )}
-
 
 
         </div>
@@ -185,13 +249,11 @@ function Projects() {
       )}
 
 
-
     </section>
 
   );
 
 }
-
 
 
 // Export component
