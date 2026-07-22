@@ -4,15 +4,21 @@ import { useState } from "react";
 import "../styles/ContactForm.css";
 
 function ContactForm() {
-  // Form state
+  // Store form input values
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
 
-  // Success message
+  // Track form submission status
   const [submitted, setSubmitted] = useState(false);
+
+  // Track loading state while the form is submitting
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // Store any submission errors
+  const [error, setError] = useState("");
 
   // Update form fields
   function handleChange(event) {
@@ -22,33 +28,72 @@ function ContactForm() {
       ...previousData,
       [name]: value,
     }));
+
+    // Hide messages when the user starts typing again
+    setSubmitted(false);
+    setError("");
   }
 
-  // Submit form
-  function handleSubmit(event) {
+  // Submit form to Web3Forms
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    console.log(formData);
+    setIsSubmitting(true);
+    setSubmitted(false);
+    setError("");
 
-    setSubmitted(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: import.meta.env.VITE_WEB3FORMS_ACCESS_KEY,
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Portfolio Contact Message from ${formData.name}`,
+        }),
+      });
 
-    setFormData({
-      name: "",
-      email: "",
-      message: "",
-    });
+      const result = await response.json();
+
+      if (result.success) {
+        // Show success message
+        setSubmitted(true);
+
+        // Clear form
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        setError(
+          "Something went wrong. Please try again later."
+        );
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+
+      setError(
+        "Unable to send your message. Please try again later."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
     <section className="contact-form-section">
-
       <form
         className="contact-form"
         onSubmit={handleSubmit}
       >
-
+        {/* Name Field */}
         <div className="form-group">
-
           <label htmlFor="name">
             Name
           </label>
@@ -62,11 +107,10 @@ function ContactForm() {
             placeholder="Your name"
             required
           />
-
         </div>
 
+        {/* Email Field */}
         <div className="form-group">
-
           <label htmlFor="email">
             Email
           </label>
@@ -80,11 +124,10 @@ function ContactForm() {
             placeholder="Your email"
             required
           />
-
         </div>
 
+        {/* Message Field */}
         <div className="form-group">
-
           <label htmlFor="message">
             Message
           </label>
@@ -98,24 +141,37 @@ function ContactForm() {
             placeholder="Write your message..."
             required
           />
-
         </div>
 
+        {/* Submit Button */}
         <button
           type="submit"
           className="button primary-button"
+          disabled={isSubmitting}
         >
-          Send Message
+          {isSubmitting ? "Sending..." : "Send Message"}
         </button>
 
+        {/* Success Message */}
         {submitted && (
-          <p className="success-message">
-            Thank you! Your message has been sent.
+          <p
+            className="success-message"
+            role="status"
+          >
+            Thank you! Your message has been sent successfully.
           </p>
         )}
 
+        {/* Error Message */}
+        {error && (
+          <p
+            className="error-message"
+            role="alert"
+          >
+            {error}
+          </p>
+        )}
       </form>
-
     </section>
   );
 }
