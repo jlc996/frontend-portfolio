@@ -115,6 +115,69 @@
 
 
 /* =====================================================
+   Validation States
+===================================================== */
+
+/* Invalid Input */
+
+.form-group input.input-error,
+.form-group textarea.input-error {
+
+    border-color: #ef4444;
+
+}
+
+
+
+/* Valid Input */
+
+.form-group input.input-valid,
+.form-group textarea.input-valid {
+
+    border-color: #22c55e;
+
+}
+
+
+
+/* =====================================================
+   Validation Messages
+===================================================== */
+
+.field-error,
+.field-success {
+
+    margin-top: .5rem;
+
+    font-size: .9rem;
+
+    font-weight: 500;
+
+}
+
+
+
+/* Error Message */
+
+.field-error {
+
+    color: #ef4444;
+
+}
+
+
+
+/* Success Message */
+
+.field-success {
+
+    color: #22c55e;
+
+}
+
+
+
+/* =====================================================
    Textarea
 ===================================================== */
 
@@ -141,6 +204,20 @@
 
 
 /* =====================================================
+   Disabled Submit Button
+===================================================== */
+
+.contact-form button:disabled {
+
+    opacity: .6;
+
+    cursor: not-allowed;
+
+}
+
+
+
+/* =====================================================
    Success Message
 ===================================================== */
 
@@ -149,6 +226,22 @@
     margin-top: 1.5rem;
 
     color: #22c55e;
+
+    font-weight: 600;
+
+}
+
+
+
+/* =====================================================
+   Error Message
+===================================================== */
+
+.error-message {
+
+    margin-top: 1.5rem;
+
+    color: #ef4444;
 
     font-weight: 600;
 
