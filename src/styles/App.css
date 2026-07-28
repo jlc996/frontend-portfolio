@@ -1,0 +1,109 @@
+/* ==========================
+   Global Reset
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ==========================
+   Theme Variables
+========================== */
+
+.light-theme {
+  --bg-color: #cccccc;
+  --text-color: #1f2937;
+  --card-color: #bfc0c0;
+  --accent-color: #2563eb;
+}
+
+
+.dark-theme {
+  --bg-color: #111827;
+  --text-color: #f9fafb;
+  --card-color: #1f2937;
+  --accent-color: #60a5fa;
+}
+
+
+/* ==========================
+   Root Layout
+========================== */
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+
+/* ==========================
+   Body
+========================== */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/* ==========================
+   App Layout
+========================== */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* ==========================
+   Main Content
+========================== */
+
+.main-content {
+  flex: 1;
+
+  width: min(1200px, 100%);
+  margin: 0 auto;
+
+  padding: 2rem 1rem;
+}
+
+
+/* ==========================
+   Links
+========================== */
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================
+   Images
+========================== */
+
+img {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}

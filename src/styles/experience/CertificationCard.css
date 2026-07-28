@@ -1,0 +1,79 @@
+/* =====================================================
+   Certification Badge Card
+===================================================== */
+
+
+.certification-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:2rem;
+
+}
+
+
+
+.certificate-card {
+
+
+    background:var(--card-color);
+
+    border-radius:16px;
+
+    padding:2rem;
+
+    text-align:center;
+
+
+    border-left:
+    5px solid var(--accent-color);
+
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.12);
+
+
+    transition:.3s;
+
+}
+
+
+
+.certificate-card:hover {
+
+    transform:translateY(-8px);
+
+}
+
+
+
+.certificate-card img {
+
+
+    width:180px;
+
+    max-width:100%;
+
+    height:auto;
+
+    display:block;
+
+
+    margin:0 auto 1.5rem;
+
+
+    object-fit:contain;
+
+}
+
+
+
+.certificate-card h3 {
+
+
+    color:var(--accent-color);
+
+}

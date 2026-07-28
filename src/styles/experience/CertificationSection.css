@@ -1,0 +1,107 @@
+/* ==========================
+   Certifications Section
+========================== */
+
+
+.certifications {
+
+    margin-bottom: 5rem;
+
+}
+
+
+.certifications h2 {
+
+    text-align:center;
+
+    font-size:2rem;
+
+    margin-bottom:2rem;
+
+}
+
+
+/* Card Grid */
+
+.certification-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+
+    gap:2rem;
+
+}
+
+
+/* Certificate Card */
+
+.certificate-card {
+
+    background:var(--card-color);
+
+    color:var(--text-color);
+
+    padding:2rem;
+
+    text-align:center;
+
+    border-radius:16px;
+
+    border-left:5px solid var(--accent-color);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,.12);
+
+    transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+
+}
+
+
+.certificate-card:hover {
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 12px 30px rgba(0,0,0,.2);
+
+}
+
+
+
+/* Badge Image */
+
+.certificate-card img {
+
+    width:120px;
+
+    height:120px;
+
+    object-fit:contain;
+
+    margin:0 auto 1.5rem;
+
+    display:block;
+
+}
+
+
+
+.certificate-card h3 {
+
+    color:var(--accent-color);
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.certificate-card p {
+
+    line-height:1.6;
+
+}
