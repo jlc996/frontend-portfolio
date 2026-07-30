@@ -7,60 +7,60 @@ import CompletionCertificateCard from "./CompletionCertificateCard";
 
 // Import certificate data
 import {
-  completionCertificates
+    completionCertificates
 } from "../../data/experienceData";
 
 
 // Import styles
-import "../../styles/experience/CompletionCertificateSection.css";
+import styles from "../../styles/experience/CompletionCertificateSection.module.css";
 
 
 
 function CompletionCertificateSection() {
 
 
-  return (
+    return (
 
-    <section className="completion-certificates">
-
-
-      <h2>
-        Completion Certificates
-      </h2>
+        <section className={styles.completionCertificates}>
 
 
-
-      <p>
-        Official module completion certificates earned while completing
-        the Full Stack Development program at Mississippi Coding Academies.
-      </p>
+            <h2>
+                Completion Certificates
+            </h2>
 
 
 
-      <div className="certificate-grid">
+            <p>
+                Official module completion certificates earned while completing
+                the Full Stack Development program at Mississippi Coding Academies.
+            </p>
 
 
-        {
-          completionCertificates.map((certificate) => (
 
-            <CompletionCertificateCard
-
-              key={certificate.id}
-
-              certificate={certificate}
-
-            />
-
-          ))
-        }
+            <div className={styles.certificateGrid}>
 
 
-      </div>
+                {
+                    completionCertificates.map((certificate) => (
+
+                        <CompletionCertificateCard
+
+                            key={certificate.id}
+
+                            certificate={certificate}
+
+                        />
+
+                    ))
+                }
 
 
-    </section>
+            </div>
 
-  );
+
+        </section>
+
+    );
 
 }
 
