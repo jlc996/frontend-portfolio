@@ -174,7 +174,7 @@ export const completionCertificates = [
 // Timeline Data
 // ==========================
 
-const timelineData = [
+export const timelineData = [
 
     {
         id: 1,
