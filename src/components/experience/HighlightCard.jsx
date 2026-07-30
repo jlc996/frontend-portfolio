@@ -1,25 +1,30 @@
-import "../../styles/experience/HighlightCard.css";
-
-function HighlightCard({title,text}){
-
-return(
-
-<div className="highlight-card">
+// HighlightCard.jsx
 
 
-<h3>
-{title}
-</h3>
+import styles from "../../styles/experience/HighlightCard.module.css";
 
 
-<p>
-{text}
-</p>
+function HighlightCard({ title, text }) {
 
 
-</div>
+    return (
 
-);
+        <div className={styles.highlightCard}>
+
+
+            <h3>
+                {title}
+            </h3>
+
+
+            <p>
+                {text}
+            </p>
+
+
+        </div>
+
+    );
 
 
 }
