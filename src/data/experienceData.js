@@ -174,54 +174,31 @@ export const completionCertificates = [
 // Timeline Data
 // ==========================
 
-export const timelineData = [
+const timelineData = [
 
-  {
-    id: 1,
+    {
+        id: 1,
+        title: "2026 – Full Stack Development Foundations",
+        description: "Learned HTML5, CSS3, Git, GitHub, and JavaScript fundamentals while completing Collab Computers."
+    },
 
-    title:
-      "2026 – Full Stack Development Foundations",
+    {
+        id: 2,
+        title: "2026 – JavaScript Application Development",
+        description: "Built dynamic applications using DOM manipulation, Local Storage, and reusable rendering functions."
+    },
 
-    description:
-      "Learned HTML5, CSS3, responsive design, Git, GitHub, and JavaScript fundamentals while completing the Collab Computers capstone project."
+    {
+        id: 3,
+        title: "2026 – Modern React Development",
+        description: "Built React applications using components, hooks, routing, and API integration."
+    },
 
-  },
-
-
-  {
-    id: 2,
-
-    title:
-      "2026 – JavaScript Application Development",
-
-    description:
-      "Converted Collab Computers into a dynamic JavaScript application using reusable data structures, DOM manipulation, and Local Storage."
-
-  },
-
-
-  {
-    id: 3,
-
-    title:
-      "2026 – Modern React Development",
-
-    description:
-      "Built React applications using components, hooks, React Router, API integration, and responsive layouts."
-
-  },
-
-
-  {
-    id: 4,
-
-    title:
-      "2026 – Frontend Engineering Capstone",
-
-    description:
-      "Created this React portfolio using Vite, React Router, custom hooks, GitHub API integration, and a theme system."
-
-  }
+    {
+        id: 4,
+        title: "2026 – Frontend Engineering Capstone",
+        description: "Created this React portfolio using Vite, React Router, custom hooks, and REST APIs."
+    }
 
 ];
 
