@@ -1,69 +1,101 @@
 // Hero.jsx
 
+
 // React Router
 import { Link } from "react-router-dom";
+
 
 // Profile image
 import profile from "../../assets/profile/profile.png";
 
+
 // Component styles
-import "../../styles/home/Hero.css";
+import styles from "../../styles/home/Hero.module.css";
+
+
 
 // Hero component
 function Hero() {
-  return (
-    <section className="hero">
 
-      {/* Left Side */}
-      <div className="hero-content">
 
-        <p className="hero-greeting">
-          Hello, I'm
-        </p>
+    return (
 
-        <h1>Joshua Craven</h1>
+        <section className={styles.hero}>
 
-        <h2>Frontend Developer</h2>
 
-        <p>
-          I build responsive, accessible, and modern web applications using
-          HTML, CSS, JavaScript, React, Bootstrap, and REST APIs. I enjoy
-          creating clean user interfaces and interactive user experiences while
-          continually expanding my full stack development skills.
-        </p>
+            {/* Left Side */}
+            <div className={styles.heroContent}>
 
-        <div className="hero-buttons">
 
-          <Link
-            to="/projects"
-            className="button primary-button"
-          >
-            View My Projects
-          </Link>
+                <p className={styles.heroGreeting}>
+                    Hello, I'm
+                </p>
 
-          <Link
-            to="/contact"
-            className="button secondary-button"
-          >
-            Contact Me
-          </Link>
 
-        </div>
+                <h1>
+                    Joshua Craven
+                </h1>
 
-      </div>
 
-      {/* Right Side */}
-      <div className="hero-image">
+                <h2>
+                    Frontend Developer
+                </h2>
 
-        <img
-          src={profile}
-          alt="Joshua Craven"
-        />
 
-      </div>
+                <p>
+                    I build responsive, accessible, and modern web applications
+                    using HTML, CSS, JavaScript, React, Bootstrap, and REST APIs.
+                    I enjoy creating clean user interfaces and interactive user
+                    experiences while continually expanding my full stack
+                    development skills.
+                </p>
 
-    </section>
-  );
+
+
+                <div className={styles.heroButtons}>
+
+
+                    <Link
+                        to="/projects"
+                        className={`${styles.button} ${styles.primaryButton}`}
+                    >
+                        View My Projects
+                    </Link>
+
+
+                    <Link
+                        to="/contact"
+                        className={`${styles.button} ${styles.secondaryButton}`}
+                    >
+                        Contact Me
+                    </Link>
+
+
+                </div>
+
+
+            </div>
+
+
+
+            {/* Right Side */}
+            <div className={styles.heroImage}>
+
+
+                <img
+                    src={profile}
+                    alt="Joshua Craven"
+                />
+
+
+            </div>
+
+
+        </section>
+
+    );
+
 }
+
 
 export default Hero;
