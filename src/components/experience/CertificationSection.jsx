@@ -2,35 +2,7 @@ import CertificationCard from "./CertificationCard";
 
 import styles from "../../styles/experience/CertificationSection.module.css";
 
-import htmlBadge from "../../assets/badges/html-badge.png";
-import cssBadge from "../../assets/badges/css-badge.png";
-import javascriptBadge from "../../assets/badges/javascript-badge.png";
-
-
-const badges=[
-
-{
-id:1,
-title:"HTML5 Certification",
-image:htmlBadge,
-description:"Semantic HTML and accessibility skills."
-},
-
-{
-id:2,
-title:"CSS3 Certification",
-image:cssBadge,
-description:"Responsive layouts using modern CSS."
-},
-
-{
-id:3,
-title:"JavaScript Certification",
-image:javascriptBadge,
-description:"ES6+, DOM, events, and applications."
-}
-
-];
+import { certifications } from "../../data/experienceData";
 
 
 function CertificationSection(){
@@ -38,18 +10,18 @@ function CertificationSection(){
 
 return(
 
-<section className="certifications">
+<section className={styles.certifications}>
 
 
-<h2 className = {styles.title}>
+<h2 className={styles.title}>
 Certifications & Badges
 </h2>
 
 
-<div className="certification-grid">
+<div className={styles.certificationGrid}>
 
 
-{badges.map((certificate)=>(
+{certifications.map((certificate)=>(
 
 <CertificationCard
 
