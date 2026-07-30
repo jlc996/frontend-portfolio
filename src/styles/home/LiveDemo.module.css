@@ -2,7 +2,8 @@
    Live Demo Section
 ===================================================== */
 
-.live-demo-section {
+
+.liveDemoSection {
 
     width: 100%;
 
@@ -11,7 +12,13 @@
 }
 
 
-.live-demo-container {
+
+/* =====================================================
+   Live Demo Container
+===================================================== */
+
+
+.liveDemoContainer {
 
     width: 100%;
 
@@ -22,11 +29,13 @@
 }
 
 
+
 /* =====================================================
    Live Demo Header
 ===================================================== */
 
-.live-demo-header {
+
+.liveDemoHeader {
 
     text-align: center;
 
@@ -35,7 +44,8 @@
 }
 
 
-.live-demo-header h2 {
+
+.liveDemoHeader h2 {
 
     font-size: clamp(2rem, 4vw, 3rem);
 
@@ -44,7 +54,8 @@
 }
 
 
-.live-demo-header p {
+
+.liveDemoHeader p {
 
     max-width: 650px;
 
@@ -57,15 +68,18 @@
 }
 
 
+
 /* =====================================================
    Live Demo Card
 ===================================================== */
 
-.live-demo-card {
+
+.liveDemoCard {
 
     display: grid;
 
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns:
+        1.5fr 1fr;
 
     gap: 2rem;
 
@@ -77,16 +91,19 @@
 
     border-radius: 16px;
 
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.1);
 
 }
+
 
 
 /* =====================================================
    Live Demo Preview
 ===================================================== */
 
-.live-demo-preview {
+
+.liveDemoPreview {
 
     width: 100%;
 
@@ -101,7 +118,8 @@
 }
 
 
-.live-demo-preview iframe {
+
+.liveDemoPreview iframe {
 
     width: 100%;
 
@@ -112,11 +130,13 @@
 }
 
 
+
 /* =====================================================
    Project Content
 ===================================================== */
 
-.project-label {
+
+.projectLabel {
 
     display: inline-block;
 
@@ -135,7 +155,8 @@
 }
 
 
-.live-demo-content h3 {
+
+.liveDemoContent h3 {
 
     font-size: 1.8rem;
 
@@ -144,7 +165,8 @@
 }
 
 
-.live-demo-content p {
+
+.liveDemoContent p {
 
     line-height: 1.7;
 
@@ -153,11 +175,13 @@
 }
 
 
+
 /* =====================================================
    Action Buttons
 ===================================================== */
 
-.live-demo-actions {
+
+.liveDemoActions {
 
     display: flex;
 
@@ -168,7 +192,8 @@
 }
 
 
-.live-demo-button {
+
+.liveDemoButton {
 
     display: inline-block;
 
@@ -191,7 +216,8 @@
 }
 
 
-.live-demo-button:hover {
+
+.liveDemoButton:hover {
 
     transform: translateY(-2px);
 
@@ -200,7 +226,8 @@
 }
 
 
-.live-demo-button.secondary {
+
+.liveDemoButtonSecondary {
 
     background: transparent;
 
@@ -211,41 +238,42 @@
 }
 
 
+
 /* =====================================================
    Responsive Design
 ===================================================== */
 
+
 @media (max-width: 768px) {
 
-    .live-demo-card {
 
-        grid-template-columns: 1fr;
-
-    }
-
-
-    .live-demo-section {
+    .liveDemoSection {
 
         padding: 4rem 1rem;
 
     }
 
 
-    .live-demo-card {
+
+    .liveDemoCard {
+
+        grid-template-columns: 1fr;
 
         padding: 1.25rem;
 
     }
 
 
-    .live-demo-actions {
+
+    .liveDemoActions {
 
         flex-direction: column;
 
     }
 
 
-    .live-demo-button {
+
+    .liveDemoButton {
 
         text-align: center;
 

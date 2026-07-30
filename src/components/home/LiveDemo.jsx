@@ -1,36 +1,56 @@
-import "../../styles/home/LiveDemo.css";
+// LiveDemo.jsx
+
+
+// Component styles
+import styles from "../../styles/home/LiveDemo.module.css";
+
+
 
 function LiveDemo() {
 
-    const demoUrl = "https://jlc996.github.io/Digital_Timekeeper/";
+
+    const demoUrl =
+        "https://jlc996.github.io/Digital_Timekeeper/";
+
+
 
     return (
 
-        <section className="live-demo-section">
+        <section className={styles.liveDemoSection}>
 
-            <div className="live-demo-container">
+
+            <div className={styles.liveDemoContainer}>
+
 
                 {/* Section Header */}
 
-                <div className="live-demo-header">
+                <div className={styles.liveDemoHeader}>
 
-                    <h2>Live Demo</h2>
+
+                    <h2>
+                        Live Demo
+                    </h2>
+
 
                     <p>
                         Try my Digital Timekeeper project directly
                         from my portfolio.
                     </p>
 
+
                 </div>
+
 
 
                 {/* Live Demo Card */}
 
-                <div className="live-demo-card">
+                <div className={styles.liveDemoCard}>
+
 
                     {/* Project Preview */}
 
-                    <div className="live-demo-preview">
+                    <div className={styles.liveDemoPreview}>
+
 
                         <iframe
                             src={demoUrl}
@@ -38,18 +58,25 @@ function LiveDemo() {
                             loading="lazy"
                         />
 
+
                     </div>
+
 
 
                     {/* Project Information */}
 
-                    <div className="live-demo-content">
+                    <div className={styles.liveDemoContent}>
 
-                        <span className="project-label">
+
+                        <span className={styles.projectLabel}>
                             Featured Project
                         </span>
 
-                        <h3>Digital Timekeeper</h3>
+
+                        <h3>
+                            Digital Timekeeper
+                        </h3>
+
 
                         <p>
                             A responsive digital timekeeping application
@@ -58,40 +85,49 @@ function LiveDemo() {
                         </p>
 
 
+
                         {/* Action Buttons */}
 
-                        <div className="live-demo-actions">
+                        <div className={styles.liveDemoActions}>
+
 
                             <a
                                 href={demoUrl}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="live-demo-button"
+                                className={styles.liveDemoButton}
                             >
                                 Open Full Demo
                             </a>
+
 
                             <a
                                 href="https://github.com/jlc996/Digital_Timekeeper"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="live-demo-button secondary"
+                                className={styles.liveDemoButtonSecondary}
                             >
                                 View Source
                             </a>
 
+
                         </div>
+
 
                     </div>
 
+
                 </div>
 
+
             </div>
+
 
         </section>
 
     );
 
 }
+
 
 export default LiveDemo;
