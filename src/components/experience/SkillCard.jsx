@@ -1,37 +1,37 @@
 // SkillCard.jsx
 
-import "../../styles/experience/SkillCard.css";
+import styles from "../../styles/experience/SkillCard.module.css";
 
 
 function SkillCard({ title, skills }) {
 
 
-  return (
+    return (
 
-    <div className="skill-card">
-
-
-      <h3>
-        {title}
-      </h3>
+        <div className={styles.skillCard}>
 
 
-      <ul>
-
-        {skills.map((skill, index) => (
-
-          <li key={index}>
-            {skill}
-          </li>
-
-        ))}
-
-      </ul>
+            <h3>
+                {title}
+            </h3>
 
 
-    </div>
+            <ul>
 
-  );
+                {skills.map((skill, index) => (
+
+                    <li key={index}>
+                        {skill}
+                    </li>
+
+                ))}
+
+            </ul>
+
+
+        </div>
+
+    );
 
 }
 

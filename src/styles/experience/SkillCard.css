@@ -1,27 +1,9 @@
 /* =====================================================
-   Skill Card Layout
-===================================================== */
-
-
-.skills-grid {
-
-    display: grid;
-
-    /* 3 cards side-by-side on desktop */
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 2rem;
-
-}
-
-
-
-/* =====================================================
    Skill Card
 ===================================================== */
 
 
-.skill-card {
+.skillCard {
 
     background: var(--card-color);
 
@@ -37,7 +19,7 @@
 
 
     box-shadow:
-        0 8px 20px rgba(0,0,0,.12);
+        0 8px 20px rgba(0, 0, 0, .12);
 
 
     transition:
@@ -48,19 +30,29 @@
 
 
 
-.skill-card:hover {
+/* =====================================================
+   Hover Effect
+===================================================== */
+
+
+.skillCard:hover {
 
     transform: translateY(-8px);
 
 
     box-shadow:
-        0 12px 30px rgba(0,0,0,.2);
+        0 12px 30px rgba(0, 0, 0, .2);
 
 }
 
 
 
-.skill-card h3 {
+/* =====================================================
+   Skill Card Title
+===================================================== */
+
+
+.skillCard h3 {
 
     color: var(--accent-color);
 
@@ -70,7 +62,12 @@
 
 
 
-.skill-card ul {
+/* =====================================================
+   Skill List
+===================================================== */
+
+
+.skillCard ul {
 
     padding-left: 1.2rem;
 
@@ -78,43 +75,10 @@
 
 
 
-.skill-card li {
+.skillCard li {
 
     margin-bottom: .75rem;
 
     line-height: 1.6;
-
-}
-
-
-
-/* =====================================================
-   Responsive
-===================================================== */
-
-
-/* Tablet */
-
-@media (max-width: 992px) {
-
-    .skills-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
-}
-
-
-
-/* Mobile */
-
-@media (max-width: 768px) {
-
-    .skills-grid {
-
-        grid-template-columns: 1fr;
-
-    }
 
 }
