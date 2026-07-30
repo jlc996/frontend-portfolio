@@ -1,0 +1,57 @@
+/* =====================================================
+   Completion Certificate Card
+===================================================== */
+
+
+.certificateCard {
+
+    background: var(--card-color);
+
+    border-radius: 16px;
+
+    padding: 2rem;
+
+    text-align: center;
+
+    border-left: 5px solid var(--accent-color);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .12);
+
+    transition: .3s;
+
+}
+
+
+.certificateCard:hover {
+
+    transform: translateY(-8px);
+
+}
+
+
+.certificateCard img {
+
+    width: 100%;
+
+    max-width: 650px;
+
+    height: auto;
+
+    object-fit: contain;
+
+}
+
+
+.certificateContent h4 {
+
+    color: var(--accent-color);
+
+}
+
+
+.certificateContent p {
+
+    line-height: 1.7;
+
+}

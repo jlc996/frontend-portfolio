@@ -1,38 +1,29 @@
 // CertificationCard.jsx
 
-import "../../styles/experience/CertificationCard.css";
+import styles from "../../styles/experience/CertificationCard.module.css";
 
-function CertificationCard({certificate}){
+function CertificationCard({ certificate }) {
 
+    return (
 
-return(
+        <div className={styles.certificateCard}>
 
-<div className="certificate-card">
+            <img
+                src={certificate.image}
+                alt={certificate.title}
+            />
 
+            <h3>
+                {certificate.title}
+            </h3>
 
-<img
+            <p>
+                {certificate.description}
+            </p>
 
-src={certificate.image}
+        </div>
 
-alt={certificate.title}
-
-/>
-
-
-<h3>
-{certificate.title}
-</h3>
-
-
-<p>
-{certificate.description}
-</p>
-
-
-</div>
-
-);
-
+    );
 
 }
 

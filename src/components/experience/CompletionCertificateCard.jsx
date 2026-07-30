@@ -1,50 +1,39 @@
 // CompletionCertificateCard.jsx
 
-import "../../styles/experience/CertificationCard.css";
+import styles from "../../styles/experience/CompletionCertificateCard.module.css";
 
 function CompletionCertificateCard({ certificate }) {
 
+    return (
 
-  return (
+        <article className={styles.certificateCard}>
 
-    <article className="certificate-card">
+            {/* Certificate Image */}
+            <img
+                src={certificate.image}
+                alt={certificate.title}
+            />
 
+            {/* Certificate Content */}
+            <div className={styles.certificateContent}>
 
-      {/* Certificate Image */}
-      <img
+                <h3>
+                    {certificate.title}
+                </h3>
 
-        src={certificate.image}
+                <h4>
+                    {certificate.issuer}
+                </h4>
 
-        alt={certificate.title}
+                <p>
+                    {certificate.description}
+                </p>
 
-      />
+            </div>
 
+        </article>
 
-      {/* Certificate Content */}
-      <div className="certificate-content">
-
-
-        <h3>
-          {certificate.title}
-        </h3>
-
-
-        <h4>
-          {certificate.issuer}
-        </h4>
-
-
-        <p>
-          {certificate.description}
-        </p>
-
-
-      </div>
-
-
-    </article>
-
-  );
+    );
 
 }
 

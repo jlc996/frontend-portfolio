@@ -73,7 +73,16 @@
 
 .certificate-card h3 {
 
-
     color:var(--accent-color);
+
+    margin-bottom:1rem;
+
+}
+
+
+
+.certificate-card p {
+
+    line-height:1.6;
 
 }

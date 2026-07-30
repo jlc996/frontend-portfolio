@@ -10,7 +10,7 @@
 }
 
 
-.certifications h2 {
+.title {
 
     text-align:center;
 
@@ -90,7 +90,7 @@
 
 
 
-.certificate-card h3 {
+/* .certificate-card h3 {
 
     color:var(--accent-color);
 
@@ -104,4 +104,4 @@
 
     line-height:1.6;
 
-}
+} */

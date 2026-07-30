@@ -1,6 +1,6 @@
 import CertificationCard from "./CertificationCard";
 
-import "../../styles/experience/CertificationSection.css";
+import styles from "../../styles/experience/CertificationSection.module.css";
 
 import htmlBadge from "../../assets/badges/html-badge.png";
 import cssBadge from "../../assets/badges/css-badge.png";
@@ -41,7 +41,7 @@ return(
 <section className="certifications">
 
 
-<h2>
+<h2 className = {styles.title}>
 Certifications & Badges
 </h2>
 
