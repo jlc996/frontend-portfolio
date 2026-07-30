@@ -9,7 +9,7 @@ import {
 } from "../../data/experienceData";
 
 // Import styles
-import "../../styles/experience/SkillsSection.css";
+import styles from "../../styles/experience/SkillsSection.module.css";
 
 
 // Skills section component
@@ -17,7 +17,7 @@ function SkillsSection() {
 
   return (
 
-    <section className="skills-section">
+    <section className={styles.skillsSection}>
 
 
       {/* Section Heading */}
@@ -28,7 +28,7 @@ function SkillsSection() {
 
 
       {/* Skill Cards Grid */}
-      <div className="skills-grid">
+      <div className={styles.skillsGrid}>
 
 
         {
