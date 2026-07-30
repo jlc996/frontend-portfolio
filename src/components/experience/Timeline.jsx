@@ -1,71 +1,60 @@
-import "../../styles/experience/Timeline.css";
+// Timeline.jsx
 
 
-const timelineItems=[
-
-{
-title:"2026 – Full Stack Development Foundations",
-text:"Learned HTML5, CSS3, Git, GitHub, and JavaScript fundamentals while completing Collab Computers."
-},
-
-{
-title:"2026 – JavaScript Application Development",
-text:"Built dynamic applications using DOM manipulation, Local Storage, and reusable rendering functions."
-},
-
-{
-title:"2026 – Modern React Development",
-text:"Built React applications using components, hooks, routing, and API integration."
-},
-
-{
-title:"2026 – Frontend Engineering Capstone",
-text:"Created this React portfolio using Vite, React Router, custom hooks, and REST APIs."
-}
-
-];
+// Import timeline data
+import {
+    timelineItems
+} from "../../data/experienceData";
 
 
-function Timeline(){
+// Import styles
+import styles from "../../styles/experience/Timeline.module.css";
 
 
-return(
 
-<section className="timeline">
-
-
-<h2>
-Development Journey
-</h2>
+function Timeline() {
 
 
-{timelineItems.map((item,index)=>(
+    return (
 
-<div 
-className="timeline-item"
-key={index}
->
+        <section className={styles.timeline}>
 
 
-<h3>
-{item.title}
-</h3>
+            <h2>
+                Development Journey
+            </h2>
 
 
-<p>
-{item.text}
-</p>
+
+            {
+                timelineItems.map((item) => (
+
+                    <div
+                        className={styles.timelineItem}
+                        key={item.id}
+                    >
 
 
-</div>
+                        <h3>
+                            {item.title}
+                        </h3>
 
-))}
 
 
-</section>
+                        <p>
+                            {item.text}
+                        </p>
 
-);
 
+                    </div>
+
+                ))
+            }
+
+
+        </section>
+
+    );
 
 }
 

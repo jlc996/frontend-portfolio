@@ -1,0 +1,53 @@
+/* =====================================================
+   Development Timeline
+===================================================== */
+
+
+.timelineItem {
+
+    background: var(--card-color);
+
+    color: var(--text-color);
+
+    padding: 2rem;
+
+    margin-bottom: 2rem;
+
+    border-left:
+        5px solid var(--accent-color);
+
+    border-radius:
+        0 16px 16px 0;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .12);
+
+}
+
+
+
+/* =====================================================
+   Timeline Title
+===================================================== */
+
+
+.timelineItem h3 {
+
+    color: var(--accent-color);
+
+    margin-bottom: 1rem;
+
+}
+
+
+
+/* =====================================================
+   Timeline Description
+===================================================== */
+
+
+.timelineItem p {
+
+    line-height: 1.8;
+
+}
