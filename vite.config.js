@@ -5,6 +5,4 @@ export default defineConfig({
 
   plugins: [react()],
 
-  base: "/frontend-portfolio/"
-
 });
