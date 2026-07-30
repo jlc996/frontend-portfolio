@@ -3,7 +3,7 @@
 
 // Import timeline data
 import {
-    timelineItems
+    timelineData
 } from "../../data/experienceData";
 
 
