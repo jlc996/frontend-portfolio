@@ -27,7 +27,7 @@ function Timeline() {
 
 
             {
-                timelineItems.map((item) => (
+                timelineData.map((item) => (
 
                     <div
                         className={styles.timelineItem}
