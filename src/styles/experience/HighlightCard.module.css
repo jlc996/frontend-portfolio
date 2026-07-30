@@ -16,11 +16,12 @@
 ===================================================== */
 
 
-.highlights-grid {
+.highlightsGrid {
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(auto-fit, minmax(300px, 1fr));
 
     gap: 2rem;
 
@@ -33,7 +34,7 @@
 ===================================================== */
 
 
-.highlight-card {
+.highlightCard {
 
     background: var(--card-color);
 
@@ -41,17 +42,13 @@
 
     padding: 2rem;
 
-
     border-radius: 16px;
-
 
     /* Blue left border */
     border-left: 5px solid var(--accent-color);
 
-
     box-shadow:
-        0 8px 20px rgba(0,0,0,.12);
-
+        0 8px 20px rgba(0, 0, 0, .12);
 
     transition:
         transform .3s ease,
@@ -66,13 +63,12 @@
 ===================================================== */
 
 
-.highlight-card:hover {
+.highlightCard:hover {
 
     transform: translateY(-8px);
 
-
     box-shadow:
-        0 12px 30px rgba(0,0,0,.2);
+        0 12px 30px rgba(0, 0, 0, .2);
 
 }
 
@@ -83,7 +79,7 @@
 ===================================================== */
 
 
-.highlight-card h3 {
+.highlightCard h3 {
 
     color: var(--accent-color);
 
@@ -98,41 +94,10 @@
 ===================================================== */
 
 
-.highlight-card p {
+.highlightCard p {
 
     color: var(--text-color);
 
     line-height: 1.7;
-
-}
-
-
-
-/* =====================================================
-   Responsive Design
-===================================================== */
-
-
-@media (max-width: 992px) {
-
-
-    .highlights-grid {
-
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-
-}
-
-
-
-@media (max-width: 768px) {
-
-
-    .highlights-grid {
-
-        grid-template-columns: 1fr;
-
-    }
 
 }
