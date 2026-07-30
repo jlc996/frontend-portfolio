@@ -10,8 +10,7 @@ ReactDOM.createRoot(
   document.getElementById("root")
 ).render(
 
-  <BrowserRouter basename="/frontend-portfolio/">
-
+  <BrowserRouter >
     <App />
 
   </BrowserRouter>
