@@ -3,86 +3,61 @@
 ===================================================== */
 
 
-.certification-grid {
+.certificateCard {
 
-    display:grid;
+    background: var(--card-color);
 
-    grid-template-columns:
-    repeat(auto-fit,minmax(260px,1fr));
+    border-radius: 16px;
 
-    gap:2rem;
+    padding: 2rem;
 
-}
+    text-align: center;
 
-
-
-.certificate-card {
-
-
-    background:var(--card-color);
-
-    border-radius:16px;
-
-    padding:2rem;
-
-    text-align:center;
-
-
-    border-left:
-    5px solid var(--accent-color);
-
+    border-left: 5px solid var(--accent-color);
 
     box-shadow:
-    0 8px 20px rgba(0,0,0,.12);
+        0 8px 20px rgba(0, 0, 0, .12);
 
-
-    transition:.3s;
-
-}
-
-
-
-.certificate-card:hover {
-
-    transform:translateY(-8px);
+    transition: .3s;
 
 }
 
 
+.certificateCard:hover {
 
-.certificate-card img {
-
-
-    width:180px;
-
-    max-width:100%;
-
-    height:auto;
-
-    display:block;
-
-
-    margin:0 auto 1.5rem;
-
-
-    object-fit:contain;
+    transform: translateY(-8px);
 
 }
 
 
+.certificateCard img {
 
-.certificate-card h3 {
+    width: 180px;
 
-    color:var(--accent-color);
+    max-width: 100%;
 
-    margin-bottom:1rem;
+    height: auto;
+
+    display: block;
+
+    margin: 0 auto 1.5rem;
+
+    object-fit: contain;
 
 }
 
 
+.certificateCard h3 {
 
-.certificate-card p {
+    color: var(--accent-color);
 
-    line-height:1.6;
+    margin-bottom: 1rem;
+
+}
+
+
+.certificateCard p {
+
+    line-height: 1.6;
 
 }
