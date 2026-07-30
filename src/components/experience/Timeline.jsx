@@ -42,7 +42,7 @@ function Timeline() {
 
 
                         <p>
-                            {item.text}
+                            {item.description}
                         </p>
 
 
