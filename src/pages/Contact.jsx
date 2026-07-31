@@ -2,7 +2,7 @@
 
 
 // Contact form component
-import ContactForm from "../components/ContactForm";
+import ContactForm from "../components/contact/ContactForm";
 
 
 // Page styles

@@ -2,11 +2,16 @@
    Contact Form Section
 ===================================================== */
 
-.contact-form-section {
+
+.contactFormSection {
+
+    width: 100%;
 
     max-width: 800px;
 
     margin: 0 auto;
+
+    box-sizing: border-box;
 
 }
 
@@ -16,7 +21,12 @@
    Contact Form
 ===================================================== */
 
-.contact-form {
+
+.contactForm {
+
+    width: 100%;
+
+    box-sizing: border-box;
 
     background: var(--card-color);
 
@@ -39,11 +49,14 @@
    Form Groups
 ===================================================== */
 
-.form-group {
+
+.formGroup {
 
     display: flex;
 
     flex-direction: column;
+
+    width: 100%;
 
     margin-bottom: 1.5rem;
 
@@ -55,7 +68,8 @@
    Labels
 ===================================================== */
 
-.form-group label {
+
+.formGroup label {
 
     font-weight: 600;
 
@@ -71,10 +85,15 @@
    Inputs & Textarea
 ===================================================== */
 
-.form-group input,
-.form-group textarea {
+
+.formGroup input,
+.formGroup textarea {
 
     width: 100%;
+
+    max-width: 100%;
+
+    box-sizing: border-box;
 
     padding: 1rem;
 
@@ -100,8 +119,9 @@
    Focus State
 ===================================================== */
 
-.form-group input:focus,
-.form-group textarea:focus {
+
+.formGroup input:focus,
+.formGroup textarea:focus {
 
     outline: none;
 
@@ -118,10 +138,12 @@
    Validation States
 ===================================================== */
 
+
 /* Invalid Input */
 
-.form-group input.input-error,
-.form-group textarea.input-error {
+
+.formGroup input.inputError,
+.formGroup textarea.inputError {
 
     border-color: #ef4444;
 
@@ -131,8 +153,9 @@
 
 /* Valid Input */
 
-.form-group input.input-valid,
-.form-group textarea.input-valid {
+
+.formGroup input.inputValid,
+.formGroup textarea.inputValid {
 
     border-color: #22c55e;
 
@@ -144,8 +167,9 @@
    Validation Messages
 ===================================================== */
 
-.field-error,
-.field-success {
+
+.fieldError,
+.fieldSuccess {
 
     margin-top: .5rem;
 
@@ -159,7 +183,8 @@
 
 /* Error Message */
 
-.field-error {
+
+.fieldError {
 
     color: #ef4444;
 
@@ -169,7 +194,8 @@
 
 /* Success Message */
 
-.field-success {
+
+.fieldSuccess {
 
     color: #22c55e;
 
@@ -181,7 +207,8 @@
    Textarea
 ===================================================== */
 
-.form-group textarea {
+
+.formGroup textarea {
 
     resize: vertical;
 
@@ -195,7 +222,8 @@
    Submit Button
 ===================================================== */
 
-.contact-form button {
+
+.contactForm button {
 
     margin-top: .5rem;
 
@@ -207,7 +235,8 @@
    Disabled Submit Button
 ===================================================== */
 
-.contact-form button:disabled {
+
+.contactForm button:disabled {
 
     opacity: .6;
 
@@ -221,7 +250,8 @@
    Success Message
 ===================================================== */
 
-.success-message {
+
+.successMessage {
 
     margin-top: 1.5rem;
 
@@ -237,7 +267,8 @@
    Error Message
 ===================================================== */
 
-.error-message {
+
+.errorMessage {
 
     margin-top: 1.5rem;
 
@@ -253,24 +284,34 @@
    Responsive Design
 ===================================================== */
 
+
 @media (max-width: 768px) {
 
-    .contact-form {
+
+    .contactForm {
 
         padding: 2rem;
 
     }
 
+
 }
 
 
 
+/* =====================================================
+   Small Mobile
+===================================================== */
+
+
 @media (max-width: 480px) {
 
-    .contact-form {
+
+    .contactForm {
 
         padding: 1.5rem;
 
     }
+
 
 }
