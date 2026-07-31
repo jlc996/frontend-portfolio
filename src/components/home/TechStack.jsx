@@ -1,66 +1,59 @@
 // TechStack.jsx
 
+
+// Import reusable component
 import TechCard from "./TechCard";
 
-import "../../styles/home/TechStack.css";
+
+// Import styles
+import styles from "../../styles/home/TechStack.module.css";
 
 
-// Technology data
-
-const technologies = [
-
-  "React",
-
-  "JavaScript",
-
-  "HTML5",
-
-  "CSS3",
-
-  "Bootstrap 5",
-
-  "Git & GitHub"
-
-];
+// Import technology data
+import {
+    techStackData
+} from "../../data/homeData";
 
 
 
 function TechStack() {
 
 
-  return (
+    return (
 
-    <section className="tech-stack">
-
-
-      <h2>
-        Core Technologies
-      </h2>
+        <section className={styles.techStack}>
 
 
-
-      <div className="tech-grid">
-
-
-        {technologies.map((technology, index) => (
-
-          <TechCard
-
-            key={index}
-
-            technology={technology}
-
-          />
-
-        ))}
+            <h2>
+                Core Technologies
+            </h2>
 
 
-      </div>
+
+            <div className={styles.techGrid}>
 
 
-    </section>
+                {
+                    techStackData.map((technology, index) => (
 
-  );
+                        <TechCard
+
+                            key={index}
+
+                            technology={technology}
+
+                        />
+
+                    ))
+                }
+
+
+            </div>
+
+
+        </section>
+
+    );
 
 }
 

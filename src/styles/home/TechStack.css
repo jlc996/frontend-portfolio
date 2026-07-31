@@ -3,34 +3,43 @@
 ===================================================== */
 
 
-.tech-stack {
+.techStack {
 
-    margin-top:4rem;
+    margin-top: 4rem;
 
-    text-align:center;
-
-}
-
-
-
-.tech-stack h2 {
-
-    font-size:2rem;
-
-    margin-bottom:2rem;
+    text-align: center;
 
 }
 
 
 
-.tech-grid {
+/* =====================================================
+   Section Heading
+===================================================== */
 
-    display:grid;
+
+.techStack h2 {
+
+    font-size: 2rem;
+
+    margin-bottom: 2rem;
+
+}
+
+
+
+/* =====================================================
+   Technology Grid
+===================================================== */
+
+
+.techGrid {
+
+    display: grid;
 
     grid-template-columns:
-    repeat(auto-fit,minmax(160px,1fr));
+        repeat(auto-fit, minmax(160px, 1fr));
 
-
-    gap:2rem;
+    gap: 2rem;
 
 }
