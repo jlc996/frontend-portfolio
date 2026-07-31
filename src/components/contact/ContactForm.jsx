@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-import styles from "../styles/ContactForm.module.css";
+import styles from "../../styles/ContactForm.module.css";
 
 
 function ContactForm() {

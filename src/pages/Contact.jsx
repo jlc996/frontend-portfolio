@@ -6,7 +6,7 @@ import ContactForm from "../components/contact/ContactForm";
 
 
 // Page styles
-import styles from "../styles/pages/Contact.module.css";
+import styles from "../styles/pages/contact/Contact.module.css";
 
 
 
