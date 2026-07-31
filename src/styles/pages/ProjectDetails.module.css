@@ -2,7 +2,6 @@
    Project Details Page
 ===================================================== */
 
-
 .projectDetails {
 
     width: 100%;
@@ -20,226 +19,8 @@
 
 
 /* =====================================================
-   Project Header
-===================================================== */
-
-
-.projectDetailsHeader {
-
-    text-align: center;
-
-    margin-bottom: 3rem;
-
-}
-
-
-
-.projectDetailsHeader h1 {
-
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-
-    font-weight: 800;
-
-    color: var(--text-color);
-
-    margin-bottom: 1rem;
-
-}
-
-
-
-.projectDescription {
-
-    width: 100%;
-
-    max-width: 750px;
-
-    margin: 0 auto;
-
-    font-size: 1.15rem;
-
-    line-height: 1.8;
-
-    color: var(--text-color);
-
-    opacity: .9;
-
-}
-
-
-
-/* =====================================================
-   Information Card
-===================================================== */
-
-
-.detailsCard {
-
-    background: var(--card-color);
-
-    color: var(--text-color);
-
-    padding: 2rem;
-
-    border-radius: 16px;
-
-    border-left: 5px solid var(--accent-color);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, .12);
-
-    margin-bottom: 2.5rem;
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-
-}
-
-
-
-.detailsCard:hover {
-
-    transform: translateY(-5px);
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, .2);
-
-}
-
-
-
-.detailsCard p {
-
-    margin-bottom: 1rem;
-
-    line-height: 1.7;
-
-}
-
-
-
-.detailsCard p:last-child {
-
-    margin-bottom: 0;
-
-}
-
-
-
-.detailsCard strong {
-
-    color: var(--accent-color);
-
-}
-
-
-
-/* =====================================================
-   Buttons
-===================================================== */
-
-
-.detailsButtons {
-
-    display: flex;
-
-    justify-content: center;
-
-    gap: 1rem;
-
-    flex-wrap: wrap;
-
-}
-
-
-
-.button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: .85rem 2rem;
-
-    border-radius: 12px;
-
-    font-weight: 700;
-
-    text-decoration: none;
-
-    transition:
-        transform .3s ease,
-        background-color .3s ease;
-
-}
-
-
-
-.button:hover {
-
-    transform: translateY(-4px);
-
-}
-
-
-
-/* =====================================================
-   Primary GitHub Button
-===================================================== */
-
-
-.primaryButton {
-
-    background: var(--accent-color);
-
-    color: white;
-
-}
-
-
-
-.primaryButton:hover {
-
-    color: white;
-
-}
-
-
-
-/* =====================================================
-   Secondary Back Button
-===================================================== */
-
-
-.secondaryButton {
-
-    border: 2px solid var(--accent-color);
-
-    color: var(--accent-color);
-
-    background: transparent;
-
-}
-
-
-
-.secondaryButton:hover {
-
-    background: var(--accent-color);
-
-    color: white;
-
-}
-
-
-
-/* =====================================================
    Loading / Error States
 ===================================================== */
-
 
 .projectDetails h2 {
 
@@ -250,7 +31,6 @@
     margin-bottom: 1rem;
 
 }
-
 
 
 .projectDetails > p {
@@ -267,53 +47,11 @@
    Responsive Design
 ===================================================== */
 
-
 @media (max-width: 768px) {
-
 
     .projectDetails {
 
         padding: 3rem 1rem;
-
-    }
-
-
-
-    .projectDetailsHeader h1 {
-
-        font-size: 2rem;
-
-    }
-
-
-
-    .projectDescription {
-
-        font-size: 1rem;
-
-    }
-
-
-
-    .detailsCard {
-
-        padding: 1.5rem;
-
-    }
-
-
-
-    .detailsButtons {
-
-        flex-direction: column;
-
-    }
-
-
-
-    .button {
-
-        width: 100%;
 
     }
 

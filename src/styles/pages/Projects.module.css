@@ -2,7 +2,6 @@
    Projects Page Layout
 ===================================================== */
 
-
 .projects {
 
     width: 100%;
@@ -23,7 +22,6 @@
    Page Header
 ===================================================== */
 
-
 .projectsHeader {
 
     text-align: center;
@@ -31,7 +29,6 @@
     margin-bottom: 3rem;
 
 }
-
 
 
 .projectsHeader h1 {
@@ -45,7 +42,6 @@
     margin-bottom: 1rem;
 
 }
-
 
 
 .projectsHeader p {
@@ -67,170 +63,8 @@
 
 
 /* =====================================================
-   Search Bar
-===================================================== */
-
-
-.searchContainer {
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    width: 100%;
-
-    margin: 0 auto 4rem;
-
-}
-
-
-
-/* Search Bar Wrapper */
-
-
-.searchBar {
-
-    display: flex;
-
-    align-items: center;
-
-    width: 100%;
-
-    max-width: 500px;
-
-    padding: .25rem;
-
-    margin: 0 auto;
-
-    background: var(--card-color);
-
-    border: 2px solid #d1d5db;
-
-    border-radius: 10px;
-
-    box-sizing: border-box;
-
-    transition:
-        border-color .3s ease,
-        box-shadow .3s ease;
-
-}
-
-
-
-/* Search Bar Focus State */
-
-
-.searchBar:focus-within {
-
-    border-color: var(--accent-color);
-
-    box-shadow:
-        0 0 10px rgba(37, 99, 235, .25);
-
-}
-
-
-
-/* Search Input */
-
-
-.searchBar input {
-
-    flex: 1;
-
-    width: 100%;
-
-    min-width: 0;
-
-    padding: .75rem 1rem;
-
-    border: none;
-
-    outline: none;
-
-    background: transparent;
-
-    color: var(--text-color);
-
-    font-size: 1rem;
-
-    box-sizing: border-box;
-
-}
-
-
-
-/* Search Input Placeholder */
-
-
-.searchBar input::placeholder {
-
-    color: var(--text-color);
-
-    opacity: .65;
-
-}
-
-
-
-/* Clear Search Button */
-
-
-.clearSearch {
-
-    flex-shrink: 0;
-
-    padding: .6rem .9rem;
-
-    margin-right: .25rem;
-
-    border: none;
-
-    border-radius: 7px;
-
-    background: var(--accent-color);
-
-    color: white;
-
-    font-size: .9rem;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition:
-        transform .3s ease,
-        opacity .3s ease;
-
-}
-
-
-
-.clearSearch:hover {
-
-    transform: translateY(-2px);
-
-    opacity: .9;
-
-}
-
-
-
-.clearSearch:active {
-
-    transform: translateY(0);
-
-}
-
-
-
-/* =====================================================
    Project Grid
 ===================================================== */
-
 
 .projectGrid {
 
@@ -246,210 +80,8 @@
 
 
 /* =====================================================
-   Project Card
-===================================================== */
-
-
-.projectCard {
-
-    background: var(--card-color);
-
-    color: var(--text-color);
-
-    border-radius: 16px;
-
-    padding: 2rem;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: space-between;
-
-    min-width: 0;
-
-    overflow: hidden;
-
-    /* Blue side accent line */
-    border-left: 5px solid var(--accent-color);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, .12);
-
-    transition:
-        transform .3s ease,
-        box-shadow .3s ease;
-
-}
-
-
-
-.projectCard:hover {
-
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 12px 30px rgba(0, 0, 0, .2);
-
-}
-
-
-
-/* =====================================================
-   Project Title
-===================================================== */
-
-
-.projectCard h2 {
-
-    font-size: 1.5rem;
-
-    font-weight: 700;
-
-    margin-bottom: 1rem;
-
-    color: var(--accent-color);
-
-    overflow-wrap: break-word;
-
-    word-break: break-word;
-
-}
-
-
-
-/* =====================================================
-   Project Description
-===================================================== */
-
-
-.projectCard p {
-
-    line-height: 1.7;
-
-    margin-bottom: 1rem;
-
-    color: var(--text-color);
-
-    overflow-wrap: break-word;
-
-    word-break: break-word;
-
-}
-
-
-
-/* =====================================================
-   Project Information
-===================================================== */
-
-
-.projectInfo {
-
-    margin: 1rem 0;
-
-}
-
-
-
-/* =====================================================
-   Technology Tags
-===================================================== */
-
-
-.projectTech {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: .6rem;
-
-    list-style: none;
-
-    padding: 0;
-
-    margin-top: 1rem;
-
-}
-
-
-
-.projectTech li {
-
-    background: var(--accent-color);
-
-    color: white;
-
-    padding: .35rem .8rem;
-
-    border-radius: 20px;
-
-    font-size: .85rem;
-
-}
-
-
-
-/* =====================================================
-   Project Buttons
-===================================================== */
-
-
-.projectButtons {
-
-    display: flex;
-
-    gap: 1rem;
-
-    margin-top: 1.5rem;
-
-    flex-wrap: wrap;
-
-}
-
-
-
-.projectButtons a {
-
-    text-decoration: none;
-
-}
-
-
-
-.projectButtons .button {
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: .75rem 1.5rem;
-
-    border-radius: 10px;
-
-    font-weight: 600;
-
-    transition: .3s ease;
-
-}
-
-
-
-.projectButtons .button:hover {
-
-    transform: translateY(-3px);
-
-}
-
-
-
-/* =====================================================
    Loading / Error / Empty States
 ===================================================== */
-
 
 .loadingMessage,
 .errorMessage,
@@ -471,9 +103,7 @@
    Responsive Design
 ===================================================== */
 
-
 @media (max-width: 900px) {
-
 
     .projects {
 
@@ -481,46 +111,14 @@
 
     }
 
-
 }
-
-
-
-/* =====================================================
-   Mobile
-===================================================== */
 
 
 @media (max-width: 600px) {
 
-
     .projectsHeader h1 {
 
         font-size: 2rem;
-
-    }
-
-
-
-    .projectCard {
-
-        padding: 1.5rem;
-
-    }
-
-
-
-    .projectButtons {
-
-        flex-direction: column;
-
-    }
-
-
-
-    .projectButtons .button {
-
-        width: 100%;
 
     }
 
