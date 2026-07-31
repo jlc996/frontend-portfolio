@@ -1,27 +1,32 @@
 // MetricCard.jsx
 
 
+// Import styles
+import styles from "../../styles/home/MetricCard.module.css";
+
+
+
 function MetricCard({ value, label }) {
 
 
-  return (
+    return (
 
-    <div className="metric-card">
-
-
-      <h3>
-        {value}
-      </h3>
+        <article className={styles.metricCard}>
 
 
-      <p>
-        {label}
-      </p>
+            <h3>
+                {value}
+            </h3>
 
 
-    </div>
+            <p>
+                {label}
+            </p>
 
-  );
+
+        </article>
+
+    );
 
 }
 
