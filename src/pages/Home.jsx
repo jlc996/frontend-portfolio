@@ -1,50 +1,49 @@
 // Home.jsx
 
 
+// Home sections
 import Hero from "../components/home/Hero";
-
 import LiveDemo from "../components/home/LiveDemo";
-
 import TechStack from "../components/home/TechStack";
-
 import Metrics from "../components/home/Metrics";
 
 
-import "../styles/pages/Home.css";
+// Page styles
+import styles from "../styles/pages/Home.module.css";
 
 
 
 function Home() {
 
 
-  return (
+    return (
 
-    <section className="home">
-
-
-      {/* Introduction + Profile Picture */}
-
-      <Hero />
+        <section className={styles.home}>
 
 
-      {/* Digital Timekeeper Live Demo */}
+            {/* Introduction + Profile Picture */}
 
-      <LiveDemo />
-
-
-      {/* Technology Stack */}
-
-      <TechStack />
+            <Hero />
 
 
-      {/* Portfolio Metrics */}
+            {/* Digital Timekeeper Live Demo */}
 
-      <Metrics />
+            <LiveDemo />
 
 
-    </section>
+            {/* Technology Stack */}
 
-  );
+            <TechStack />
+
+
+            {/* Portfolio Metrics */}
+
+            <Metrics />
+
+
+        </section>
+
+    );
 
 }
 
