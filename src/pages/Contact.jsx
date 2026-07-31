@@ -1,23 +1,49 @@
-import "../styles/pages/Contact.css";
+// Contact.jsx
+
+
+// Contact form component
 import ContactForm from "../components/ContactForm";
 
+
+// Page styles
+import styles from "../styles/pages/Contact.module.css";
+
+
+
 function Contact() {
-  return (
-    <section className="contact">
 
-      <header className="contact-header">
-        <h1>Contact Me</h1>
 
-        <p>
-          Have a question or want to discuss a project?
-          I'd love to hear from you.
-        </p>
-      </header>
+    return (
 
-      <ContactForm />
+        <section className={styles.contact}>
 
-    </section>
-  );
+
+            <header className={styles.contactHeader}>
+
+
+                <h1>
+                    Contact Me
+                </h1>
+
+
+                <p>
+                    Have a question or want to discuss a project?
+                    I'd love to hear from you.
+                </p>
+
+
+            </header>
+
+
+
+            <ContactForm />
+
+
+        </section>
+
+    );
+
 }
+
 
 export default Contact;

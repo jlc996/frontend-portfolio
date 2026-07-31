@@ -2,7 +2,10 @@
    Contact Page
 ===================================================== */
 
+
 .contact {
+
+    width: 100%;
 
     max-width: 1200px;
 
@@ -12,6 +15,8 @@
 
     color: var(--text-color);
 
+    box-sizing: border-box;
+
 }
 
 
@@ -20,7 +25,8 @@
    Page Header
 ===================================================== */
 
-.contact-header {
+
+.contactHeader {
 
     text-align: center;
 
@@ -30,7 +36,7 @@
 
 
 
-.contact-header h1 {
+.contactHeader h1 {
 
     font-size: clamp(2.5rem, 5vw, 3.5rem);
 
@@ -42,7 +48,9 @@
 
 
 
-.contact-header p {
+.contactHeader p {
+
+    width: 100%;
 
     max-width: 700px;
 
@@ -64,11 +72,13 @@
    Contact Content
 ===================================================== */
 
-.contact-content {
+
+.contactContent {
 
     display: grid;
 
-    grid-template-columns: 1fr;
+    grid-template-columns:
+        minmax(0, 1fr);
 
     gap: 3rem;
 
@@ -80,7 +90,9 @@
    Responsive Design
 ===================================================== */
 
+
 @media (max-width: 768px) {
+
 
     .contact {
 
@@ -88,7 +100,9 @@
 
     }
 
-    .contact-header {
+
+
+    .contactHeader {
 
         margin-bottom: 3rem;
 
@@ -100,13 +114,16 @@
 
 @media (max-width: 480px) {
 
-    .contact-header h1 {
+
+    .contactHeader h1 {
 
         font-size: 2rem;
 
     }
 
-    .contact-header p {
+
+
+    .contactHeader p {
 
         font-size: 1rem;
 
