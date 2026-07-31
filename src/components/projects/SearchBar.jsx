@@ -1,5 +1,8 @@
 // SearchBar.jsx
 
+// Import component styles
+import styles from "../../styles/projects/SearchBar.module.css";
+
 
 // Search Bar component
 function SearchBar({
@@ -11,7 +14,7 @@ function SearchBar({
 
   return (
 
-    <div className="search-bar">
+    <div className={styles.searchBar}>
 
 
       {/* ==========================
@@ -43,7 +46,7 @@ function SearchBar({
               }
             })
           }
-          className="clear-search"
+          className={styles.clearSearch}
           aria-label="Clear project search"
         >
 
