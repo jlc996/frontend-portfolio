@@ -2,25 +2,39 @@
    Projects Page Layout
 ===================================================== */
 
+
 .projects {
+
     width: 100%;
+
     max-width: 1200px;
+
     margin: 0 auto;
+
     padding: 4rem 2rem;
+
+    box-sizing: border-box;
+
 }
+
 
 
 /* =====================================================
    Page Header
 ===================================================== */
 
-.projects-header {
+
+.projectsHeader {
+
     text-align: center;
+
     margin-bottom: 3rem;
+
 }
 
 
-.projects-header h1 {
+
+.projectsHeader h1 {
 
     font-size: clamp(2.5rem, 5vw, 3.5rem);
 
@@ -33,7 +47,10 @@
 }
 
 
-.projects-header p {
+
+.projectsHeader p {
+
+    width: 100%;
 
     max-width: 750px;
 
@@ -53,7 +70,8 @@
    Search Bar
 ===================================================== */
 
-.search-container {
+
+.searchContainer {
 
     display: flex;
 
@@ -68,9 +86,11 @@
 }
 
 
+
 /* Search Bar Wrapper */
 
-.search-bar {
+
+.searchBar {
 
     display: flex;
 
@@ -99,9 +119,11 @@
 }
 
 
+
 /* Search Bar Focus State */
 
-.search-bar:focus-within {
+
+.searchBar:focus-within {
 
     border-color: var(--accent-color);
 
@@ -111,9 +133,11 @@
 }
 
 
+
 /* Search Input */
 
-.search-bar input {
+
+.searchBar input {
 
     flex: 1;
 
@@ -138,9 +162,11 @@
 }
 
 
+
 /* Search Input Placeholder */
 
-.search-bar input::placeholder {
+
+.searchBar input::placeholder {
 
     color: var(--text-color);
 
@@ -149,9 +175,11 @@
 }
 
 
+
 /* Clear Search Button */
 
-.clear-search {
+
+.clearSearch {
 
     flex-shrink: 0;
 
@@ -180,9 +208,8 @@
 }
 
 
-/* Clear Button Hover */
 
-.clear-search:hover {
+.clearSearch:hover {
 
     transform: translateY(-2px);
 
@@ -191,27 +218,26 @@
 }
 
 
-/* Clear Button Active */
 
-.clear-search:active {
+.clearSearch:active {
 
     transform: translateY(0);
 
 }
 
+
+
 /* =====================================================
    Project Grid
 ===================================================== */
 
-.project-grid {
+
+.projectGrid {
 
     display: grid;
 
-
     grid-template-columns:
-
         repeat(auto-fit, minmax(300px, 1fr));
-
 
     gap: 2rem;
 
@@ -223,69 +249,49 @@
    Project Card
 ===================================================== */
 
-.project-card {
+
+.projectCard {
 
     background: var(--card-color);
 
-
     color: var(--text-color);
-
 
     border-radius: 16px;
 
-
     padding: 2rem;
-
 
     display: flex;
 
-
     flex-direction: column;
-
 
     justify-content: space-between;
 
-
     min-width: 0;
-
 
     overflow: hidden;
 
-
-
     /* Blue side accent line */
-
     border-left: 5px solid var(--accent-color);
 
-
-
     box-shadow:
-
-        0 8px 20px rgba(0,0,0,.12);
-
-
+        0 8px 20px rgba(0, 0, 0, .12);
 
     transition:
-
         transform .3s ease,
-
         box-shadow .3s ease;
 
 }
 
 
 
-.project-card:hover {
+.projectCard:hover {
 
     transform: translateY(-8px);
 
-
     box-shadow:
-
-        0 12px 30px rgba(0,0,0,.2);
+        0 12px 30px rgba(0, 0, 0, .2);
 
 }
-
 
 
 
@@ -293,19 +299,16 @@
    Project Title
 ===================================================== */
 
-.project-card h2 {
+
+.projectCard h2 {
 
     font-size: 1.5rem;
 
-
     font-weight: 700;
-
 
     margin-bottom: 1rem;
 
-
     color: var(--accent-color);
-
 
     overflow-wrap: break-word;
 
@@ -319,16 +322,14 @@
    Project Description
 ===================================================== */
 
-.project-card p {
+
+.projectCard p {
 
     line-height: 1.7;
 
-
     margin-bottom: 1rem;
 
-
     color: var(--text-color);
-
 
     overflow-wrap: break-word;
 
@@ -338,12 +339,12 @@
 
 
 
-
 /* =====================================================
    Project Information
 ===================================================== */
 
-.project-info {
+
+.projectInfo {
 
     margin: 1rem 0;
 
@@ -355,40 +356,34 @@
    Technology Tags
 ===================================================== */
 
-.project-tech {
+
+.projectTech {
 
     display: flex;
 
     flex-wrap: wrap;
 
-
     gap: .6rem;
-
 
     list-style: none;
 
-
     padding: 0;
-
 
     margin-top: 1rem;
 
 }
 
 
-.project-tech li {
+
+.projectTech li {
 
     background: var(--accent-color);
 
-
     color: white;
-
 
     padding: .35rem .8rem;
 
-
     border-radius: 20px;
-
 
     font-size: .85rem;
 
@@ -396,21 +391,18 @@
 
 
 
-
 /* =====================================================
    Project Buttons
 ===================================================== */
 
-.project-buttons {
+
+.projectButtons {
 
     display: flex;
 
-
     gap: 1rem;
 
-
     margin-top: 1.5rem;
-
 
     flex-wrap: wrap;
 
@@ -418,7 +410,7 @@
 
 
 
-.project-buttons a {
+.projectButtons a {
 
     text-decoration: none;
 
@@ -426,25 +418,19 @@
 
 
 
-.project-buttons .button {
+.projectButtons .button {
 
     display: inline-flex;
 
-
     align-items: center;
-
 
     justify-content: center;
 
-
     padding: .75rem 1.5rem;
-
 
     border-radius: 10px;
 
-
     font-weight: 600;
-
 
     transition: .3s ease;
 
@@ -452,7 +438,7 @@
 
 
 
-.project-buttons .button:hover {
+.projectButtons .button:hover {
 
     transform: translateY(-3px);
 
@@ -464,18 +450,16 @@
    Loading / Error / Empty States
 ===================================================== */
 
-.loading-message,
-.error-message,
-.no-projects {
+
+.loadingMessage,
+.errorMessage,
+.noProjects {
 
     text-align: center;
 
-
     margin-top: 3rem;
 
-
     color: var(--text-color);
-
 
     font-size: 1.1rem;
 
@@ -498,46 +482,46 @@
     }
 
 
-    .project-grid {
-
-        grid-template-columns: 1fr;
-
-    }
-
-
 }
 
+
+
+/* =====================================================
+   Mobile
+===================================================== */
 
 
 @media (max-width: 600px) {
 
 
-    .projects-header h1 {
+    .projectsHeader h1 {
 
         font-size: 2rem;
 
     }
 
 
-    .project-card {
+
+    .projectCard {
 
         padding: 1.5rem;
 
     }
 
 
-    .project-buttons {
+
+    .projectButtons {
 
         flex-direction: column;
 
     }
 
 
-    .project-buttons .button {
+
+    .projectButtons .button {
 
         width: 100%;
 
     }
-
 
 }

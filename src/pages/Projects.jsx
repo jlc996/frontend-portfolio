@@ -1,10 +1,13 @@
 // Projects.jsx
 
+
 // Import React state
 import { useState } from "react";
 
+
 // Import custom fetch hook
 import useFetch from "../hooks/useFetch";
+
 
 // Import reusable components
 import ProjectCard from "../components/projects/ProjectCard";
@@ -12,248 +15,254 @@ import SearchBar from "../components/projects/SearchBar";
 import LoadingSpinner from "../components/projects/LoadingSpinner";
 import ErrorMessage from "../components/projects/ErrorMessage";
 
-// Import page stylesheet
-import "../styles/pages/Projects.css";
+
+// Import page styles
+import styles from "../styles/pages/Projects.module.css";
+
 
 
 // GitHub API URL
 const API_URL =
-  "https://api.github.com/users/jlc996/repos";
+    "https://api.github.com/users/jlc996/repos";
+
 
 
 // Repositories to hide from portfolio
 const excludedProjects = [
-  "Software-Design"
+
+    "Software-Design"
+
 ];
+
 
 
 // Projects page component
 function Projects() {
 
 
-  // ==========================
-  // Search State
-  // ==========================
+    // ==========================
+    // Search State
+    // ==========================
 
-  // Store the user's search input
-  const [searchTerm, setSearchTerm] = useState("");
-
-
-
-  // ==========================
-  // Fetch GitHub Repositories
-  // ==========================
-
-  const {
-    data: projects,
-    isLoading,
-    error,
-  } = useFetch(API_URL);
+    const [searchTerm, setSearchTerm] = useState("");
 
 
 
-  // ==========================
-  // Normalize Search Input
-  // ==========================
+    // ==========================
+    // Fetch GitHub Repositories
+    // ==========================
 
-  // Remove extra spaces and convert
-  // the search term to lowercase
-  const normalizedSearchTerm =
-    searchTerm.trim().toLowerCase();
-
-
-
-  // ==========================
-  // Filter Projects
-  // ==========================
-
-  const filteredProjects = (projects || [])
-
-    // Remove unwanted repositories
-    .filter(
-      (project) =>
-        !excludedProjects.includes(project.name)
-    )
-
-    // Search project information
-    .filter((project) => {
-
-
-      // Project name
-      const projectName =
-        project.name?.toLowerCase() || "";
-
-
-      // Project description
-      const projectDescription =
-        project.description?.toLowerCase() || "";
-
-
-      // Primary programming language
-      const projectLanguage =
-        project.language?.toLowerCase() || "";
-
-
-      // GitHub repository topics
-      const projectTopics =
-        project.topics
-          ?.join(" ")
-          .toLowerCase() || "";
+    const {
+        data: projects,
+        isLoading,
+        error,
+    } = useFetch(API_URL);
 
 
 
-      // Return projects that match
-      // any searchable field
-      return (
+    // ==========================
+    // Normalize Search Input
+    // ==========================
 
-        projectName.includes(
-          normalizedSearchTerm
-        ) ||
+    const normalizedSearchTerm =
+        searchTerm.trim().toLowerCase();
 
-        projectDescription.includes(
-          normalizedSearchTerm
-        ) ||
 
-        projectLanguage.includes(
-          normalizedSearchTerm
-        ) ||
 
-        projectTopics.includes(
-          normalizedSearchTerm
+    // ==========================
+    // Filter Projects
+    // ==========================
+
+    const filteredProjects = (projects || [])
+
+        // Remove unwanted repositories
+        .filter(
+            (project) =>
+                !excludedProjects.includes(project.name)
         )
 
-      );
-
-    });
-
+        // Search project information
+        .filter((project) => {
 
 
-  // ==========================
-  // Render Projects Page
-  // ==========================
-
-  return (
-
-    <section className="projects">
+            // Project name
+            const projectName =
+                project.name?.toLowerCase() || "";
 
 
-      {/* ==========================
-          Page Header
-      ========================== */}
+            // Project description
+            const projectDescription =
+                project.description?.toLowerCase() || "";
 
-      <header className="projects-header">
 
-        <h1>
-          My Projects
-        </h1>
+            // Primary programming language
+            const projectLanguage =
+                project.language?.toLowerCase() || "";
 
-        <p>
-          Browse my GitHub repositories and explore
-          the applications I've built using modern
-          frontend technologies.
-        </p>
 
-      </header>
+            // GitHub repository topics
+            const projectTopics =
+                project.topics
+                    ?.join(" ")
+                    .toLowerCase() || "";
 
 
 
-      {/* ==========================
-          Search Projects
-      ========================== */}
+            // Return projects that match
+            return (
 
-      <SearchBar
+                projectName.includes(
+                    normalizedSearchTerm
+                ) ||
 
-        value={searchTerm}
+                projectDescription.includes(
+                    normalizedSearchTerm
+                ) ||
 
-        onChange={(event) =>
-          setSearchTerm(event.target.value)
-        }
+                projectLanguage.includes(
+                    normalizedSearchTerm
+                ) ||
 
-        placeholder="Search projects by name, technology, or topic..."
+                projectTopics.includes(
+                    normalizedSearchTerm
+                )
 
-      />
+            );
 
-
-
-      {/* ==========================
-          Loading State
-      ========================== */}
-
-      {isLoading && (
-
-        <LoadingSpinner />
-
-      )}
+        });
 
 
 
-      {/* ==========================
-          Error State
-      ========================== */}
+    // ==========================
+    // Render Projects Page
+    // ==========================
 
-      {error && (
+    return (
 
-        <ErrorMessage
-          message={error}
-        />
-
-      )}
+        <section className={styles.projects}>
 
 
+            {/* ==========================
+                Page Header
+            ========================== */}
 
-      {/* ==========================
-          Project Grid
-      ========================== */}
-
-      {!isLoading && !error && (
-
-        <div className="project-grid">
+            <header className={styles.projectsHeader}>
 
 
-          {/* ==========================
-              Matching Projects
-          ========================== */}
-
-          {filteredProjects.length > 0 ? (
-
-            filteredProjects.map((project) => (
-
-              <ProjectCard
-
-                key={project.id}
-
-                project={project}
-
-              />
-
-            ))
-
-          ) : (
+                <h1>
+                    My Projects
+                </h1>
 
 
-            /* ==========================
-               No Search Results
-            ========================== */
-
-            <p className="no-projects">
-
-              No portfolio projects found.
-
-            </p>
-
-          )}
+                <p>
+                    Browse my GitHub repositories and explore
+                    the applications I've built using modern
+                    frontend technologies.
+                </p>
 
 
-        </div>
-
-      )}
+            </header>
 
 
-    </section>
 
-  );
+            {/* ==========================
+                Search Projects
+            ========================== */}
+
+            <SearchBar
+
+                value={searchTerm}
+
+                onChange={(event) =>
+                    setSearchTerm(event.target.value)
+                }
+
+                placeholder="Search projects by name, technology, or topic..."
+
+            />
+
+
+
+            {/* ==========================
+                Loading State
+            ========================== */}
+
+            {isLoading && (
+
+                <LoadingSpinner />
+
+            )}
+
+
+
+            {/* ==========================
+                Error State
+            ========================== */}
+
+            {error && (
+
+                <ErrorMessage
+                    message={error}
+                />
+
+            )}
+
+
+
+            {/* ==========================
+                Project Grid
+            ========================== */}
+
+            {!isLoading && !error && (
+
+                <div className={styles.projectGrid}>
+
+
+                    {/* ==========================
+                        Matching Projects
+                    ========================== */}
+
+                    {filteredProjects.length > 0 ? (
+
+                        filteredProjects.map((project) => (
+
+                            <ProjectCard
+
+                                key={project.id}
+
+                                project={project}
+
+                            />
+
+                        ))
+
+                    ) : (
+
+
+                        /* ==========================
+                           No Search Results
+                        ========================== */
+
+                        <p className={styles.noProjects}>
+
+                            No portfolio projects found.
+
+                        </p>
+
+                    )}
+
+
+                </div>
+
+            )}
+
+
+        </section>
+
+    );
 
 }
+
 
 
 // Export component
