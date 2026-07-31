@@ -2,30 +2,36 @@
 
 ## Project Overview
 
-This project is a modern **Frontend Developer Portfolio** built with **React and Vite**. The application is designed as a responsive Single Page Application (SPA) that showcases my development skills, projects, professional experience, certifications, technical stack, and contact information.
+This project is a modern **Frontend Developer Portfolio** built with **React and Vite**.
 
-The portfolio demonstrates modern frontend development practices including:
+The portfolio is designed as a responsive **Single Page Application (SPA)** that showcases my development skills, projects, professional experience, certifications, technical stack, and contact information.
+
+The application demonstrates modern frontend development practices including:
 
 * Component-based React architecture
 * React Router navigation
 * Reusable UI components
 * Context API for theme management
-* Dynamic data rendering
+* CSS Modules for component-level styling
+* Dynamic GitHub repository data
 * Custom React hooks
 * Responsive layouts
 * Organized asset management
-* CSS Modules
-* API integration
-* Third-party form management
+* Modular and maintainable CSS
+* Web3Forms contact form integration
 * Vercel deployment
 
 ---
 
 # Live Demo
 
-🔗 **Portfolio Website:**
+### Vercel Deployment
 
-https://joshua-craven-portfolio-ikcb4mcq9-jlc996s-projects.vercel.app/
+🔗 https://joshua-craven-portfolio-ikcb4mcq9-jlc996s-projects.vercel.app/
+
+### GitHub Pages
+
+🔗 https://jlc996.github.io/frontend-portfolio/
 
 ---
 
@@ -43,18 +49,23 @@ https://joshua-craven-portfolio-ikcb4mcq9-jlc996s-projects.vercel.app/
 ## Development Tools
 
 * Visual Studio Code
-* Git & GitHub
+* Git
+* GitHub
 * npm
 * Vite Development Server
-* Chrome DevTools
 * Vercel
 
-## Libraries & Services
+## APIs and Services
 
-* React Router DOM
-* React Context API
-* Custom React Hooks
+* GitHub REST API
 * Web3Forms
+
+## React Features
+
+* React Context API
+* React Hooks
+* Custom Hooks
+* Dynamic Component Rendering
 
 ---
 
@@ -62,19 +73,20 @@ https://joshua-craven-portfolio-ikcb4mcq9-jlc996s-projects.vercel.app/
 
 ## Responsive Portfolio Website
 
-The application is designed to work across:
+The portfolio is designed to work across:
 
 * Desktop computers
+* Laptops
 * Tablets
 * Mobile devices
 
-Responsive layouts are implemented using CSS media queries and flexible Grid and Flexbox layouts.
+Responsive CSS layouts are used throughout the application to provide a consistent experience across different screen sizes.
 
 ---
 
 # Single Page Application
 
-The portfolio uses React Router for client-side navigation.
+The portfolio uses **React Router DOM** for client-side navigation.
 
 Available routes:
 
@@ -83,13 +95,12 @@ Available routes:
 ├── Home
 │
 ├── /projects
-│   └── Project Showcase
-│
-├── /projects/:id
-│   └── Project Details
+│   ├── Project Showcase
+│   └── /projects/:id
+│       └── Project Details
 │
 ├── /experience
-│   └── Experience, Certifications, and Achievements
+│   └── Experience, Certifications, Badges
 │
 └── /contact
     └── Contact Form
@@ -106,77 +117,72 @@ The home page introduces:
 * Developer profile
 * Professional summary
 * Hero section
-* Featured live project demonstration
 * Technical highlights
-* Portfolio metrics
-* Core technology stack
-
-The Home page is composed of reusable components including:
-
-* `Hero`
-* `LiveDemo`
-* `TechStack`
-* `TechCard`
-* `Metrics`
-* `MetricCard`
+* Skills overview
+* Technology stack
+* Portfolio introduction
 
 ---
 
 ## Projects Page
 
-The Projects page displays repositories retrieved dynamically from the GitHub API.
+The projects section dynamically retrieves repositories from the GitHub REST API.
 
 Features include:
 
 * Dynamic project cards
 * GitHub repository integration
-* Search functionality
-* Project filtering
+* Project search
+* Search by project name
+* Search by description
+* Search by programming language
+* Search by GitHub topics
 * Project details pages
-* Repository links
-* Technology information
-
-The application retrieves repositories using a reusable custom `useFetch` hook.
+* GitHub repository links
+* Live demo links when available
+* Repository statistics
 
 ---
 
 ## Project Details
 
-Individual project pages are generated dynamically using React Router URL parameters.
+Each project can have its own details page.
 
-Example:
+Project details include:
 
-```text
-/projects/Digital_Timekeeper
-```
-
-Project information is retrieved from the GitHub API and displayed using reusable components.
-
-The project details page includes:
-
-* Project title
+* Project name
 * Project description
-* Repository information
-* GitHub source link
-* Navigation back to projects
+* GitHub topics
+* Primary programming language
+* Stars
+* Forks
+* Open issues
+* Repository visibility
+* Repository size
+* Default branch
+* License
+* Repository creation date
+* Last updated date
+* GitHub repository link
+* Live demo link when available
+
+Project information is retrieved dynamically from GitHub.
 
 ---
 
 ## Experience Page
 
-The Experience page showcases my development journey and technical accomplishments.
+The experience section displays:
 
-It includes:
-
-* Technical skills
+* Professional experience
+* Development journey
 * Certifications
 * Completion certificates
-* Development timeline
-* Highlights and achievements
+* Technical skills
+* Technical achievements
+* Development highlights
 
-Experience information is separated into centralized data files.
-
-Example:
+Experience information is managed through a centralized data file:
 
 ```text
 src/data/experienceData.js
@@ -188,55 +194,30 @@ This keeps portfolio content separate from presentation logic.
 
 ## Contact Page
 
-The Contact page provides a professional contact form for visitors to send messages.
+The contact page provides a professional contact form.
 
 The form includes:
 
-* Name field
-* Email field
-* Message field
+* Name
+* Email
+* Message
 * Client-side validation
 * Validation feedback
-* Submission loading state
-* Success messaging
+* Submission status
 * Error handling
-* Web3Forms integration
+* Loading state
 
----
+### Web3Forms Integration
 
-# Web3Forms Contact Management
+The contact form uses **Web3Forms** to process submissions without requiring a custom backend server.
 
-The contact form uses **Web3Forms** to process and deliver submitted messages without requiring a custom backend server.
-
-The form sends submissions to the Web3Forms API using the Fetch API.
-
-The implementation includes:
-
-* Environment variable configuration
-* JSON-based form submission
-* Client-side validation
-* Submission loading state
-* Success handling
-* Error handling
-* Form reset after successful submission
-
-The Web3Forms access key is stored as an environment variable rather than being hard-coded into the component.
-
-Example environment variable:
+Form submissions are sent securely using a Vite environment variable:
 
 ```text
-VITE_WEB3FORMS_ACCESS_KEY=your_access_key
+VITE_WEB3FORMS_ACCESS_KEY
 ```
 
-The environment file should not be committed to GitHub.
-
-The contact form accesses the environment variable using:
-
-```javascript
-import.meta.env.VITE_WEB3FORMS_ACCESS_KEY
-```
-
-This keeps configuration separate from the application's source code.
+The access key is not hard-coded into the source code.
 
 ---
 
@@ -266,47 +247,40 @@ frontend-portfolio/
 │   │   └── logo.png
 │   │
 │   ├── components/
-│   │   │
-│   │   ├── experience/
-│   │   │   ├── CertificationCard.jsx
-│   │   │   ├── CertificationSection.jsx
-│   │   │   ├── CompletionCertificateCard.jsx
-│   │   │   ├── CompletionCertificateSection.jsx
-│   │   │   ├── HighlightCard.jsx
-│   │   │   ├── HighlightSection.jsx
-│   │   │   ├── SkillCard.jsx
-│   │   │   ├── SkillsSection.jsx
-│   │   │   └── Timeline.jsx
-│   │   │
-│   │   ├── home/
-│   │   │   ├── Hero.jsx
-│   │   │   ├── LiveDemo.jsx
-│   │   │   ├── MetricCard.jsx
-│   │   │   ├── Metrics.jsx
-│   │   │   ├── TechCard.jsx
-│   │   │   └── TechStack.jsx
-│   │   │
-│   │   ├── projects/
-│   │   │   ├── ErrorMessage.jsx
-│   │   │   ├── LoadingSpinner.jsx
-│   │   │   ├── ProjectCard.jsx
-│   │   │   ├── SearchBar.jsx
-│   │   │   └── projectDetails/
-│   │   │       ├── ProjectActions.jsx
-│   │   │       ├── ProjectHeader.jsx
-│   │   │       └── ProjectInfoCard.jsx
-│   │   │
+│   │   ├── CertificationCard.jsx
+│   │   ├── CertificationSection.jsx
+│   │   ├── CompletionCertificateCard.jsx
+│   │   ├── CompletionCertificateSection.jsx
 │   │   ├── ContactForm.jsx
+│   │   ├── ErrorMessage.jsx
 │   │   ├── Footer.jsx
+│   │   ├── Hero.jsx
+│   │   ├── HighlightCard.jsx
+│   │   ├── HighlightSection.jsx
+│   │   ├── LoadingSpinner.jsx
+│   │   ├── MetricCard.jsx
+│   │   ├── Metrics.jsx
 │   │   ├── Navbar.jsx
-│   │   └── ThemeToggle.jsx
+│   │   ├── ProjectCard.jsx
+│   │   ├── ProjectTopics.jsx
+│   │   ├── SearchBar.jsx
+│   │   ├── SkillCard.jsx
+│   │   ├── SkillsSection.jsx
+│   │   ├── TechCard.jsx
+│   │   ├── TechStack.jsx
+│   │   ├── ThemeToggle.jsx
+│   │   │
+│   │   └── projects/
+│   │       └── projectDetails/
+│   │           ├── ProjectActions.jsx
+│   │           ├── ProjectHeader.jsx
+│   │           └── ProjectInfoCard.jsx
 │   │
 │   ├── context/
 │   │   └── ThemeContext.jsx
 │   │
 │   ├── data/
-│   │   ├── experienceData.js
-│   │   └── homeData.js
+│   │   └── experienceData.js
 │   │
 │   ├── hooks/
 │   │   └── useFetch.js
@@ -320,22 +294,24 @@ frontend-portfolio/
 │   │
 │   ├── styles/
 │   │   ├── App.css
+│   │   ├── Contact.css
 │   │   ├── ContactForm.css
+│   │   ├── Experience.css
 │   │   ├── Footer.css
+│   │   ├── Home.css
 │   │   ├── Navbar.css
 │   │   │
-│   │   ├── components/
-│   │   │   ├── MetricCard.module.css
-│   │   │   ├── Metrics.module.css
-│   │   │   ├── TechCard.module.css
-│   │   │   └── TechStack.module.css
-│   │   │
-│   │   └── pages/
-│   │       ├── Contact.module.css
-│   │       ├── Experience.module.css
-│   │       ├── Home.module.css
-│   │       ├── ProjectDetails.module.css
-│   │       └── Projects.module.css
+│   │   └── projects/
+│   │       ├── Projects.module.css
+│   │       ├── ProjectCard.module.css
+│   │       ├── SearchBar.module.css
+│   │       │
+│   │       └── projectDetails/
+│   │           ├── ProjectDetails.module.css
+│   │           ├── ProjectActions.module.css
+│   │           ├── ProjectHeader.module.css
+│   │           ├── ProjectInfoCard.module.css
+│   │           └── ProjectTopics.module.css
 │   │
 │   ├── App.jsx
 │   └── main.jsx
@@ -365,43 +341,78 @@ Page
  └── Card Component
 ```
 
+For example:
+
+```text
+Projects.jsx
+     |
+     ├── SearchBar.jsx
+     |
+     └── ProjectCard.jsx
+             |
+             └── Project Details
+```
+
+The Project Details page follows a similar structure:
+
+```text
+ProjectDetails.jsx
+       |
+       ├── ProjectHeader.jsx
+       │       └── ProjectTopics.jsx
+       │
+       ├── ProjectInfoCard.jsx
+       │
+       └── ProjectActions.jsx
+```
+
+This approach keeps components:
+
+* Reusable
+* Maintainable
+* Focused
+* Easier to test
+* Easier to update
+* Easier to scale
+
+---
+
+# CSS Architecture
+
+The project uses a combination of global CSS and **CSS Modules**.
+
+CSS Modules are used for component-specific styling to prevent class-name conflicts and improve component isolation.
+
 Example:
 
 ```text
-Experience.jsx
-       |
-       ↓
-SkillsSection.jsx
-       |
-       ↓
-SkillCard.jsx
+src/styles/projects/
+│
+├── Projects.module.css
+├── ProjectCard.module.css
+├── SearchBar.module.css
+│
+└── projectDetails/
+    ├── ProjectDetails.module.css
+    ├── ProjectActions.module.css
+    ├── ProjectHeader.module.css
+    ├── ProjectInfoCard.module.css
+    └── ProjectTopics.module.css
 ```
 
-Another example:
+A component imports its CSS Module directly:
 
-```text
-Home.jsx
-   |
-   ├── Hero.jsx
-   │
-   ├── LiveDemo.jsx
-   │
-   ├── TechStack.jsx
-   │       |
-   │       └── TechCard.jsx
-   │
-   └── Metrics.jsx
-           |
-           └── MetricCard.jsx
+```javascript
+import styles from "../../styles/projects/SearchBar.module.css";
 ```
 
-This architecture keeps the application:
+Then styles are applied through the generated module class:
 
-* Maintainable
-* Scalable
-* Reusable
-* Easier to debug
-* Easier to update
+```jsx
+<div className={styles.searchBar}>
+```
+
+This provides better style encapsulation and reduces the possibility of global CSS conflicts.
 
 ---
 
@@ -409,80 +420,57 @@ This architecture keeps the application:
 
 Portfolio information is separated from presentation logic.
 
-Home page data is stored in:
-
-```text
-src/data/homeData.js
-```
-
-This includes information such as:
-
-* Portfolio metrics
-* Technology stack
-
-Experience information is stored in:
+Example:
 
 ```text
 src/data/experienceData.js
 ```
 
-This includes:
+This file stores:
 
-* Skills
+* Work experience
 * Certifications
-* Completion certificates
-* Timeline information
-* Highlights
+* Achievements
+* Technical accomplishments
 
-Components import the data and dynamically render the appropriate UI.
+Components import the data and dynamically render the appropriate sections.
 
 Benefits include:
 
 * Cleaner components
 * Easier content updates
 * Improved organization
-* Reduced duplication
-* Better separation of concerns
+* Separation of concerns
+* Reusable data structures
 
 ---
 
-# CSS Architecture
+# GitHub API Integration
 
-The project uses CSS Modules where component-specific styling benefits from locally scoped class names.
+The Projects page uses the GitHub REST API to retrieve repository information.
 
-Examples:
-
-```text
-MetricCard.module.css
-Metrics.module.css
-TechCard.module.css
-TechStack.module.css
-```
-
-Page-specific styling also uses CSS Modules where appropriate.
-
-Global application styles are handled through:
+API endpoint:
 
 ```text
-src/styles/App.css
+https://api.github.com/users/jlc996/repos
 ```
 
-Global styles include:
+The custom `useFetch` hook manages:
 
-* CSS reset
-* Theme variables
-* Application layout
-* Global typography
-* Global link styling
-* Global image behavior
+* API requests
+* Loading state
+* Error handling
+* Retrieved data
 
-This approach keeps global styles centralized while allowing individual components to maintain isolated styling.
+Repository information is then passed into reusable project components.
+
+This allows the portfolio to automatically reflect changes made to public GitHub repositories.
 
 ---
 
 # Theme System
 
-The portfolio includes a custom light and dark theme system using the React Context API.
+The portfolio includes a custom theme system using the React Context API.
 
 Implementation:
 
@@ -490,41 +478,41 @@ Implementation:
 src/context/ThemeContext.jsx
 ```
 
-Features include:
+The theme system provides:
 
 * Light mode
 * Dark mode
 * Global theme state
-* Theme toggle control
-* Dynamic CSS variables
+* Theme toggle functionality
+* CSS variable-based colors
 
-Theme variables are defined in `App.css`.
+Theme variables are managed through the global application stylesheet.
 
 Example:
 
 ```css
 .light-theme {
-  --bg-color: #cccccc;
-  --text-color: #1f2937;
-  --card-color: #bfc0c0;
-  --accent-color: #2563eb;
+    --bg-color: #cccccc;
+    --text-color: #1f2937;
+    --card-color: #bfc0c0;
+    --accent-color: #2563eb;
 }
 
 .dark-theme {
-  --bg-color: #111827;
-  --text-color: #f9fafb;
-  --card-color: #1f2937;
-  --accent-color: #60a5fa;
+    --bg-color: #111827;
+    --text-color: #f9fafb;
+    --card-color: #1f2937;
+    --accent-color: #60a5fa;
 }
 ```
 
-Components use these variables to automatically adapt to the selected theme.
+Components use these variables to maintain consistent styling across themes.
 
 ---
 
 # Custom Hooks
 
-Reusable application logic is separated into custom React hooks.
+Reusable application logic is separated into custom hooks.
 
 Example:
 
@@ -537,31 +525,82 @@ The `useFetch` hook is used for:
 * API requests
 * Data loading
 * Error handling
-* Loading states
-* Dynamic GitHub repository data
+* Managing fetched data
 
-This prevents API-fetching logic from being duplicated across components.
+This keeps API logic separate from UI components.
 
 ---
 
-# API Integration
+# Contact Form Management
 
-The portfolio integrates with the GitHub REST API to dynamically retrieve repository information.
+The portfolio uses **Web3Forms** to process contact form submissions.
 
-GitHub API endpoint:
+The form performs client-side validation before sending the request.
+
+Validation includes:
+
+* Required name
+* Minimum name length
+* Valid email format
+* Required message
+* Minimum message length
+
+The Web3Forms access key is provided through an environment variable:
 
 ```text
-https://api.github.com/users/jlc996/repos
+VITE_WEB3FORMS_ACCESS_KEY
 ```
 
-The application uses the returned repository data to populate project cards and project detail pages.
+This prevents the access key from being directly stored in the source code.
 
-Search functionality can filter projects using:
+---
 
-* Repository name
-* Description
-* Programming language
-* GitHub repository topics
+# Environment Variables
+
+Create a local `.env` file for development:
+
+```text
+VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
+```
+
+Do not commit `.env` files containing private configuration values to GitHub.
+
+For production deployment, the environment variable should be configured through the hosting provider.
+
+---
+
+# Vercel Deployment
+
+The portfolio is deployed using **Vercel**.
+
+Production deployment:
+
+```text
+https://joshua-craven-portfolio-ikcb4mcq9-jlc996s-projects.vercel.app/
+```
+
+Vercel provides automated deployment from the GitHub repository.
+
+Typical deployment workflow:
+
+```text
+GitHub Repository
+       |
+       ↓
+     Vercel
+       |
+       ↓
+Production Build
+       |
+       ↓
+Live Portfolio
+```
+
+The project is built using:
+
+```bash
+npm run build
+```
 
 ---
 
@@ -593,35 +632,7 @@ assets/
 └── logo.png
 ```
 
-This keeps project resources organized and easy to reference from React components.
-
----
-
-# Environment Variables
-
-Environment variables are used for configuration values that should not be hard-coded into the application.
-
-The contact form uses:
-
-```text
-VITE_WEB3FORMS_ACCESS_KEY
-```
-
-Example `.env` file:
-
-```text
-VITE_WEB3FORMS_ACCESS_KEY=your_access_key
-```
-
-The `.env` file should remain local and should not be committed to GitHub.
-
-A `.env.example` file can be used to document required environment variables without exposing the actual access key.
-
-Example:
-
-```text
-VITE_WEB3FORMS_ACCESS_KEY=
-```
+This keeps project resources organized and easy to reference.
 
 ---
 
@@ -656,10 +667,10 @@ npm install
 Create a `.env` file in the project root:
 
 ```text
-VITE_WEB3FORMS_ACCESS_KEY=your_access_key
+VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
 ```
 
-Replace `your_access_key` with the access key provided by Web3Forms.
+Replace the placeholder with your Web3Forms access key.
 
 ---
 
@@ -689,20 +700,6 @@ npm run preview
 
 ---
 
-# Deployment
-
-The portfolio is deployed using **Vercel**.
-
-Vercel provides continuous deployment through the GitHub repository, allowing updates to the portfolio to be automatically built and deployed when changes are pushed.
-
-Live deployment:
-
-https://joshua-craven-portfolio-ikcb4mcq9-jlc996s-projects.vercel.app/
-
-The application is configured as a Vite React application and deployed through Vercel.
-
----
-
 # Development Practices
 
 This project follows modern frontend development practices:
@@ -710,39 +707,39 @@ This project follows modern frontend development practices:
 * Component-driven development
 * Separation of concerns
 * Reusable components
+* CSS Modules
 * Data-driven rendering
 * Custom React hooks
 * Context API
+* Responsive design
 * API integration
-* Environment variable configuration
-* CSS Modules
-* Responsive design principles
-* Accessible form controls
-* Client-side form validation
+* Client-side validation
+* Environment variable management
+* Organized asset structure
 * Version control with Git
-* GitHub repository integration
-* Continuous deployment with Vercel
+* GitHub integration
+* Vercel deployment
 
 ---
 
 # AI Use Disclaimer
 
-AI-assisted development tools were used during the development of this portfolio as a supplemental resource for learning, debugging, documentation, code review, and development guidance.
+AI-assisted development tools were used during the development of this portfolio.
 
-AI assistance was used to help:
+AI was used as a development support tool for tasks such as:
 
-* Explain programming concepts
-* Troubleshoot errors
-* Review and improve code structure
-* Suggest development approaches
-* Assist with documentation
-* Improve readability and organization
+* Troubleshooting errors
+* Explaining programming concepts
+* Reviewing code structure
+* Suggesting improvements
+* Assisting with documentation
+* Generating development suggestions
 
-The project was developed, reviewed, tested, and adapted by **Joshua Craven**.
+All generated suggestions were reviewed, tested, modified, and integrated as appropriate.
 
-AI-generated suggestions were reviewed and modified as necessary to fit the project's requirements, architecture, functionality, and coding practices.
+The project remains the responsibility of the developer, including the final implementation, design decisions, testing, and deployment.
 
-The purpose of using AI assistance was to support the development and learning process rather than replace the developer's understanding or decision-making.
+AI assistance does not replace the developer's understanding of the technologies used in this project.
 
 ---
 
@@ -755,9 +752,9 @@ Possible future enhancements include:
 * Additional animations
 * Improved accessibility features
 * Blog section
-* More interactive project demonstrations
-* Additional portfolio projects
-* Expanded API integrations
+* Additional interactive project demonstrations
+* Expanded project filtering
+* Performance optimization
 * Automated testing
 
 ---
