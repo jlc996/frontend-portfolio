@@ -11,7 +11,7 @@ The application demonstrates modern frontend development practices including:
 * Component-based React architecture
 * React Router navigation
 * Reusable UI components
-* Context API for theme management
+* React Context API for theme management
 * CSS Modules for component-level styling
 * Dynamic GitHub repository data
 * Custom React hooks
@@ -25,11 +25,11 @@ The application demonstrates modern frontend development practices including:
 
 # Live Demo
 
-### Vercel Deployment
+## Vercel Deployment
 
 🔗 https://joshua-craven-portfolio-ikcb4mcq9-jlc996s-projects.vercel.app/
 
-### GitHub Pages
+## GitHub Pages
 
 🔗 https://jlc996.github.io/frontend-portfolio/
 
@@ -66,6 +66,7 @@ The application demonstrates modern frontend development practices including:
 * React Hooks
 * Custom Hooks
 * Dynamic Component Rendering
+* Reusable Components
 
 ---
 
@@ -100,7 +101,7 @@ Available routes:
 │       └── Project Details
 │
 ├── /experience
-│   └── Experience, Certifications, Badges
+│   └── Experience, Certifications, Skills
 │
 └── /contact
     └── Contact Form
@@ -112,21 +113,30 @@ Available routes:
 
 ## Home Page
 
-The home page introduces:
+The Home page introduces the developer and provides an overview of the portfolio.
+
+It includes:
 
 * Developer profile
 * Professional summary
 * Hero section
 * Technical highlights
-* Skills overview
+* Metrics
 * Technology stack
+* Live project demonstrations
 * Portfolio introduction
+
+Home page content is supported by centralized data stored in:
+
+```text
+src/data/homeData.js
+```
 
 ---
 
 ## Projects Page
 
-The projects section dynamically retrieves repositories from the GitHub REST API.
+The Projects section dynamically retrieves public repositories from the GitHub REST API.
 
 Features include:
 
@@ -141,14 +151,18 @@ Features include:
 * GitHub repository links
 * Live demo links when available
 * Repository statistics
+* Loading state
+* Error handling
+
+Projects are rendered through reusable components.
 
 ---
 
 ## Project Details
 
-Each project can have its own details page.
+Each GitHub repository can have its own project details page.
 
-Project details include:
+Project information can include:
 
 * Project name
 * Project description
@@ -172,29 +186,32 @@ Project information is retrieved dynamically from GitHub.
 
 ## Experience Page
 
-The experience section displays:
+The Experience section presents the developer's professional development journey.
+
+It includes:
 
 * Professional experience
 * Development journey
+* Technical skills
 * Certifications
 * Completion certificates
-* Technical skills
 * Technical achievements
 * Development highlights
+* Development timeline
 
-Experience information is managed through a centralized data file:
+Experience content is separated from presentation logic and stored in:
 
 ```text
 src/data/experienceData.js
 ```
 
-This keeps portfolio content separate from presentation logic.
+The page uses reusable section and card components for each category.
 
 ---
 
 ## Contact Page
 
-The contact page provides a professional contact form.
+The Contact page provides a professional contact form.
 
 The form includes:
 
@@ -211,7 +228,7 @@ The form includes:
 
 The contact form uses **Web3Forms** to process submissions without requiring a custom backend server.
 
-Form submissions are sent securely using a Vite environment variable:
+The Web3Forms access key is provided through a Vite environment variable:
 
 ```text
 VITE_WEB3FORMS_ACCESS_KEY
@@ -223,15 +240,18 @@ The access key is not hard-coded into the source code.
 
 # Project Architecture
 
+The project follows a modular React architecture that separates pages, reusable components, application state, data, hooks, assets, and styling.
+
 ```text
 frontend-portfolio/
 │
 ├── public/
-│   └── Static public assets
 │
 ├── src/
 │   │
 │   ├── assets/
+│   │   ├── logo.png
+│   │   │
 │   │   ├── badges/
 │   │   │   ├── css-badge.png
 │   │   │   ├── html-badge.png
@@ -241,36 +261,43 @@ frontend-portfolio/
 │   │   │   ├── html-css-cert.png
 │   │   │   └── javascript-cert.png
 │   │   │
-│   │   ├── profile/
-│   │   │   └── profile.png
-│   │   │
-│   │   └── logo.png
+│   │   └── profile/
+│   │       └── profile.png
 │   │
 │   ├── components/
-│   │   ├── CertificationCard.jsx
-│   │   ├── CertificationSection.jsx
-│   │   ├── CompletionCertificateCard.jsx
-│   │   ├── CompletionCertificateSection.jsx
-│   │   ├── ContactForm.jsx
-│   │   ├── ErrorMessage.jsx
 │   │   ├── Footer.jsx
-│   │   ├── Hero.jsx
-│   │   ├── HighlightCard.jsx
-│   │   ├── HighlightSection.jsx
-│   │   ├── LoadingSpinner.jsx
-│   │   ├── MetricCard.jsx
-│   │   ├── Metrics.jsx
 │   │   ├── Navbar.jsx
-│   │   ├── ProjectCard.jsx
-│   │   ├── ProjectTopics.jsx
-│   │   ├── SearchBar.jsx
-│   │   ├── SkillCard.jsx
-│   │   ├── SkillsSection.jsx
-│   │   ├── TechCard.jsx
-│   │   ├── TechStack.jsx
 │   │   ├── ThemeToggle.jsx
 │   │   │
+│   │   ├── contact/
+│   │   │   └── ContactForm.jsx
+│   │   │
+│   │   ├── experience/
+│   │   │   ├── CertificationCard.jsx
+│   │   │   ├── CertificationSection.jsx
+│   │   │   ├── CompletionCertificateCard.jsx
+│   │   │   ├── CompletionCertificateSection.jsx
+│   │   │   ├── HighlightCard.jsx
+│   │   │   ├── HighlightSection.jsx
+│   │   │   ├── SkillCard.jsx
+│   │   │   ├── SkillsSection.jsx
+│   │   │   └── Timeline.jsx
+│   │   │
+│   │   ├── home/
+│   │   │   ├── Hero.jsx
+│   │   │   ├── LiveDemo.jsx
+│   │   │   ├── MetricCard.jsx
+│   │   │   ├── Metrics.jsx
+│   │   │   ├── TechCard.jsx
+│   │   │   └── TechStack.jsx
+│   │   │
 │   │   └── projects/
+│   │       ├── ErrorMessage.jsx
+│   │       ├── LoadingSpinner.jsx
+│   │       ├── ProjectCard.jsx
+│   │       ├── ProjectTopics.jsx
+│   │       ├── SearchBar.jsx
+│   │       │
 │   │       └── projectDetails/
 │   │           ├── ProjectActions.jsx
 │   │           ├── ProjectHeader.jsx
@@ -280,7 +307,8 @@ frontend-portfolio/
 │   │   └── ThemeContext.jsx
 │   │
 │   ├── data/
-│   │   └── experienceData.js
+│   │   ├── experienceData.js
+│   │   └── homeData.js
 │   │
 │   ├── hooks/
 │   │   └── useFetch.js
@@ -294,26 +322,51 @@ frontend-portfolio/
 │   │
 │   ├── styles/
 │   │   ├── App.css
-│   │   ├── Contact.css
-│   │   ├── ContactForm.css
-│   │   ├── Experience.css
 │   │   ├── Footer.css
-│   │   ├── Home.css
 │   │   ├── Navbar.css
+│   │   ├── Theme.css
+│   │   │
+│   │   ├── contact/
+│   │   │   └── ContactForm.module.css
+│   │   │
+│   │   ├── experience/
+│   │   │   ├── CertificationCard.module.css
+│   │   │   ├── CertificationSection.module.css
+│   │   │   ├── CompletionCertificateCard.module.css
+│   │   │   ├── CompletionCertificateSection.module.css
+│   │   │   ├── HighlightCard.module.css
+│   │   │   ├── HighlightSection.module.css
+│   │   │   ├── SkillCard.module.css
+│   │   │   ├── SkillsSection.module.css
+│   │   │   └── Timeline.module.css
+│   │   │
+│   │   ├── home/
+│   │   │   ├── Hero.module.css
+│   │   │   ├── LiveDemo.module.css
+│   │   │   ├── MetricCard.module.css
+│   │   │   ├── Metrics.module.css
+│   │   │   ├── TechCard.module.css
+│   │   │   └── TechStack.module.css
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Contact.module.css
+│   │   │   ├── Experience.module.css
+│   │   │   ├── Home.module.css
+│   │   │   ├── ProjectDetails.module.css
+│   │   │   └── Projects.module.css
 │   │   │
 │   │   └── projects/
-│   │       ├── Projects.module.css
 │   │       ├── ProjectCard.module.css
+│   │       ├── ProjectTopics.module.css
 │   │       ├── SearchBar.module.css
 │   │       │
 │   │       └── projectDetails/
-│   │           ├── ProjectDetails.module.css
 │   │           ├── ProjectActions.module.css
 │   │           ├── ProjectHeader.module.css
-│   │           ├── ProjectInfoCard.module.css
-│   │           └── ProjectTopics.module.css
+│   │           └── ProjectInfoCard.module.css
 │   │
 │   ├── App.jsx
+│   ├── index.css
 │   └── main.jsx
 │
 ├── .gitignore
@@ -329,113 +382,299 @@ frontend-portfolio/
 
 # React Component Architecture
 
-The application follows a reusable component-based architecture.
+The application follows a reusable, component-based architecture.
+
+Pages are responsible for composing larger sections, while reusable components handle individual pieces of functionality and presentation.
 
 General structure:
 
 ```text
 Page
- |
- ├── Section Component
  │
- └── Card Component
+ ├── Section Component
+ │      │
+ │      └── Card Component
+ │
+ └── Supporting Components
 ```
 
-For example:
+This structure keeps components focused and allows individual sections to be maintained independently.
+
+---
+
+## Home Component Architecture
+
+```text
+Home.jsx
+ │
+ ├── Hero.jsx
+ │
+ ├── LiveDemo.jsx
+ │
+ ├── Metrics.jsx
+ │      └── MetricCard.jsx
+ │
+ └── TechStack.jsx
+        └── TechCard.jsx
+```
+
+Home content is supported by:
+
+```text
+src/data/homeData.js
+```
+
+---
+
+## Projects Component Architecture
 
 ```text
 Projects.jsx
-     |
-     ├── SearchBar.jsx
-     |
-     └── ProjectCard.jsx
-             |
-             └── Project Details
+ │
+ ├── SearchBar.jsx
+ │
+ ├── LoadingSpinner.jsx
+ │
+ ├── ErrorMessage.jsx
+ │
+ └── ProjectCard.jsx
+        └── ProjectTopics.jsx
 ```
 
-The Project Details page follows a similar structure:
+Project details are handled through a dedicated page:
 
 ```text
 ProjectDetails.jsx
-       |
-       ├── ProjectHeader.jsx
-       │       └── ProjectTopics.jsx
-       │
-       ├── ProjectInfoCard.jsx
-       │
-       └── ProjectActions.jsx
+ │
+ ├── ProjectHeader.jsx
+ │      └── ProjectTopics.jsx
+ │
+ ├── ProjectInfoCard.jsx
+ │
+ └── ProjectActions.jsx
 ```
 
-This approach keeps components:
-
-* Reusable
-* Maintainable
-* Focused
-* Easier to test
-* Easier to update
-* Easier to scale
-
----
-
-# CSS Architecture
-
-The project uses a combination of global CSS and **CSS Modules**.
-
-CSS Modules are used for component-specific styling to prevent class-name conflicts and improve component isolation.
-
-Example:
+Project detail components are organized under:
 
 ```text
-src/styles/projects/
-│
-├── Projects.module.css
-├── ProjectCard.module.css
-├── SearchBar.module.css
-│
-└── projectDetails/
-    ├── ProjectDetails.module.css
-    ├── ProjectActions.module.css
-    ├── ProjectHeader.module.css
-    ├── ProjectInfoCard.module.css
-    └── ProjectTopics.module.css
+src/components/projects/projectDetails/
 ```
-
-A component imports its CSS Module directly:
-
-```javascript
-import styles from "../../styles/projects/SearchBar.module.css";
-```
-
-Then styles are applied through the generated module class:
-
-```jsx
-<div className={styles.searchBar}>
-```
-
-This provides better style encapsulation and reduces the possibility of global CSS conflicts.
 
 ---
 
-# Data Management
+## Experience Component Architecture
 
-Portfolio information is separated from presentation logic.
+```text
+Experience.jsx
+ │
+ ├── SkillsSection.jsx
+ │      └── SkillCard.jsx
+ │
+ ├── CertificationSection.jsx
+ │      └── CertificationCard.jsx
+ │
+ ├── CompletionCertificateSection.jsx
+ │      └── CompletionCertificateCard.jsx
+ │
+ ├── Timeline.jsx
+ │
+ └── HighlightSection.jsx
+        └── HighlightCard.jsx
+```
 
-Example:
+Experience content is stored separately in:
 
 ```text
 src/data/experienceData.js
 ```
 
-This file stores:
+This separates data from presentation logic.
 
-* Work experience
+---
+
+## Contact Component Architecture
+
+```text
+Contact.jsx
+ │
+ └── ContactForm.jsx
+```
+
+The contact form is isolated as a dedicated component with its own CSS Module.
+
+---
+
+## Shared Components
+
+Site-wide components are located directly inside:
+
+```text
+src/components/
+```
+
+These include:
+
+```text
+Footer.jsx
+Navbar.jsx
+ThemeToggle.jsx
+```
+
+They provide shared functionality across the portfolio.
+
+---
+
+# CSS Architecture
+
+The project uses a combination of global CSS files and **CSS Modules**.
+
+The styling structure mirrors the organization of the React components and pages.
+
+---
+
+## Global Styles
+
+Global styles are located directly inside:
+
+```text
+src/styles/
+```
+
+These include:
+
+```text
+App.css
+Footer.css
+Navbar.css
+Theme.css
+```
+
+The main global stylesheet is:
+
+```text
+src/index.css
+```
+
+Global styles are used for application-wide styling, shared layout rules, navigation, footer styling, and theme functionality.
+
+---
+
+## Page CSS Modules
+
+Each page has its own CSS Module:
+
+```text
+src/styles/pages/
+│
+├── Contact.module.css
+├── Experience.module.css
+├── Home.module.css
+├── ProjectDetails.module.css
+└── Projects.module.css
+```
+
+This keeps page-specific styling isolated and prevents unnecessary global CSS conflicts.
+
+---
+
+## Contact CSS Modules
+
+```text
+src/styles/contact/
+└── ContactForm.module.css
+```
+
+The Contact Form uses its own locally scoped CSS Module.
+
+---
+
+## Experience CSS Modules
+
+```text
+src/styles/experience/
+│
+├── CertificationCard.module.css
+├── CertificationSection.module.css
+├── CompletionCertificateCard.module.css
+├── CompletionCertificateSection.module.css
+├── HighlightCard.module.css
+├── HighlightSection.module.css
+├── SkillCard.module.css
+├── SkillsSection.module.css
+└── Timeline.module.css
+```
+
+Each Experience component has a corresponding CSS Module.
+
+---
+
+## Home CSS Modules
+
+```text
+src/styles/home/
+│
+├── Hero.module.css
+├── LiveDemo.module.css
+├── MetricCard.module.css
+├── Metrics.module.css
+├── TechCard.module.css
+└── TechStack.module.css
+```
+
+This mirrors the Home component structure.
+
+---
+
+## Projects CSS Modules
+
+```text
+src/styles/projects/
+│
+├── ProjectCard.module.css
+├── ProjectTopics.module.css
+├── SearchBar.module.css
+│
+└── projectDetails/
+    ├── ProjectActions.module.css
+    ├── ProjectHeader.module.css
+    └── ProjectInfoCard.module.css
+```
+
+Project detail styles are kept in their own nested directory to mirror the component structure.
+
+---
+
+# Data Management
+
+Portfolio content is separated from presentation logic through dedicated data files.
+
+```text
+src/data/
+│
+├── experienceData.js
+└── homeData.js
+```
+
+## Home Data
+
+`homeData.js` contains data used throughout the Home page.
+
+This allows Home components to focus on rendering rather than storing large amounts of static content directly inside the JSX.
+
+---
+
+## Experience Data
+
+`experienceData.js` contains experience-related information such as:
+
+* Professional experience
 * Certifications
-* Achievements
-* Technical accomplishments
+* Completion certificates
+* Technical skills
+* Highlights
+* Timeline information
 
-Components import the data and dynamically render the appropriate sections.
-
-Benefits include:
+Separating data from presentation provides:
 
 * Cleaner components
 * Easier content updates
@@ -462,9 +701,28 @@ The custom `useFetch` hook manages:
 * Error handling
 * Retrieved data
 
-Repository information is then passed into reusable project components.
+The retrieved repository information is passed into reusable project components.
 
 This allows the portfolio to automatically reflect changes made to public GitHub repositories.
+
+---
+
+# Custom Hooks
+
+Reusable application logic is separated into custom hooks.
+
+```text
+src/hooks/useFetch.js
+```
+
+The `useFetch` hook is responsible for handling data-fetching operations and managing:
+
+* API requests
+* Loading state
+* Error state
+* Retrieved data
+
+Separating API logic from UI components keeps components focused on presentation.
 
 ---
 
@@ -484,50 +742,17 @@ The theme system provides:
 * Dark mode
 * Global theme state
 * Theme toggle functionality
-* CSS variable-based colors
+* Shared theme behavior
 
-Theme variables are managed through the global application stylesheet.
-
-Example:
-
-```css
-.light-theme {
-    --bg-color: #cccccc;
-    --text-color: #1f2937;
-    --card-color: #bfc0c0;
-    --accent-color: #2563eb;
-}
-
-.dark-theme {
-    --bg-color: #111827;
-    --text-color: #f9fafb;
-    --card-color: #1f2937;
-    --accent-color: #60a5fa;
-}
-```
-
-Components use these variables to maintain consistent styling across themes.
-
----
-
-# Custom Hooks
-
-Reusable application logic is separated into custom hooks.
-
-Example:
+Theme styling is managed through:
 
 ```text
-src/hooks/useFetch.js
+src/styles/Theme.css
 ```
 
-The `useFetch` hook is used for:
+The `ThemeToggle.jsx` component provides the interface for switching between themes.
 
-* API requests
-* Data loading
-* Error handling
-* Managing fetched data
-
-This keeps API logic separate from UI components.
+The Context API allows theme state to be accessed by components throughout the application without passing theme props through multiple levels of the component tree.
 
 ---
 
@@ -535,7 +760,7 @@ This keeps API logic separate from UI components.
 
 The portfolio uses **Web3Forms** to process contact form submissions.
 
-The form performs client-side validation before sending the request.
+The form performs client-side validation before submitting the request.
 
 Validation includes:
 
@@ -544,6 +769,9 @@ Validation includes:
 * Valid email format
 * Required message
 * Minimum message length
+* Submission status
+* Error handling
+* Loading state
 
 The Web3Forms access key is provided through an environment variable:
 
@@ -557,15 +785,17 @@ This prevents the access key from being directly stored in the source code.
 
 # Environment Variables
 
-Create a local `.env` file for development:
+Create a local `.env` file in the project root for development:
 
 ```text
 VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
 ```
 
+Replace the placeholder with your Web3Forms access key.
+
 Do not commit `.env` files containing private configuration values to GitHub.
 
-For production deployment, the environment variable should be configured through the hosting provider.
+For production deployment, configure the environment variable through the hosting provider.
 
 ---
 
@@ -602,6 +832,8 @@ The project is built using:
 npm run build
 ```
 
+The production build generates the optimized application used for deployment.
+
 ---
 
 # Asset Management
@@ -612,11 +844,13 @@ Portfolio images and resources are organized inside:
 src/assets/
 ```
 
-Structure:
+The asset structure includes:
 
 ```text
 assets/
-
+│
+├── logo.png
+│
 ├── badges/
 │   ├── css-badge.png
 │   ├── html-badge.png
@@ -626,13 +860,11 @@ assets/
 │   ├── html-css-cert.png
 │   └── javascript-cert.png
 │
-├── profile/
-│   └── profile.png
-│
-└── logo.png
+└── profile/
+    └── profile.png
 ```
 
-This keeps project resources organized and easy to reference.
+Assets are grouped by purpose to make them easier to locate and maintain.
 
 ---
 
@@ -692,7 +924,7 @@ Create an optimized production build:
 npm run build
 ```
 
-Preview the production build:
+Preview the production build locally:
 
 ```bash
 npm run preview
@@ -702,7 +934,7 @@ npm run preview
 
 # Development Practices
 
-This project follows modern frontend development practices:
+This project follows modern frontend development practices including:
 
 * Component-driven development
 * Separation of concerns
@@ -710,15 +942,17 @@ This project follows modern frontend development practices:
 * CSS Modules
 * Data-driven rendering
 * Custom React hooks
-* Context API
+* React Context API
 * Responsive design
-* API integration
+* GitHub API integration
 * Client-side validation
 * Environment variable management
 * Organized asset structure
 * Version control with Git
 * GitHub integration
 * Vercel deployment
+
+The project structure is designed to keep presentation, data, application logic, and reusable components separated.
 
 ---
 
