@@ -1,0 +1,75 @@
+/* =====================================================
+   Project Information Card
+===================================================== */
+
+
+.detailsCard {
+
+    background: var(--card-color);
+
+    color: var(--text-color);
+
+    padding: 2rem;
+
+    border-radius: 16px;
+
+    /* Blue side accent */
+    border-left: 5px solid var(--accent-color);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .12);
+
+    margin-bottom: 2.5rem;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+
+/* =====================================================
+   Card Hover
+===================================================== */
+
+
+.detailsCard:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, .2);
+
+}
+
+
+
+/* =====================================================
+   Card Content
+===================================================== */
+
+
+.detailsCard p {
+
+    margin-bottom: 1rem;
+
+    line-height: 1.7;
+
+}
+
+
+
+.detailsCard p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+
+.detailsCard strong {
+
+    color: var(--accent-color);
+
+}

@@ -1,13 +1,18 @@
 // ProjectInfoCard.jsx
 
 
+// Import component styles
+import styles from "../../../styles/projectDetails/ProjectInfoCard.module.css";
+
+
+
 // Project Information Card component
 function ProjectInfoCard({ project }) {
 
 
   return (
 
-    <div className="details-card">
+    <div className={styles.detailsCard}>
 
 
       {/* ==========================
