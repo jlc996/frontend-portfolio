@@ -3,6 +3,8 @@
 // Import project topics component
 import ProjectTopics from "../ProjectTopics";
 
+// Import component styles
+import styles from "../../../styles/projects/projectDetails/ProjectHeader.module.css";
 
 // Format GitHub repository names
 // Removes hyphens and underscores
@@ -17,13 +19,12 @@ function formatProjectName(name) {
 
 }
 
-
 // Project Header component
 function ProjectHeader({ project }) {
 
   return (
 
-    <header className="project-details-header">
+    <header className={styles.projectDetailsHeader}>
 
       {/* ==========================
           Project Title
@@ -35,20 +36,16 @@ function ProjectHeader({ project }) {
 
       </h1>
 
-
-
       {/* ==========================
           Project Description
       ========================== */}
 
-      <p className="project-description">
+      <p className={styles.projectDescription}>
 
         {project.description ||
           "This repository does not currently include a project description."}
 
       </p>
-
-
 
       {/* ==========================
           Project Topics
@@ -63,7 +60,6 @@ function ProjectHeader({ project }) {
   );
 
 }
-
 
 // Export component
 export default ProjectHeader;
