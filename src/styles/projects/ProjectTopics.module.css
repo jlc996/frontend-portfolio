@@ -1,0 +1,78 @@
+/* =====================================================
+   Project Topics
+===================================================== */
+
+.projectTopics {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: .6rem;
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: 1.5rem auto 0;
+
+}
+
+
+/* =====================================================
+   Topic Badge
+===================================================== */
+
+.topicBadge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: .4rem .85rem;
+
+    border-radius: 20px;
+
+    background: var(--accent-color);
+
+    color: white;
+
+    font-size: .85rem;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    white-space: nowrap;
+
+}
+
+
+/* =====================================================
+   Responsive Design
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .projectTopics {
+
+        gap: .5rem;
+
+    }
+
+
+    .topicBadge {
+
+        font-size: .8rem;
+
+        padding: .35rem .7rem;
+
+    }
+
+}

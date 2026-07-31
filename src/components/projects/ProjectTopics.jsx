@@ -1,5 +1,8 @@
 // ProjectTopics.jsx
 
+// Import component styles
+import styles from "../../styles/projects/ProjectTopics.module.css";
+
 
 // Project Topics component
 function ProjectTopics({ topics }) {
@@ -17,13 +20,13 @@ function ProjectTopics({ topics }) {
   // Render project topics
   return (
 
-    <div className="project-topics">
+    <div className={styles.projectTopics}>
 
       {topics.map((topic) => (
 
         <span
           key={topic}
-          className="topic-badge"
+          className={styles.topicBadge}
         >
 
           {topic}
