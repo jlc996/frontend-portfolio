@@ -2,7 +2,7 @@
 
 
 // Import component styles
-import styles from "../../../styles/projectDetails/ProjectInfoCard.module.css";
+import styles from "../../../styles/projects/projectDetails/ProjectInfoCard.module.css";
 
 
 
