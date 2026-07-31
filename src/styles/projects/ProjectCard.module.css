@@ -1,0 +1,232 @@
+/* =====================================================
+   Project Card
+===================================================== */
+
+.projectCard {
+
+    background: var(--card-color);
+
+    color: var(--text-color);
+
+    border-radius: 16px;
+
+    padding: 2rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    /* Blue side accent */
+    border-left: 5px solid var(--accent-color);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, .12);
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+}
+
+
+.projectCard:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, .2);
+
+}
+
+
+/* =====================================================
+   Project Title
+===================================================== */
+
+.projectCard h2 {
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    margin-bottom: 1rem;
+
+    color: var(--accent-color);
+
+    overflow-wrap: break-word;
+
+    word-break: break-word;
+
+}
+
+
+/* =====================================================
+   Project Description
+===================================================== */
+
+.projectCard > p {
+
+    line-height: 1.7;
+
+    margin-bottom: 1rem;
+
+    color: var(--text-color);
+
+    overflow-wrap: break-word;
+
+    word-break: break-word;
+
+}
+
+
+/* =====================================================
+   Project Information
+===================================================== */
+
+.projectInfo {
+
+    margin: 1rem 0;
+
+}
+
+
+.projectInfo p {
+
+    line-height: 1.7;
+
+    margin-bottom: 1rem;
+
+}
+
+
+.projectInfo p:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+/* =====================================================
+   Project Buttons
+===================================================== */
+
+.projectButtons {
+
+    display: flex;
+
+    gap: 1rem;
+
+    margin-top: 1.5rem;
+
+    flex-wrap: wrap;
+
+}
+
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: .75rem 1.5rem;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        transform .3s ease,
+        background-color .3s ease;
+
+}
+
+
+.button:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+/* =====================================================
+   Primary Button
+===================================================== */
+
+.primaryButton {
+
+    background: var(--accent-color);
+
+    color: white;
+
+}
+
+
+.primaryButton:hover {
+
+    color: white;
+
+}
+
+
+/* =====================================================
+   Secondary Button
+===================================================== */
+
+.secondaryButton {
+
+    border: 2px solid var(--accent-color);
+
+    color: var(--accent-color);
+
+    background: transparent;
+
+}
+
+
+.secondaryButton:hover {
+
+    background: var(--accent-color);
+
+    color: white;
+
+}
+
+
+/* =====================================================
+   Responsive Design
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .projectCard {
+
+        padding: 1.5rem;
+
+    }
+
+
+    .projectButtons {
+
+        flex-direction: column;
+
+    }
+
+
+    .button {
+
+        width: 100%;
+
+    }
+
+}
