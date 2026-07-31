@@ -1,63 +1,49 @@
 // Metrics.jsx
 
+
+// Import reusable component
 import MetricCard from "./MetricCard";
 
-import "../../styles/home/Metrics.css";
+
+// Import styles
+import styles from "../../styles/home/Metrics.module.css";
 
 
-
-const metrics = [
-
-  {
-    id: 1,
-    value: "10+",
-    label: "Projects Built"
-  },
-
-
-  {
-    id: 2,
-    value: "React",
-    label: "Frontend Framework"
-  },
-
-
-  {
-    id: 3,
-    value: "REST APIs",
-    label: "API Integration"
-  }
-
-];
+// Import metrics data
+import {
+    metricsData
+} from "../../data/homeData";
 
 
 
 function Metrics() {
 
 
-  return (
+    return (
 
-    <section className="metrics">
-
-
-      {metrics.map((metric) => (
-
-        <MetricCard
-
-          key={metric.id}
-
-          value={metric.value}
-
-          label={metric.label}
-
-        />
-
-      ))}
+        <section className={styles.metrics}>
 
 
-    </section>
+            {
+                metricsData.map((metric) => (
 
-  );
+                    <MetricCard
+
+                        key={metric.id}
+
+                        value={metric.value}
+
+                        label={metric.label}
+
+                    />
+
+                ))
+            }
+
+
+        </section>
+
+    );
 
 }
 
