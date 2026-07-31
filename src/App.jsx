@@ -15,6 +15,9 @@ import Contact from "./pages/Contact";
 // Import Theme Context
 import { ThemeProvider, useTheme } from "./context/ThemeContext";
 
+// Import global theme variables
+import "./styles/Theme.css";
+
 // Import global application styles
 import "./styles/App.css";
 
