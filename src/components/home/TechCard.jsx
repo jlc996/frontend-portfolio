@@ -1,18 +1,23 @@
 // TechCard.jsx
 
-import "../../styles/home/TechCard.css";
+
+// Import styles
+import styles from "../../styles/home/TechCard.module.css";
+
+
 
 function TechCard({ technology }) {
 
-  return (
 
-    <div className="tech-card">
+    return (
 
-      {technology}
+        <article className={styles.techCard}>
 
-    </div>
+            {technology}
 
-  );
+        </article>
+
+    );
 
 }
 
