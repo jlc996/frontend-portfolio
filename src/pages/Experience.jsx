@@ -1,7 +1,11 @@
 // Experience.jsx
 
-import "../styles/pages/Experience.css";
 
+// Page styles
+import styles from "../styles/pages/Experience.module.css";
+
+
+// Experience sections
 import SkillsSection from "../components/experience/SkillsSection";
 import CertificationSection from "../components/experience/CertificationSection";
 import CompletionCertificateSection from "../components/experience/CompletionCertificateSection";
@@ -9,50 +13,53 @@ import Timeline from "../components/experience/Timeline";
 import HighlightSection from "../components/experience/HighlightSection";
 
 
+
 function Experience() {
 
 
-  return (
+    return (
 
-    <section className="experience">
-
-
-      <header className="experience-header">
-
-        <h1>
-          Experience & Skills
-        </h1>
+        <section className={styles.experience}>
 
 
-        <p>
-          Throughout my journey at Mississippi Coding Academies,
-          I have developed a strong foundation in modern frontend
-          development by building responsive websites, interactive
-          JavaScript applications, and React Single Page Applications.
-        </p>
-
-      </header>
+            <header className={styles.experienceHeader}>
 
 
-
-      <SkillsSection />
-
-
-      <CertificationSection />
+                <h1>
+                    Experience & Skills
+                </h1>
 
 
-      <CompletionCertificateSection />
+                <p>
+                    Throughout my journey at Mississippi Coding Academies,
+                    I have developed a strong foundation in modern frontend
+                    development by building responsive websites, interactive
+                    JavaScript applications, and React Single Page Applications.
+                </p>
 
 
-      <Timeline />
+            </header>
 
 
-      <HighlightSection />
+
+            <SkillsSection />
 
 
-    </section>
+            <CertificationSection />
 
-  );
+
+            <CompletionCertificateSection />
+
+
+            <Timeline />
+
+
+            <HighlightSection />
+
+
+        </section>
+
+    );
 
 }
 

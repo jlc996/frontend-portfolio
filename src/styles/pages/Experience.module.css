@@ -1,0 +1,147 @@
+/* =====================================================
+   Experience Page Layout
+===================================================== */
+
+
+.experience {
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 4rem 2rem;
+
+    color: var(--text-color);
+
+    box-sizing: border-box;
+
+}
+
+
+
+/* =====================================================
+   Page Header
+===================================================== */
+
+
+.experienceHeader {
+
+    text-align: center;
+
+    margin-bottom: 4rem;
+
+}
+
+
+
+.experienceHeader h1 {
+
+    font-size: 3rem;
+
+    margin-bottom: 1rem;
+
+}
+
+
+
+.experienceHeader p {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    line-height: 1.8;
+
+    opacity: .9;
+
+}
+
+
+
+/* =====================================================
+   Shared Sections
+===================================================== */
+
+
+.skillsSection,
+.certifications,
+.completionCertificates,
+.timeline,
+.highlights {
+
+    margin-bottom: 5rem;
+
+}
+
+
+
+/* =====================================================
+   Section Headings
+===================================================== */
+
+
+.skillsSection h2,
+.certifications h2,
+.completionCertificates h2,
+.timeline h2,
+.highlights h2 {
+
+    text-align: center;
+
+    font-size: 2rem;
+
+    margin-bottom: 1rem;
+
+}
+
+
+
+/* =====================================================
+   Section Descriptions
+===================================================== */
+
+
+.certifications p,
+.completionCertificates p {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: 0 auto 2rem;
+
+    text-align: center;
+
+    opacity: .85;
+
+}
+
+
+
+/* =====================================================
+   Responsive Design
+===================================================== */
+
+
+@media (max-width: 768px) {
+
+
+    .experience {
+
+        padding: 3rem 1rem;
+
+    }
+
+
+
+    .experienceHeader h1 {
+
+        font-size: 2rem;
+
+    }
+
+}
