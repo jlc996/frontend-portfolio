@@ -1,152 +1,154 @@
-/* ==========================
+/* =====================================================
    Navbar Layout
-========================== */
+===================================================== */
 
 .navbar {
 
-  width: 100%;
+    position: sticky;
 
-  display: flex;
+    top: 0;
 
-  justify-content: space-between;
+    z-index: 1000;
 
-  align-items: center;
+    width: 100%;
 
-  gap: 2rem;
+    display: flex;
 
-  padding: 1rem 2rem;
+    justify-content: space-between;
 
-  background-color: var(--card-color);
+    align-items: center;
 
-  color: var(--text-color);
+    gap: 2rem;
 
-  border-bottom: 1px solid rgba(128,128,128,.2);
+    padding: 1rem 2rem;
+
+    background-color: var(--card-color);
+
+    color: var(--text-color);
+
+    border-bottom: 1px solid rgba(128, 128, 128, .2);
 
 }
 
 
-
-/* ==========================
+/* =====================================================
    Logo Section
-========================== */
+===================================================== */
 
 .logo {
 
-  display: flex;
+    display: flex;
 
-  align-items: center;
+    align-items: center;
 
-  gap: 0.75rem;
+    gap: .75rem;
 
-  text-decoration: none;
+    text-decoration: none;
 
-  color: var(--text-color);
+    color: var(--text-color);
 
 }
 
 
 .logo-image {
 
-  width: 55px;
+    width: 55px;
 
-  height: 55px;
+    height: 55px;
 
-  object-fit: contain;
+    object-fit: contain;
 
 }
 
 
 .logo h2 {
 
-  margin: 0;
+    margin: 0;
 
-  font-size: 1.25rem;
+    font-size: 1.25rem;
 
 }
 
 
-
-/* ==========================
+/* =====================================================
    Navigation Links
-========================== */
+===================================================== */
 
 .nav-links {
 
-  display: flex;
+    display: flex;
 
-  align-items: center;
+    align-items: center;
 
-  gap: 2rem;
+    gap: 2rem;
 
-  list-style: none;
+    list-style: none;
 
-  margin: 0;
+    margin: 0;
 
-  padding: 0;
+    padding: 0;
 
 }
 
 
 .nav-links a {
 
-  color: var(--text-color);
+    color: var(--text-color);
 
-  font-weight: 600;
+    font-weight: 600;
 
-  text-decoration: none;
+    text-decoration: none;
 
-  transition: color .3s ease;
+    transition: color .3s ease;
 
 }
 
 
 .nav-links a:hover {
 
-  color: var(--accent-color);
+    color: var(--accent-color);
 
 }
 
 
-
-/* Active Page Highlight */
+/* =====================================================
+   Active Page Highlight
+===================================================== */
 
 .nav-links a.active {
 
-  color: var(--accent-color);
+    color: var(--accent-color);
 
-  border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
 
 }
 
 
-
-/* ==========================
-   Responsive Mobile Layout
-========================== */
+/* =====================================================
+   Responsive Design
+===================================================== */
 
 @media (max-width: 768px) {
 
+    .navbar {
 
-  .navbar {
+        flex-direction: column;
 
-    flex-direction: column;
+        text-align: center;
 
-    text-align: center;
+        padding: 1rem;
 
-    padding: 1rem;
-
-  }
+    }
 
 
-  .nav-links {
+    .nav-links {
 
-    flex-wrap: wrap;
+        flex-wrap: wrap;
 
-    justify-content: center;
+        justify-content: center;
 
-    gap: 1rem;
+        gap: 1rem;
 
-  }
-
+    }
 
 }
