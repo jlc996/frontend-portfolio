@@ -3,15 +3,16 @@
 // Import React Router Link
 import { Link } from "react-router-dom";
 
+// Import component styles
+import styles from "../../../styles/projects/projectDetails/ProjectActions.module.css";
+
 
 // Project Actions component
 function ProjectActions({ project }) {
 
-
   return (
 
-    <div className="details-buttons">
-
+    <div className={styles.detailsButtons}>
 
       {/* ==========================
           Live Demo Button
@@ -25,7 +26,7 @@ function ProjectActions({ project }) {
           href={project.homepage}
           target="_blank"
           rel="noopener noreferrer"
-          className="button primary-button"
+          className={`${styles.button} ${styles.primaryButton}`}
         >
 
           Live Demo
@@ -33,7 +34,6 @@ function ProjectActions({ project }) {
         </a>
 
       )}
-
 
 
       {/* ==========================
@@ -44,13 +44,12 @@ function ProjectActions({ project }) {
         href={project.html_url}
         target="_blank"
         rel="noopener noreferrer"
-        className="button primary-button"
+        className={`${styles.button} ${styles.primaryButton}`}
       >
 
         View on GitHub
 
       </a>
-
 
 
       {/* ==========================
@@ -59,13 +58,12 @@ function ProjectActions({ project }) {
 
       <Link
         to="/projects"
-        className="button secondary-button"
+        className={`${styles.button} ${styles.secondaryButton}`}
       >
 
         Back to Projects
 
       </Link>
-
 
     </div>
 

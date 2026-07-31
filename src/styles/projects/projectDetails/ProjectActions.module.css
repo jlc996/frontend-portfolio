@@ -1,0 +1,115 @@
+/* =====================================================
+   Project Actions
+===================================================== */
+
+.detailsButtons {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 1rem;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* =====================================================
+   Buttons
+===================================================== */
+
+.button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: .85rem 2rem;
+
+    border-radius: 12px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform .3s ease,
+        background-color .3s ease;
+
+}
+
+
+.button:hover {
+
+    transform: translateY(-4px);
+
+}
+
+
+/* =====================================================
+   Primary Button
+===================================================== */
+
+.primaryButton {
+
+    background: var(--accent-color);
+
+    color: white;
+
+}
+
+
+.primaryButton:hover {
+
+    color: white;
+
+}
+
+
+/* =====================================================
+   Secondary Button
+===================================================== */
+
+.secondaryButton {
+
+    border: 2px solid var(--accent-color);
+
+    color: var(--accent-color);
+
+    background: transparent;
+
+}
+
+
+.secondaryButton:hover {
+
+    background: var(--accent-color);
+
+    color: white;
+
+}
+
+
+/* =====================================================
+   Responsive Design
+===================================================== */
+
+@media (max-width: 768px) {
+
+    .detailsButtons {
+
+        flex-direction: column;
+
+    }
+
+
+    .button {
+
+        width: 100%;
+
+    }
+
+}
