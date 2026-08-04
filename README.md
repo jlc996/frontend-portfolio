@@ -19,7 +19,7 @@ The application demonstrates modern frontend development practices including:
 * Organized asset management
 * Modular and maintainable CSS
 * Web3Forms contact form integration
-* Vercel deployment
+* Production deployment with Vercel
 
 ---
 
@@ -27,11 +27,11 @@ The application demonstrates modern frontend development practices including:
 
 ## Vercel Deployment
 
-🔗 https://joshua-craven-portfolio-ikcb4mcq9-jlc996s-projects.vercel.app/
+🔗 https://joshua-craven-portfolio-gray-seven.vercel.app/
 
-## GitHub Pages
+## GitHub Repository
 
-🔗 https://jlc996.github.io/frontend-portfolio/
+🔗 https://github.com/jlc996/frontend-portfolio
 
 ---
 
@@ -44,7 +44,9 @@ The application demonstrates modern frontend development practices including:
 * JavaScript (ES6+)
 * HTML5
 * CSS3
+* CSS Modules
 * React Router DOM
+* Responsive Web Design
 
 ## Development Tools
 
@@ -53,6 +55,7 @@ The application demonstrates modern frontend development practices including:
 * GitHub
 * npm
 * Vite Development Server
+* Chrome DevTools
 * Vercel
 
 ## APIs and Services
@@ -67,6 +70,8 @@ The application demonstrates modern frontend development practices including:
 * Custom Hooks
 * Dynamic Component Rendering
 * Reusable Components
+* Conditional Rendering
+* Component Composition
 
 ---
 
@@ -147,14 +152,14 @@ Features include:
 * Search by description
 * Search by programming language
 * Search by GitHub topics
-* Project details pages
+* Project detail pages
 * GitHub repository links
 * Live demo links when available
 * Repository statistics
 * Loading state
 * Error handling
 
-Projects are rendered through reusable components.
+Projects are rendered through reusable React components.
 
 ---
 
@@ -703,7 +708,7 @@ The custom `useFetch` hook manages:
 
 The retrieved repository information is passed into reusable project components.
 
-This allows the portfolio to automatically reflect changes made to public GitHub repositories.
+This allows the portfolio to dynamically reflect changes made to public GitHub repositories.
 
 ---
 
@@ -801,15 +806,21 @@ For production deployment, configure the environment variable through the hostin
 
 # Vercel Deployment
 
-The portfolio is deployed using **Vercel**.
+The production portfolio is deployed using **Vercel**.
 
 Production deployment:
 
 ```text
-https://joshua-craven-portfolio-ikcb4mcq9-jlc996s-projects.vercel.app/
+https://joshua-craven-portfolio-gray-seven.vercel.app/
 ```
 
-Vercel provides automated deployment from the GitHub repository.
+The project is built using:
+
+```bash
+npm run build
+```
+
+The production build generates the optimized application used for deployment.
 
 Typical deployment workflow:
 
@@ -825,16 +836,6 @@ Production Build
        ↓
 Live Portfolio
 ```
-
-The project is built using:
-
-```bash
-npm run build
-```
-
-The production build generates the optimized application used for deployment.
-
----
 
 # Asset Management
 
@@ -936,7 +937,7 @@ npm run preview
 
 The production build was tested to verify application stability and expected React rendering behavior.
 
-### Self-Audit Results
+## Self-Audit Results
 
 * **Console Errors:** 0 observed
 * **Infinite Re-render Loops:** 0 observed
@@ -945,7 +946,7 @@ The production build was tested to verify application stability and expected Rea
 * **React Component Rendering:** Verified
 * **Interactive Features:** Tested during production testing
 
-### Verification Confirmation
+## Verification Confirmation
 
 I confirm that the production version of the portfolio was tested and that no console errors or infinite React re-render loops were observed during the testing process.
 
@@ -954,6 +955,8 @@ I confirm that the production version of the portfolio was tested and that no co
 **Verification Date:** August 4, 2026
 
 **Verified By:** Joshua Craven
+
+---
 
 # Development Practices
 
@@ -974,6 +977,8 @@ This project follows modern frontend development practices including:
 * Version control with Git
 * GitHub integration
 * Vercel deployment
+* Production testing
+* Self-auditing
 
 The project structure is designed to keep presentation, data, application logic, and reusable components separated.
 
@@ -981,20 +986,22 @@ The project structure is designed to keep presentation, data, application logic,
 
 # AI Use Disclaimer
 
-AI-assisted development tools were used during the development of this portfolio.
+AI-assisted development tools were used during the development and troubleshooting of this portfolio.
 
-AI was used as a development support tool for tasks such as:
+AI assistance was used as a development support tool for tasks such as:
 
 * Troubleshooting errors
 * Explaining programming concepts
 * Reviewing code structure
+* Identifying potential implementation issues
 * Suggesting improvements
 * Assisting with documentation
-* Generating development suggestions
+* Assisting with deployment troubleshooting
+* Supporting development workflow questions
 
 All generated suggestions were reviewed, tested, modified, and integrated as appropriate.
 
-The project remains the responsibility of the developer, including the final implementation, design decisions, testing, and deployment.
+The project remains the responsibility of the developer, including the final implementation, design decisions, code integration, testing, debugging, and deployment.
 
 AI assistance does not replace the developer's understanding of the technologies used in this project.
 
@@ -1025,6 +1032,10 @@ Frontend Developer
 GitHub:
 
 https://github.com/jlc996
+
+Portfolio:
+
+https://joshua-craven-portfolio-gray-seven.vercel.app/
 
 ---
 
