@@ -28,31 +28,73 @@ import styles from "../styles/pages/ProjectDetails.module.css";
 
 
 
-// GitHub API endpoint
+// =====================================================
+// GitHub API Endpoint
+// =====================================================
+
 const API_URL =
     "https://api.github.com/users/jlc996/repos";
 
 
 
-// Projects hidden from portfolio
+// =====================================================
+// Projects Hidden From Portfolio
+// =====================================================
+
 const excludedProjects = [
 
-    "Software-Design"
+    "Software-Design",
+    "GitTest",
+    "Module2 Div Soup",
+    "NeXTStack",
+    "Nextstack Module1 Bio"
 
 ];
 
 
 
-// Project Details page component
+// =====================================================
+// Normalize Project Names
+// =====================================================
+
+const normalizeProjectName = (name) => {
+
+    return name
+
+        .toLowerCase()
+
+        // Convert hyphens and underscores to spaces
+        .replace(/[-_]/g, " ")
+
+        // Remove extra spaces
+        .replace(/\s+/g, " ")
+
+        // Remove spaces from beginning/end
+        .trim();
+
+};
+
+
+
+// =====================================================
+// Project Details Page Component
+// =====================================================
+
 function ProjectDetails() {
 
 
-    // Get repository name from URL
+    // ==========================
+    // Get Repository Name From URL
+    // ==========================
+
     const { id } = useParams();
 
 
 
-    // Fetch GitHub repositories
+    // ==========================
+    // Fetch GitHub Repositories
+    // ==========================
+
     const {
         data: projects,
         isLoading,
@@ -61,7 +103,10 @@ function ProjectDetails() {
 
 
 
-    // Loading state
+    // ==========================
+    // Loading State
+    // ==========================
+
     if (isLoading) {
 
         return (
@@ -78,7 +123,10 @@ function ProjectDetails() {
 
 
 
-    // Error state
+    // ==========================
+    // Error State
+    // ==========================
+
     if (error) {
 
         return (
@@ -97,27 +145,49 @@ function ProjectDetails() {
 
 
 
-    // Safely filter projects
+    // =====================================================
+    // Filter Hidden Projects
+    // =====================================================
+
     const projectList = (projects || [])
 
-        .filter(
-            (project) =>
-                !excludedProjects.includes(project.name)
+        .filter((project) => {
+
+            const projectName =
+                normalizeProjectName(project.name);
+
+            return !excludedProjects.some(
+                (excludedProject) =>
+                    normalizeProjectName(excludedProject) ===
+                    projectName
+            );
+
+        });
+
+
+
+    // =====================================================
+    // Find Selected Project
+    // =====================================================
+
+    const normalizedProjectId =
+        normalizeProjectName(id || "");
+
+
+    const project = projectList.find((repo) => {
+
+        return (
+            normalizeProjectName(repo.name) ===
+            normalizedProjectId
         );
 
-
-
-    // Find selected project
-    const project = projectList.find(
-        (repo) =>
-            repo.name === id
-    );
+    });
 
 
 
-    // ==========================
+    // =====================================================
     // Project Not Found
-    // ==========================
+    // =====================================================
 
     if (!project) {
 
@@ -138,7 +208,9 @@ function ProjectDetails() {
 
 
 
-                {/* Back to Projects Button */}
+                {/* ==========================
+                    Back to Projects Button
+                ========================== */}
 
                 <div className={styles.detailsButtons}>
 
@@ -162,7 +234,10 @@ function ProjectDetails() {
 
 
 
-    // Render project details page
+    // =====================================================
+    // Render Project Details Page
+    // =====================================================
+
     return (
 
         <section className={styles.projectDetails}>
@@ -205,5 +280,8 @@ function ProjectDetails() {
 
 
 
-// Export component
+// =====================================================
+// Export Component
+// =====================================================
+
 export default ProjectDetails;

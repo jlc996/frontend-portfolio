@@ -21,22 +21,58 @@ import styles from "../styles/pages/Projects.module.css";
 
 
 
+// =====================================================
 // GitHub API URL
+// =====================================================
+
 const API_URL =
     "https://api.github.com/users/jlc996/repos";
 
 
 
+// =====================================================
 // Repositories to hide from portfolio
+// =====================================================
+
 const excludedProjects = [
 
-    "Software-Design"
+    "Software-Design",
+    "GitTest",
+    "Module2 Div Soup",
+    "NeXTStack",
+    "Nextstack Module1 Bio"
 
 ];
 
 
 
-// Projects page component
+// =====================================================
+// Normalize Project Names
+// =====================================================
+
+const normalizeProjectName = (name) => {
+
+    return name
+
+        .toLowerCase()
+
+        // Convert hyphens and underscores to spaces
+        .replace(/[-_]/g, " ")
+
+        // Remove extra spaces
+        .replace(/\s+/g, " ")
+
+        // Remove spaces from beginning/end
+        .trim();
+
+};
+
+
+
+// =====================================================
+// Projects Page Component
+// =====================================================
+
 function Projects() {
 
 
@@ -75,32 +111,59 @@ function Projects() {
 
     const filteredProjects = (projects || [])
 
+        // ==========================================
         // Remove unwanted repositories
-        .filter(
-            (project) =>
-                !excludedProjects.includes(project.name)
-        )
+        // ==========================================
 
+        .filter((project) => {
+
+            const projectName =
+                normalizeProjectName(project.name);
+
+            return !excludedProjects.some(
+                (excludedProject) =>
+                    normalizeProjectName(excludedProject) ===
+                    projectName
+            );
+
+        })
+
+
+        // ==========================================
         // Search project information
+        // ==========================================
+
         .filter((project) => {
 
 
+            // ==========================
             // Project name
+            // ==========================
+
             const projectName =
                 project.name?.toLowerCase() || "";
 
 
+            // ==========================
             // Project description
+            // ==========================
+
             const projectDescription =
                 project.description?.toLowerCase() || "";
 
 
+            // ==========================
             // Primary programming language
+            // ==========================
+
             const projectLanguage =
                 project.language?.toLowerCase() || "";
 
 
+            // ==========================
             // GitHub repository topics
+            // ==========================
+
             const projectTopics =
                 project.topics
                     ?.join(" ")
@@ -108,7 +171,10 @@ function Projects() {
 
 
 
+            // ==========================
             // Return projects that match
+            // ==========================
+
             return (
 
                 projectName.includes(
@@ -133,18 +199,18 @@ function Projects() {
 
 
 
-    // ==========================
+    // =====================================================
     // Render Projects Page
-    // ==========================
+    // =====================================================
 
     return (
 
         <section className={styles.projects}>
 
 
-            {/* ==========================
+            {/* =================================================
                 Page Header
-            ========================== */}
+            ================================================= */}
 
             <header className={styles.projectsHeader}>
 
@@ -165,9 +231,9 @@ function Projects() {
 
 
 
-            {/* ==========================
+            {/* =================================================
                 Search Projects
-            ========================== */}
+            ================================================= */}
 
             <SearchBar
 
@@ -183,9 +249,9 @@ function Projects() {
 
 
 
-            {/* ==========================
+            {/* =================================================
                 Loading State
-            ========================== */}
+            ================================================= */}
 
             {isLoading && (
 
@@ -195,9 +261,9 @@ function Projects() {
 
 
 
-            {/* ==========================
+            {/* =================================================
                 Error State
-            ========================== */}
+            ================================================= */}
 
             {error && (
 
@@ -209,18 +275,18 @@ function Projects() {
 
 
 
-            {/* ==========================
+            {/* =================================================
                 Project Grid
-            ========================== */}
+            ================================================= */}
 
             {!isLoading && !error && (
 
                 <div className={styles.projectGrid}>
 
 
-                    {/* ==========================
+                    {/* =================================================
                         Matching Projects
-                    ========================== */}
+                    ================================================= */}
 
                     {filteredProjects.length > 0 ? (
 
@@ -239,9 +305,9 @@ function Projects() {
                     ) : (
 
 
-                        /* ==========================
+                        /* =================================================
                            No Search Results
-                        ========================== */
+                        ================================================= */
 
                         <p className={styles.noProjects}>
 
@@ -265,5 +331,8 @@ function Projects() {
 
 
 
-// Export component
+// =====================================================
+// Export Component
+// =====================================================
+
 export default Projects;
