@@ -222,10 +222,78 @@
    Submit Button
 ===================================================== */
 
+.submitButton {
 
-.contactForm button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
 
     margin-top: .5rem;
+
+    padding: .85rem 1.75rem;
+
+    border: 2px solid var(--accent-color);
+
+    border-radius: 10px;
+
+    background: var(--accent-color);
+
+    color: #ffffff;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    font-family: inherit;
+
+    line-height: 1.2;
+
+    cursor: pointer;
+
+    transition:
+        background-color .3s ease,
+        border-color .3s ease,
+        color .3s ease,
+        transform .2s ease,
+        box-shadow .3s ease;
+
+}
+
+
+
+/* =====================================================
+   Submit Button Hover
+===================================================== */
+
+.submitButton:hover:not(:disabled) {
+
+    background: transparent;
+
+    color: var(--accent-color);
+
+    border-color: var(--accent-color);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 6px 14px rgba(0, 123, 255, .18);
+
+}
+
+
+
+/* =====================================================
+   Submit Button Focus
+===================================================== */
+
+.submitButton:focus-visible {
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 4px rgba(0, 123, 255, .18);
 
 }
 
@@ -235,15 +303,17 @@
    Disabled Submit Button
 ===================================================== */
 
-
-.contactForm button:disabled {
+.submitButton:disabled {
 
     opacity: .6;
 
     cursor: not-allowed;
 
-}
+    transform: none;
 
+    box-shadow: none;
+
+}
 
 
 /* =====================================================
